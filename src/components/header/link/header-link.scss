@@ -1,0 +1,38 @@
+@import "../../../../variables.scss";
+.header-link {
+    width: fit-content;
+    height: 40px;
+    font-size: 20px;
+    line-height: 60px;
+    color: $color-light;
+
+    &:hover {
+        cursor: pointer;
+        &.header-link::after {
+            width: 100%;
+        }
+    }
+
+    &:after {
+        transition: 0.2s;
+        transition-timing-function: linear;
+        display: block;
+        content: "";
+        width: 0%;
+        height: 2px;
+        background-color: $background-dark;
+    }
+
+    &-title {
+        height: 45px;
+    }
+}
+
+body[dark] {
+    .header-link {
+        color: $color-dark;
+    }
+    .header-link::after {
+        background-color: $color-dark;
+    }
+}

@@ -4,9 +4,6 @@
     top: -5px;
     height: 60px;
     fill: $color-light;
-    &:hover {
-        filter: contrast(2);
-    }
 
     &:hover > .logo-bracket-right {
         transform: translateX(410px);

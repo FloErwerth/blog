@@ -1,0 +1,30 @@
+@import "../../../../variables.scss";
+.theme-switcher {
+    width: 28px;
+    height: 43px;
+    &-icon {
+        user-select: none;
+        outline: solid $color-light 3px;
+        border-radius: 5%;
+        overflow: hidden;
+        width: 40px;
+        height: 40px;
+        transition: 0.5s;
+        background-color: $background-header-light;
+        &:hover {
+            cursor: pointer;
+        }
+    }
+    &-mover {
+        padding: 5px;
+        transition: 0.2s;
+        position: relative;
+    }
+}
+
+body[dark] {
+    .theme-switcher-icon {
+        outline: solid $color-dark 3px;
+        background-color: $background-header-dark;
+    }
+}
