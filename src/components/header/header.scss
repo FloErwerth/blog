@@ -1,31 +1,74 @@
 @import "../../../variables.scss";
+
 .header {
+    transition: 0.5s;
     position: fixed;
-    display: grid;
-    grid-template-columns: 15% 45% 15% 15%;
+    display: flex;
     align-items: center;
     top: 0;
     left: 0;
     width: 100%;
     padding: 5px;
     height: 60px;
+    column-gap: 20px;
+    line-height: 60px;
     margin: 0;
     backdrop-filter: blur(5px);
     background-color: $background-header-light;
     color: $color-dark;
-    &-left {
+
+    &-burger-menu {
+        transition: 0.5s;
+        margin-left: 20px;
+        @media (min-width: 1200px) {
+            width: 0;
+            visibility: hidden;
+        }
+
+        &-line {
+            fill: $background-header-light;
+            stroke: $background-header-light;
+            stroke-width: 3px;
+            stroke-linecap: round;
+        }
+    }
+
+    &-links {
+        transition: 0.5s;
         display: flex;
         column-gap: 20px;
-    }
-    &-right {
-        display: flex;
-        justify-content: flex-end;
-        margin-right: 40px;
+        overflow: hidden;
+        height: 60px;
+        @media (max-width: 1200px) {
+            position: absolute;
+            display: flex;
+            align-items: flex-end;
+            top: -75px;
+            left: -5px;
+            z-index: -5;
+            padding: 30px;
+            background-color: $background-header-light;
+            font-size: 12px;
+            margin-top: 100px;
+            visibility: hidden;
+            height: 0px;
+            width: 100vw;
+            filter: opacity(0);
+        }
+
+        &-show {
+            visibility: visible;
+            filter: opacity(1);
+            height: 50px;
+        }
     }
 }
 
 body[dark] {
     .header {
+        background-color: $background-header-dark;
+    }
+    .header-links {
         background-color: $background-header-dark;
     }
 }

@@ -17,7 +17,7 @@ function ThemeSwitcher(props) {
         <div
           className="theme-switcher-mover"
           style={{
-            top: dark ? "-6px" : "-57px",
+            top: dark ? "-6px" : "-65px",
           }}
         >
           <img src={Sun} className="theme-switcher" />
