@@ -1,0 +1,30 @@
+@import "../../../../variables.scss";
+.logo {
+    position: relative;
+    top: -5px;
+    height: 60px;
+    fill: $color-light;
+    &:hover {
+        filter: contrast(2);
+    }
+
+    &:hover > .logo-bracket-right {
+        transform: translateX(410px);
+    }
+
+    &-bracket-right {
+        transition: 0.05s linear;
+        transform: translateX(0px);
+    }
+
+    &-text {
+        font-size: 75px;
+        user-select: none;
+    }
+}
+
+body[dark] {
+    .logo {
+        fill: $color-dark;
+    }
+}

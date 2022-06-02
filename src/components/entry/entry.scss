@@ -1,0 +1,10 @@
+@import "../../../variables.scss";
+body[dark] {
+    .entry {
+        color: $color-dark;
+    }
+}
+
+.entry {
+    font-size: 20px;
+}

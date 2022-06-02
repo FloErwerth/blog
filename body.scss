@@ -1,0 +1,9 @@
+@import "variables.scss";
+body {
+    margin: 10px;
+    margin-top: 70px;
+    background-color: $background-light;
+    &[dark] {
+        background-color: $background-dark;
+    }
+}
