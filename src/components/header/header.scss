@@ -13,6 +13,7 @@
     column-gap: 20px;
     line-height: 60px;
     margin: 0;
+    z-index: 10000;
     backdrop-filter: blur(5px);
     background-color: $background-header-light;
     color: $color-dark;

@@ -3,6 +3,7 @@ import "./header-link.scss";
 import { navigateTo } from "../../../..";
 function HeaderLink(props) {
   const handleClick = () => {
+    props.onClick();
     navigateTo(props.to);
   };
   return (

@@ -11,12 +11,12 @@ body {
 }
 
 .content-wrapper {
-    transition: 0.5s;
+    transition: 0.25s linear;
     opacity: 1;
     position: relative;
     top: 0px;
     &[animation] {
-        top: 50px;
+        top: 100px;
         opacity: 0;
     }
 }

@@ -28,8 +28,8 @@ function Header(props) {
         handleBurgerMenu={handleBurgerMenu}
       />
       <div className="header-links">
-        <HeaderLink title="Blog" to="/" />
-        <HeaderLink title="About Me" to="/about" />
+        <HeaderLink title="Blog" to="/" onClick={handleBurgerMenu} />
+        <HeaderLink title="About Me" to="/about" onClick={handleBurgerMenu} />
       </div>
       <ThemeSwitcher
         onClick={() => {
