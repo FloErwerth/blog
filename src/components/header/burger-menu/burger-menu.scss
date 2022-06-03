@@ -1,0 +1,17 @@
+@import "../../../../variables.scss";
+.burger-menu {
+    margin-left: 16px;
+
+    @media (min-width: 1200px) {
+        opacity: 0;
+        visibility: hidden;
+        width: 0;
+    }
+
+    &-line {
+        fill: $color-header;
+        stroke: $color-header;
+        stroke-width: 3px;
+        stroke-linecap: round;
+    }
+}

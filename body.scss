@@ -1,11 +1,22 @@
 @import "variables.scss";
 body {
-    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
     margin: 10px;
-    margin-top: 150px;
+    margin-top: 110px;
     transition: 0.5s;
     background-color: $background-light;
     &[dark] {
         background-color: $background-dark;
+    }
+}
+
+.content-wrapper {
+    transition: 0.5s;
+    opacity: 1;
+    position: relative;
+    top: 0px;
+    &[animation] {
+        top: 50px;
+        opacity: 0;
     }
 }

@@ -1,9 +1,10 @@
 import React, { StrictMode, useState } from "react";
 import Dom from "react-dom/client";
-import Entry from "./src/components/entry/Entry";
+import Main from "./src/components/main/main";
 import Header from "./src/components/header/header";
+import CreateReactApp from "./src/components/blog-entries/create-react-app/create-react-app";
 import "./body.scss";
-import { HashRouter, Routes, Route } from "react-router-dom";
+import { HashRouter, Routes, Route, Link } from "react-router-dom";
 
 const root = document.getElementById("root");
 const body = document.getElementById("body");
@@ -14,11 +15,26 @@ const rootObject = Dom.createRoot(root);
 
 rootObject.render(
   <StrictMode>
-    <HashRouter>
-      <Header />
-      <Routes>
-        <Route path="/" element={<Entry />} />
-      </Routes>
-    </HashRouter>
+    <Header />
+    <div id="wrapper" className="content-wrapper">
+      <HashRouter>
+        <Routes>
+          <Route path="/" element={<Main />} />
+          <Route
+            path="/about"
+            element={<div>TO BE WORKED OUT, NO WORRIES</div>}
+          />
+          <Route path="/create-react-app" element={<CreateReactApp />} />
+        </Routes>
+      </HashRouter>
+    </div>
   </StrictMode>
 );
+
+export const navigateTo = (href) => {
+  document.getElementById("wrapper").toggleAttribute("animation");
+  setTimeout(() => {
+    window.location.href = "/#" + href;
+    document.getElementById("wrapper").toggleAttribute("animation");
+  }, 500);
+};

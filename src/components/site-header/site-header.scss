@@ -1,0 +1,20 @@
+@import "../../../variables.scss";
+.site-header {
+    width: 100%;
+    user-select: none;
+    transition: 0.5s;
+    &::after {
+        position: relative;
+        transition: 0.5s;
+        content: "";
+        display: block;
+        height: 1px;
+        background-color: $background-dark;
+    }
+}
+
+body[dark] {
+    .site-header::after {
+        background-color: $color-dark;
+    }
+}

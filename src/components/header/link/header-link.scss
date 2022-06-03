@@ -4,7 +4,7 @@
     height: 40px;
     font-size: 20px;
     line-height: 60px;
-    color: $color-light;
+    color: $color-header;
 
     &:hover {
         cursor: pointer;
@@ -20,19 +20,10 @@
         content: "";
         width: 0%;
         height: 2px;
-        background-color: $background-dark;
+        background-color: $color-header;
     }
 
     &-title {
         height: 45px;
-    }
-}
-
-body[dark] {
-    .header-link {
-        color: $color-dark;
-    }
-    .header-link::after {
-        background-color: $color-dark;
     }
 }

@@ -4,14 +4,17 @@ import Logo from "./logo/logo";
 import ThemeSwitcher from "./theme-switcher/theme-switcher";
 import HeaderLink from "./link/header-link";
 import { Link } from "react-router-dom";
+import BurgerMenu from "./burger-menu/burger-menu";
 
 function Header(props) {
   const [dark, setDark] = useState(false);
+  const [collapsed, setCollapsed] = useState(true);
   const themeChangedEvent = new Event("theme", {
     bubbles: true,
     composed: true,
   });
   const handleBurgerMenu = () => {
+    setCollapsed((collapsed) => !collapsed);
     document
       .querySelector(".header-links")
       .classList.toggle("header-links-show");
@@ -19,50 +22,14 @@ function Header(props) {
 
   return (
     <h1 id="header" className="header">
-      <div className="header-burger-menu" onClick={handleBurgerMenu}>
-        <svg width="40" height="30">
-          <line
-            style={{
-              fill: dark ? "#c8c8ff" : "rgb(15, 19, 15)",
-              stroke: dark ? "#c8c8ff" : "rgb(15, 19, 15)",
-              strokeWidth: "3px",
-              strokeLinecap: "round",
-            }}
-            x1={5}
-            x2={35}
-            y1={5}
-            y2={5}
-          />
-          <line
-            style={{
-              fill: dark ? "#c8c8ff" : "rgb(15, 19, 15)",
-              stroke: dark ? "#c8c8ff" : "rgb(15, 19, 15)",
-              strokeWidth: "3px",
-              strokeLinecap: "round",
-            }}
-            x1={5}
-            x2={35}
-            y1={15}
-            y2={15}
-          />
-          <line
-            style={{
-              fill: dark ? "#c8c8ff" : "rgb(15, 19, 15)",
-              stroke: dark ? "#c8c8ff" : "rgb(15, 19, 15)",
-              strokeWidth: "3px",
-              strokeLinecap: "round",
-            }}
-            x1={5}
-            x2={35}
-            y1={25}
-            y2={25}
-          />
-        </svg>
-      </div>
+      <BurgerMenu
+        dark={dark}
+        collapsed={collapsed}
+        handleBurgerMenu={handleBurgerMenu}
+      />
       <div className="header-links">
-        <HeaderLink title="Blog" />
-        <HeaderLink title="Recent Posts" />
-        <HeaderLink title="About Me" />
+        <HeaderLink title="Blog" to="/" />
+        <HeaderLink title="About Me" to="/about" />
       </div>
       <ThemeSwitcher
         onClick={() => {

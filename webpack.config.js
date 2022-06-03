@@ -33,6 +33,19 @@ module.exports = {
         test: /\.svg$/,
         use: [{ loader: "svg-url-loader", options: { limit: 10000 } }],
       },
+      {
+        test: /\.(jpg|jpeg|png|)$/i,
+        use: [
+          "file-loader",
+          {
+            loader: "image-webpack-loader",
+            options: {
+              bypassOnDebug: true, // webpack@1.x
+              disable: true, // webpack@2.x and newer
+            },
+          },
+        ],
+      },
     ],
   },
   plugins: [
