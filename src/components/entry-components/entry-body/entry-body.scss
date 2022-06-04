@@ -8,6 +8,9 @@
     margin: auto;
     font-size: 19px;
     color: $color-light;
+    &-text {
+        font-size: 15px;
+    }
 }
 
 body[dark] {

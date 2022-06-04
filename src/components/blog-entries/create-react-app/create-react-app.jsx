@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useRef } from "react";
 import "./create-react-app.scss";
 import EntryHeader from "../../entry-components/entry-header/entry-header";
 import EntryBody from "../../entry-components/entry-body/entry-body";
+import EntryList from "../../entry-components/entry-list/entry-list";
 function CreateReactApp() {
+  const packages = useRef(null);
   return (
     <EntryBody>
       <div className="create-react-app">
@@ -18,12 +20,18 @@ function CreateReactApp() {
         using create-react-app shipped with react. The table of content is the
         following:
       </p>
-      <ul>
-        <li>Installing the necessary packages and modules</li>
-        <li>Configure the loaders and plugins for webpack</li>
-        <li>Usage of webpack</li>
-      </ul>
-      <h4>Installing the necessary packages and modules</h4>
+      <EntryList>
+        <EntryList.Element clickRef={packages}>
+          Create the project and install necessary packages and modules
+        </EntryList.Element>
+      </EntryList>
+      <EntryBody.Subtitle ref={packages}>
+        Create the project and install necessary packages and modules
+      </EntryBody.Subtitle>
+      <EntryBody.Text>
+        The obvious first step is to create a project and create the folder
+        structure.
+      </EntryBody.Text>
     </EntryBody>
   );
 }
