@@ -1,0 +1,46 @@
+@import "../../../../variables.scss";
+.entry-header {
+    transition: 0.5s;
+    &-title {
+        font-size: 32px;
+    }
+    &-image {
+        width: 80px;
+        height: 80px;
+        border-radius: 100%;
+        margin-bottom: 30px;
+
+        &:hover {
+            outline: 3px solid $highlight;
+            cursor: pointer;
+        }
+    }
+    &-wrapper {
+        display: flex;
+    }
+    &-metadata {
+        font-family: Arial, Helvetica, sans-serif;
+        margin-left: 30px;
+    }
+    &-date {
+        margin-top: 20px;
+        font-size: 12px;
+        font-style: italic;
+    }
+    &-social {
+        transition: 0.5s;
+        width: 30px;
+        height: 30px;
+        margin-top: 10px;
+        &:hover {
+            cursor: pointer;
+            transform: scale(1.02);
+        }
+    }
+}
+
+body[dark] {
+    .entry-header {
+        color: $color-dark;
+    }
+}

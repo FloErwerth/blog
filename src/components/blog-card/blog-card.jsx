@@ -1,7 +1,7 @@
 import React from "react";
 import "./blog-card.scss";
 import pic from "./Foto_Florian.jpg";
-import { navigateTo } from "../../..";
+import { navigateTo } from "../../../index.js";
 
 function BlogCard(props) {
   const handleTextClick = () => {
@@ -28,14 +28,14 @@ function BlogCard(props) {
           className="blog-card-image"
           style={{
             backgroundImage: `url(${pic})`,
-            backgroundSize: "220% 240%",
+            backgroundSize: "200% 240%",
             backgroundPosition: "-3px -10px",
           }}
         ></div>
         <div className="blog-card-metadata">
           {props.author}
           <div className="blog-card-date">
-            {props.date} - {props.readingTime} minutes reading time
+            {props.date} - {props.time} mins reading
           </div>
         </div>
       </div>

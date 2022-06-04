@@ -1,0 +1,11 @@
+@import "../../../../../variables.scss";
+.social-logo {
+    transition: 0.5s;
+    filter: $svg-light-filter;
+}
+
+body[dark] {
+    .social-logo {
+        filter: $svg-dark-filter;
+    }
+}
