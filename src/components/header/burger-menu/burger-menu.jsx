@@ -7,8 +7,8 @@ function BurgerMenu(props) {
       <svg width="40" height="30">
         <line
           style={{
-            fill: props.dark ? "#c8c8ff" : "rgb(15, 19, 15)",
-            stroke: props.dark ? "#c8c8ff" : "rgb(15, 19, 15)",
+            fill: props.dark ? "rgb(15, 19, 15)" : "#c8c8ff",
+            stroke: props.dark ? "rgb(15, 19, 15)" : "#c8c8ff",
             strokeWidth: "3px",
             strokeLinecap: "round",
             transform: props.collapsed
@@ -23,8 +23,8 @@ function BurgerMenu(props) {
         />
         <line
           style={{
-            fill: props.dark ? "#c8c8ff" : "rgb(15, 19, 15)",
-            stroke: props.dark ? "#c8c8ff" : "rgb(15, 19, 15)",
+            fill: props.dark ? "rgb(15, 19, 15)" : "#c8c8ff",
+            stroke: props.dark ? "rgb(15, 19, 15)" : "#c8c8ff",
             strokeWidth: "3px",
             strokeLinecap: "round",
             transform: props.collapsed

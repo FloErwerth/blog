@@ -1,0 +1,12 @@
+.entry-body-image {
+    width: 80%;
+    aspect-ratio: "16/9";
+    display: flex;
+    position: relative;
+    transition: 0.2s;
+
+    &-text {
+        width: 100%;
+        padding: 30px;
+    }
+}

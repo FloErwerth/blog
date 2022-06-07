@@ -6,7 +6,6 @@
     height: 40px;
     &-icon {
         user-select: none;
-        outline: solid $background-dark 3px;
         border-radius: 5%;
         overflow: hidden;
         width: 40px;
@@ -25,7 +24,6 @@
 
 body[dark] {
     .theme-switcher-icon {
-        outline: solid yellow 3px;
         background-color: $background-header-dark;
     }
 }

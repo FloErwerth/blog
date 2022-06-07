@@ -11,6 +11,16 @@
     &-text {
         font-size: 15px;
     }
+    &-link {
+        transition: 0.5s;
+        text-decoration: underline;
+        &:hover {
+            cursor: pointer;
+        }
+        &:visited {
+            color: $color-light;
+        }
+    }
 }
 
 body[dark] {
@@ -18,5 +28,8 @@ body[dark] {
         background-color: $background-card-dark;
         box-shadow: 0px 0px 2px 1px $background-card-dark;
         color: $color-dark;
+        &-link {
+            color: $color-dark;
+        }
     }
 }

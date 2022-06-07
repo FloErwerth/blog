@@ -1,7 +1,6 @@
 @import "../../../variables.scss";
 
 .header {
-    font-family: Arial, Helvetica, sans-serif;
     transition: 0.5s;
     position: fixed;
     display: flex;
@@ -32,14 +31,15 @@
             display: flex;
             align-items: flex-end;
             background-color: $background-header-light;
-            top: -75px;
+            top: -30px;
             left: -125vw;
             z-index: -5;
-            padding: 30px;
+            padding: 10px;
+            padding-left: 30px;
             font-size: 12px;
             margin-top: 100px;
             visibility: hidden;
-            height: 50px;
+            height: 20px;
             width: 100vw;
         }
 

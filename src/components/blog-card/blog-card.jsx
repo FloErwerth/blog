@@ -35,7 +35,7 @@ function BlogCard(props) {
         <div className="blog-card-metadata">
           {props.author}
           <div className="blog-card-date">
-            {props.date} - {props.time} mins reading
+            {props.date} - {props.time} mins
           </div>
         </div>
       </div>

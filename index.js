@@ -32,7 +32,7 @@ rootObject.render(
 );
 
 export const navigateTo = (href) => {
-  if (window.location.hash === "#" + href) return;
+  if (window.location.hash === "#" + href || href === undefined) return;
   document.getElementById("wrapper").toggleAttribute("animation");
   setTimeout(() => {
     window.location.href = "/#" + href;
