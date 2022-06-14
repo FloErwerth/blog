@@ -5,28 +5,22 @@ function EntryBodyImage(props) {
   const handleClick = () => {
     setIsFullscreen(true);
   };
+
   return (
     <>
       <div id={props.id} className="entry-body-image">
-        {props.placement == "left" ? (
-          <>
-            <img
-              src={props.src}
-              onClick={handleClick}
-              style={{ width: "100%", height: "100%" }}
-            ></img>
-            <div className="entry-body-image-text">{props.children}</div>
-          </>
-        ) : (
-          <>
-            <div className="entry-body-image-text">{props.children}</div>
-            <img
-              src={props.src}
-              onClick={handleClick}
-              style={{ width: "100%", height: "100%" }}
-            ></img>
-          </>
-        )}
+        <>
+          <img
+            lazy
+            src={props.src}
+            className="entry-body-image-image"
+            style={{
+              width: `95%`,
+            }}
+            onClick={handleClick}
+          ></img>
+          <div className="entry-body-image-text">{props.children}</div>
+        </>
       </div>
     </>
   );

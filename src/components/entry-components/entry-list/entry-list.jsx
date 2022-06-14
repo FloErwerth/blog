@@ -2,7 +2,16 @@ import React from "react";
 import EntryListElement from "./entry-list-element";
 
 function EntryList(props) {
-  return <ul>{props.children}</ul>;
+  return <ul style={{ marginBottom: "60px" }}>{props.children}</ul>;
 }
-EntryList.Element = EntryListElement;
+EntryList.Element = (props) => (
+  <EntryListElement
+    onClick={() => {
+      console.log(props);
+    }}
+    clickRef={props.clickRef}
+  >
+    {props.children}
+  </EntryListElement>
+);
 export default EntryList;
