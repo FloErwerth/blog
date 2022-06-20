@@ -1,6 +1,8 @@
 @import "variables.scss";
-body {
+html {
     scroll-behavior: smooth;
+}
+body {
     font-family: Roboto;
     margin: 10px;
     margin-top: 110px;
@@ -14,9 +16,15 @@ body {
 .content-wrapper {
     transition: 0.25s linear;
     opacity: 1;
-    position: relative;
+    position: inherit;
     top: 0px;
+
+    @media (max-width: 1200px) {
+        width: fit-content;
+    }
+
     &[animation] {
+        position: relative;
         top: 100px;
         opacity: 0;
     }

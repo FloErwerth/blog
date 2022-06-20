@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./entry-header.scss";
 import pic from "./Foto_Florian.jpg";
 import { navigateTo } from "../../../..";
@@ -11,8 +11,10 @@ function EntryHeader(props) {
   const handleImageClick = () => {
     navigateTo("/about");
   };
+
   return (
-    <div className="entry-header">
+    //TODO: return button
+    <div id="entry-header" className="entry-header">
       <div className="entry-header-wrapper">
         <div
           className="entry-header-image"
@@ -25,7 +27,7 @@ function EntryHeader(props) {
         ></div>
         <div className="entry-header-metadata">
           <div className="entry-header-author">{props.author}</div>
-          <div className="entry-header-wrapper">
+          <div id="social-links" className="entry-header-wrapper">
             <SocialLogo
               width="20"
               height="20"

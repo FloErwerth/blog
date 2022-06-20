@@ -1,25 +1,26 @@
+@import "../../../../variables.scss";
 .entry-body-image {
-    display: grid;
-    grid-template-columns: 50% 50%;
     margin-top: 29px;
     margin-bottom: 25px;
+    margin-inline: auto;
     transition: 0.2s;
-    width: 100%;
+    width: 80%;
     padding: 5px;
+
+    &-image {
+        width: 100%;
+    }
 
     @media (max-width: 1200px) {
         display: block;
-        grid-template-columns: 100%;
-        &-image {
-            width: 100% !important;
-        }
+        width: 100%;
         &-text {
-            background-color: rgb(215, 215, 215);
+            background-color: $background-light;
         }
     }
 
     &-text {
         display: block;
-        font-size: 14px;
+        font-size: 18px;
     }
 }

@@ -7,13 +7,16 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, "dist"),
     filename: "[name].js",
+    clean: true,
   },
   devServer: {
     port: "3000",
-    static: ["./public"],
+    static: "./dist",
     open: true,
     hot: true,
-    liveReload: true,
+  },
+  optimization: {
+    runtimeChunk: "single",
   },
   resolve: {
     extensions: [".js", ".jsx", ".json"],
