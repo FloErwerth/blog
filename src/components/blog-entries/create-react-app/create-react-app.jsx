@@ -23,8 +23,9 @@ function CreateReactApp() {
   const configfile = useRef(null);
   const webpack = useRef(null);
   const plugins = useRef(null);
+  const top = useRef(null);
   return (
-    <EntryBody>
+    <EntryBody reference={top}>
       <div className="create-react-app">
         <EntryHeader
           title="Create a react app without using create-react-app"

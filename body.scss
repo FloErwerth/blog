@@ -5,7 +5,7 @@ html {
 body {
     font-family: Roboto;
     margin: 10px;
-    margin-top: 110px;
+    margin-top: 70px;
     transition: 0.5s;
     background-color: $background-light;
     &[dark] {
@@ -14,18 +14,21 @@ body {
 }
 
 .content-wrapper {
-    transition: 0.25s linear;
+    transition: 1s;
     opacity: 1;
-    position: inherit;
+    position: relative;
     top: 0px;
+    width: 60%;
+    left: 20%;
 
     @media (max-width: 1200px) {
-        width: fit-content;
+        width: 90%;
+        left: 5%;
     }
 
     &[animation] {
         position: relative;
-        top: 100px;
+        top: 50px;
         opacity: 0;
     }
 }

@@ -1,0 +1,19 @@
+@import "../../../../variables.scss";
+.entry {
+    &-shift {
+        float: left;
+        width: 30px;
+        height: 12px;
+    }
+    &-text {
+        transition: 0.5s;
+        font-size: 18px;
+        color: $color-light;
+    }
+}
+
+body[dark] {
+    .entry-text {
+        color: $color-dark;
+    }
+}

@@ -37,7 +37,7 @@ module.exports = {
         use: [{ loader: "svg-url-loader", options: { limit: 10000 } }],
       },
       {
-        test: /\.(jpg|jpeg|png|)$/i,
+        test: /\.(jpg|jpeg|png|mp4)$/i,
         use: [
           "file-loader",
           {

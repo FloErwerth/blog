@@ -5,6 +5,8 @@ import Header from "./src/components/header/header";
 import CreateReactApp from "./src/components/blog-entries/create-react-app/create-react-app";
 import "./body.scss";
 import { HashRouter, Routes, Route, Link } from "react-router-dom";
+import PortfolioMain from "./src/components/portfolio/main/main";
+import Projects from "./src/components/portfolio/projectPage/projects";
 
 const root = document.getElementById("root");
 const body = document.getElementById("body");
@@ -20,10 +22,8 @@ rootObject.render(
       <HashRouter>
         <Routes>
           <Route path="/" element={<Main />} />
-          <Route
-            path="/about"
-            element={<div>TO BE WORKED OUT, NO WORRIES</div>}
-          />
+          <Route path="/about" element={<PortfolioMain />} />
+          <Route path="/projects" element={<Projects />} />
           <Route path="/create-react-app" element={<CreateReactApp />} />
         </Routes>
       </HashRouter>
@@ -37,5 +37,5 @@ export const navigateTo = (href) => {
   setTimeout(() => {
     window.location.href = "/#" + href;
     document.getElementById("wrapper").toggleAttribute("animation");
-  }, 500);
+  }, 1000);
 };

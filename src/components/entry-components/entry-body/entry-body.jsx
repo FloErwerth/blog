@@ -2,7 +2,17 @@ import React, { useEffect, useState } from "react";
 import "./entry-body.scss";
 import EntryBodyImage from "../entry-body-image/entry-body-image";
 function EntryBody(props) {
-  return <div className="entry-body">{props.children}</div>;
+  return (
+    <div ref={props.reference} className="entry-body">
+      <button
+        className="entry-body-return"
+        onClick={() => {
+          props.reference.current.scrollIntoView();
+        }}
+      ></button>
+      {props.children}
+    </div>
+  );
 }
 
 EntryBody.Text = (props) => <p className="entry-body-text">{props.children}</p>;

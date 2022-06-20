@@ -3,13 +3,46 @@
     transition: 0.5s;
     background-color: $background-light;
     padding: 2%;
-    width: 50%;
+    width: 60%;
     margin: auto;
     font-size: 19px;
     color: $color-light;
 
     @media (max-width: 1200px) {
         width: 95%;
+    }
+
+    &-return {
+        position: fixed;
+        bottom: 50px;
+        right: 50px;
+        height: 40px;
+        padding: 10px;
+        padding-inline: 50px;
+        border-radius: 5px;
+        background-color: $highlight;
+        transition: 0.5s;
+        &::after {
+            content: "Scroll to top";
+        }
+
+        &:hover {
+            filter: saturate(1.5);
+            cursor: pointer;
+        }
+
+        @media (max-width: 1200px) {
+            padding: 2.5px;
+            border-top-right-radius: 0;
+            border-bottom-right-radius: 0;
+            border-right: none;
+            top: 25vh;
+            width: 15px;
+            right: 0;
+            &::after {
+                content: "^";
+            }
+        }
     }
 
     &-text {

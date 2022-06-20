@@ -1,0 +1,38 @@
+@import "../../../../variables.scss";
+.box {
+    @media (max-width: 1200px) {
+        margin-left: 0;
+        margin-top: 20px;
+    }
+    margin-top: 5px;
+    margin-left: 20px;
+    display: flex;
+    @media (max-width: 1200px) {
+        display: block;
+    }
+    place-items: center;
+    &-type {
+        padding: 2px 15px;
+        border-radius: 5px;
+        color: white;
+        background-color: $highlight;
+    }
+    &-link {
+        text-decoration: none;
+        color: $color-light;
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+    &-text {
+        position: absolute;
+        left: 20%;
+        @media (max-width: 1200px) {
+            position: relative;
+            left: 0;
+            margin-left: auto;
+            line-height: 30px;
+            width: 100%;
+        }
+    }
+}

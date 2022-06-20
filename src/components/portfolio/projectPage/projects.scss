@@ -1,0 +1,58 @@
+@import "../../../../variables.scss";
+.projects {
+    &-container {
+        position: relative;
+        padding-inline: 2.5%;
+
+        top: 50px;
+        @media (max-width: 1200px) {
+            width: 100%;
+            left: -2.5%;
+        }
+        padding-top: 30px;
+        padding-bottom: 30px;
+        user-select: none;
+        transition: 0.25s;
+        opacity: 1;
+    }
+
+    &-header {
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+body[dark] {
+    .projects-container {
+        background-color: $background-card-dark;
+    }
+}
+
+.show-projects {
+    animation: show-projects-anim 750ms forwards;
+}
+.hide-projects {
+    animation: hide-projects-anim 750ms forwards;
+}
+
+@keyframes show-projects-anim {
+    from {
+        top: 5vh;
+        opacity: 0;
+    }
+    to {
+        top: 0vh;
+        opacity: 1;
+    }
+}
+
+@keyframes hide-projects-anim {
+    from {
+        top: 0vh;
+        opacity: 1;
+    }
+    to {
+        top: 5vh;
+        opacity: 0;
+    }
+}

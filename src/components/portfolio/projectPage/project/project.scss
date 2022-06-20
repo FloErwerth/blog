@@ -1,0 +1,78 @@
+@import "../../../../../variables.scss";
+.project {
+    transition: 0.5s;
+    position: absolute;
+    top: 0px;
+    left: calc(50% - 325px);
+    width: 650px;
+    height: 300px;
+
+    @media (max-width: 1200px) {
+        width: 90%;
+        left: 5%;
+    }
+
+    &-header {
+        display: flex;
+        font-size: 18px;
+        color: $color-light;
+
+        &-duration {
+            margin-top: 10px;
+            padding: 5px;
+            background-color: $highlight;
+            width: fit-content;
+            border-radius: 5px;
+            color: white;
+            font-size: 14px;
+        }
+    }
+
+    &-return {
+        margin-left: auto;
+        background-color: $highlight;
+        border: none;
+        border-radius: 5px;
+        padding: 5px;
+        color: white;
+        @media (max-width: 1200px) {
+            margin-right: 0;
+        }
+        margin-right: 10px;
+        transition: 0.5s;
+        &:hover {
+            cursor: pointer;
+            filter: saturate(1.5);
+        }
+    }
+}
+
+.show-project {
+    animation: show-project-anim 750ms forwards;
+}
+
+.hide-project {
+    animation: hide-project-anim 750ms forwards;
+}
+
+@keyframes show-project-anim {
+    from {
+        top: 50px;
+        opacity: 0;
+    }
+    to {
+        top: 0px;
+        opacity: 1;
+    }
+}
+
+@keyframes hide-project-anim {
+    from {
+        top: 0px;
+        opacity: 1;
+    }
+    to {
+        top: 50px;
+        opacity: 0;
+    }
+}

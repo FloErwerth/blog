@@ -5,6 +5,7 @@
     font-size: 20px;
     line-height: 60px;
     color: $color-dark;
+    transition: 0.5s;
 
     &:hover {
         cursor: pointer;
@@ -18,7 +19,7 @@
         transition-timing-function: linear;
         display: block;
         position: relative;
-        top: -38%;
+        top: -20%;
         content: "";
         width: 0%;
         height: 3px;

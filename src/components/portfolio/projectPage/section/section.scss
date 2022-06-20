@@ -1,0 +1,28 @@
+@import "../../../../../variables.scss";
+.section {
+    @media (max-width: 1200px) {
+        margin-bottom: 80px;
+    }
+    margin-bottom: 30px;
+    &-container {
+        @media (max-width: 1200px) {
+            grid-template-columns: 80%;
+            justify-content: center;
+            row-gap: 10px;
+        }
+        display: grid;
+        grid-template-columns: 40% 40%;
+        justify-content: space-around;
+    }
+
+    &-description {
+        @media (max-width: 1200px) {
+            left: 10%;
+        }
+        position: relative;
+        top: -10px;
+        left: 35px;
+        font-size: 20px;
+        color: $color-light;
+    }
+}
