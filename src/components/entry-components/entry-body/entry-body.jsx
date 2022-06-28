@@ -1,17 +1,26 @@
 import React, { useEffect, useState } from "react";
 import "./entry-body.scss";
 import EntryBodyImage from "../entry-body-image/entry-body-image";
+import { navigateTo } from "../../../..";
 function EntryBody(props) {
+  const handleReturn = () => {
+    navigateTo("/");
+  };
   return (
-    <div ref={props.reference} className="entry-body">
-      <button
-        className="entry-body-return"
-        onClick={() => {
-          props.reference.current.scrollIntoView();
-        }}
-      ></button>
-      {props.children}
-    </div>
+    <>
+      <button className="entry-body-button" onClick={handleReturn}>
+        RETURN
+      </button>
+      <div ref={props.reference} className="entry-body">
+        <button
+          className="entry-body-return"
+          onClick={() => {
+            props.reference.current.scrollIntoView();
+          }}
+        ></button>
+        {props.children}
+      </div>
+    </>
   );
 }
 

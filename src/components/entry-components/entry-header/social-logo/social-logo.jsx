@@ -1,5 +1,9 @@
 import React from "react";
 import "./social-logo.scss";
+import instagram from "./svgs/instagram.svg";
+import github from "./svgs/github.svg";
+import twitter from "./svgs/twitter.svg";
+
 function SocialLogo(props) {
   const handleSocialClick = () => {
     const link = document.createElement("a");
@@ -10,17 +14,34 @@ function SocialLogo(props) {
     link.target = "_blank";
     link.click();
   };
+
+  const getSource = () => {
+    switch (props.logo) {
+      case "instagram":
+        return instagram;
+      case "twitter":
+        return twitter;
+      case "github":
+        return github;
+    }
+  };
+
   return (
     <img
-      src={props.src}
+      src={getSource()}
       style={{
         width: `${props.width}px`,
         height: `${props.height}px`,
         cursor: "pointer",
-        marginTop: "15px",
         marginRight: "5px",
       }}
-      className={props.useFilter ? "social-logo" : ""}
+      className={
+        props.useFilter
+          ? props.invertFilter
+            ? "social-logo-inverted"
+            : "social-logo"
+          : ""
+      }
       onClick={handleSocialClick}
     />
   );

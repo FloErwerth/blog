@@ -5,8 +5,6 @@ import Header from "./src/components/header/header";
 import CreateReactApp from "./src/components/blog-entries/create-react-app/create-react-app";
 import "./body.scss";
 import { HashRouter, Routes, Route, Link } from "react-router-dom";
-import PortfolioMain from "./src/components/portfolio/main/main";
-import Projects from "./src/components/portfolio/projectPage/projects";
 
 const root = document.getElementById("root");
 const body = document.getElementById("body");
@@ -22,8 +20,6 @@ rootObject.render(
       <HashRouter>
         <Routes>
           <Route path="/" element={<Main />} />
-          <Route path="/about" element={<PortfolioMain />} />
-          <Route path="/projects" element={<Projects />} />
           <Route path="/create-react-app" element={<CreateReactApp />} />
         </Routes>
       </HashRouter>
@@ -31,11 +27,34 @@ rootObject.render(
   </StrictMode>
 );
 
-export const navigateTo = (href) => {
-  if (window.location.hash === "#" + href || href === undefined) return;
+export const navigateTo = (to) => {
+  handleActivityStatus(to);
+  if (window.location.hash === "#" + to || to === undefined) return;
   document.getElementById("wrapper").toggleAttribute("animation");
   setTimeout(() => {
-    window.location.href = "/#" + href;
+    window.location.href = "/#" + to;
     document.getElementById("wrapper").toggleAttribute("animation");
-  }, 1000);
+  }, 750);
+};
+
+export const handleActivityStatus = (to) => {
+  const links = document.querySelectorAll(".header-link");
+  var valid = false;
+
+  for (var i = 0; i < links.length; i++) {
+    var link = links[i];
+    if (link.id == to) {
+      valid = true;
+      break;
+    }
+  }
+
+  if (valid) {
+    links.forEach((link) => {
+      link.setAttribute("isActive", "false");
+      if (link.id == to) {
+        link.setAttribute("isActive", "true");
+      }
+    });
+  }
 };

@@ -1,16 +1,18 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./header-link.scss";
 import { navigateTo } from "../../../..";
+
 function HeaderLink(props) {
-  const handleClick = (e) => {
+  const handleClick = () => {
     navigateTo(props.to);
-    props.onClick(e);
   };
+
   return (
     <a
       id={props.to}
       className="header-link header-link-title"
-      onClick={(e) => handleClick(e)}
+      onClick={handleClick}
+      isActive={props.isActive !== undefined ? "true" : "false"}
     >
       {props.title}
     </a>

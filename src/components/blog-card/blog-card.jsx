@@ -15,9 +15,6 @@ function BlogCard(props) {
 
   return (
     <div className="blog-card" id={props.id}>
-      {props.picture !== undefined ? (
-        <div className="blog-card-picture">{props.picture}</div>
-      ) : null}
       <div className="blog-card-content" onClick={handleTextClick}>
         <div className="blog-card-title">{props.title}</div>
         <div className="blog-card-text">{props.text}</div>

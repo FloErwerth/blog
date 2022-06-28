@@ -1,5 +1,4 @@
 import React, { useRef } from "react";
-import "./create-react-app.scss";
 import EntryHeader from "../../entry-components/entry-header/entry-header";
 import EntryBody from "../../entry-components/entry-body/entry-body";
 import EntryList from "../../entry-components/entry-list/entry-list";
@@ -28,6 +27,7 @@ function CreateReactApp() {
     <EntryBody reference={top}>
       <div className="create-react-app">
         <EntryHeader
+          shortDescription="React Developer @ Check24"
           title="Create a react app without using create-react-app"
           date="04.06.2022"
           author="Florian Erwerth"

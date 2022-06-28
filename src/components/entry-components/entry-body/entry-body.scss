@@ -3,13 +3,18 @@
     transition: 0.5s;
     background-color: $background-light;
     padding: 2%;
-    width: 60%;
     margin: auto;
     font-size: 19px;
     color: $color-light;
 
-    @media (max-width: 1200px) {
-        width: 95%;
+    &-button {
+        height: 30px;
+        width: 75px;
+        line-height: 30px;
+        margin-left: calc(100% - 75px);
+        background-color: $highlight;
+        border: none;
+        border-radius: 5px;
     }
 
     &-return {
@@ -19,6 +24,7 @@
         height: 40px;
         padding: 10px;
         padding-inline: 50px;
+        border: none;
         border-radius: 5px;
         background-color: $highlight;
         transition: 0.5s;
@@ -37,10 +43,11 @@
             border-bottom-right-radius: 0;
             border-right: none;
             top: 25vh;
-            width: 15px;
+            width: 40px;
             right: 0;
             &::after {
-                content: "^";
+                font-size: 1.5em;
+                content: "top";
             }
         }
     }
@@ -67,9 +74,8 @@
     &-highlight {
         padding: 3px;
         font-family: consolas;
-        color: $highlight;
-        border: 2px solid $highlight;
-        font-size: 15px;
+        background-color: $highlight;
+        font-size: 18px;
         border-radius: 3px;
         margin-top: 1px;
         display: inline-flex;

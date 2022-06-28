@@ -27,12 +27,11 @@
     }
 
     &-title {
-        &[active] {
+        &[isActive="true"] {
             &.header-link::after {
                 width: 100%;
             }
         }
-
         line-height: 45px;
         height: 45px;
     }
