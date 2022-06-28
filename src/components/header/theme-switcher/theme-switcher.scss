@@ -17,6 +17,15 @@
     &-mover {
         transition: 0.2s;
         position: relative;
+
+        & > img:focus-visible {
+            outline: none;
+        }
+    }
+
+    @media (max-width: 1200px) {
+        visibility: hidden;
+        width: 0;
     }
 }
 

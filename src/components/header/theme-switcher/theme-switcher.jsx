@@ -6,7 +6,7 @@ import Moon from "./svgs/moon.svg";
 function ThemeSwitcher(props) {
   const [dark, setDark] = useState(false);
   return (
-    <div className="theme-switcher">
+    <div className="theme-switcher" id="theme-switcher">
       <div
         className="theme-switcher-icon"
         onClick={() => {

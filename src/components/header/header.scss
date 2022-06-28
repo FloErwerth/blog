@@ -2,6 +2,7 @@
 
 .header {
     transition: 0.5s;
+    transition: top 0s;
     position: fixed;
     display: flex;
     flex-direction: column;
@@ -18,11 +19,28 @@
     color: $color-dark;
 
     @media (max-width: 1200px) {
-        height: 40px;
-        width: 40px;
+        height: 80px;
+        width: 60%;
+        padding: 0;
+        left: 20%;
+        border-bottom-left-radius: 20px;
+        border-bottom-right-radius: 20px;
         flex-direction: row;
         align-items: center;
         justify-content: start;
+    }
+
+    &-swipe-text {
+        visibility: hidden;
+        @media (max-width: 1200px) {
+            visibility: visible;
+            position: relative;
+            font-size: 14px;
+            text-align: center;
+            align-self: flex-end;
+            margin-bottom: 10px;
+            margin-inline: auto;
+        }
     }
 
     &-links {
@@ -33,12 +51,17 @@
 
         @media (max-width: 1200px) {
             visibility: hidden;
+            width: 0;
         }
 
         &-show {
             visibility: visible;
             left: -5px;
         }
+    }
+
+    &-transition-return {
+        transition: top 1s;
     }
 }
 

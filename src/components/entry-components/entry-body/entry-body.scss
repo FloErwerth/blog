@@ -71,6 +71,7 @@
             color: $color-light;
         }
     }
+
     &-highlight {
         padding: 3px;
         font-family: consolas;
@@ -79,8 +80,6 @@
         border-radius: 3px;
         margin-top: 1px;
         display: inline-flex;
-
-        //todo: erase anim, make with transition and find a way to always land in the middle
     }
 
     &-copybutton {
