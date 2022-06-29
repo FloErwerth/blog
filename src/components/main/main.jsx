@@ -19,7 +19,6 @@ function Main() {
         date="21.06.2022"
         to="/experiences"
       ></BlogCard>
-      <BlogCard></BlogCard>
     </>
   );
 }

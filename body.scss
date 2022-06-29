@@ -1,13 +1,12 @@
 @import "variables.scss";
 html {
     scroll-behavior: smooth;
-    scroll-padding-top: 50px;
+    scroll-padding-top: 125px;
 }
 body {
+    transition: 0.5s;
     font-family: Roboto;
     margin: 10px;
-    margin-top: 70px;
-    transition: 0.5s;
     background-color: $background-light;
     &[dark] {
         background-color: $background-dark;
@@ -18,7 +17,7 @@ body {
     transition: 750ms;
     opacity: 1;
     position: relative;
-    top: 30px;
+    top: 50px;
     width: 60%;
     left: 25%;
 
@@ -29,7 +28,7 @@ body {
 
     &[animation] {
         position: relative;
-        top: 100px;
+        top: 0px;
         opacity: 0;
     }
 }

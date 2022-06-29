@@ -2,10 +2,10 @@
 .entry-body {
     transition: 0.5s;
     background-color: $background-light;
-    padding: 2%;
     margin: auto;
     font-size: 19px;
     color: $color-light;
+    width: 100%;
 
     &-button {
         height: 30px;
@@ -15,6 +15,11 @@
         background-color: $highlight;
         border: none;
         border-radius: 5px;
+
+        @media (max-width: 768px) {
+            width: 100%;
+            margin-left: 0;
+        }
     }
 
     &-return {
@@ -43,10 +48,10 @@
             border-bottom-right-radius: 0;
             border-right: none;
             top: 25vh;
-            width: 40px;
+            width: 30px;
             right: 0;
             &::after {
-                font-size: 1.5em;
+                font-size: 1em;
                 content: "top";
             }
         }
@@ -76,14 +81,14 @@
         padding: 3px;
         font-family: consolas;
         background-color: $highlight;
-        font-size: 18px;
+        font-size: 1em;
+        word-break: break-all;
         border-radius: 3px;
         margin-top: 1px;
         display: inline-flex;
     }
 
     &-copybutton {
-        background-color: $background-light;
         height: 30px;
         width: 30px;
         margin: auto;
@@ -93,12 +98,12 @@
             &:hover {
                 cursor: pointer;
             }
-
+            padding: 0;
             overflow: hidden;
-            border: 2px solid $highlight;
             background-color: rgba($highlight, 0.15);
-            border-radius: 2px;
+            border-radius: 5px;
             position: relative;
+            margin-top: 20px;
             margin-inline: auto;
             width: fit-content;
         }
@@ -129,14 +134,13 @@
 
 body[dark] {
     .entry-body {
-        background-color: $background-card-dark;
-        box-shadow: 0px 0px 2px 1px $background-card-dark;
+        background-color: $background-dark;
         color: $color-dark;
         &-link {
             color: $color-dark;
         }
         &-copybutton {
-            background-color: $background-card-dark;
+            background-color: $background-dark;
             fill: $color-dark;
         }
     }

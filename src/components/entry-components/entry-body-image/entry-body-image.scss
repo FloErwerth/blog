@@ -4,10 +4,11 @@
     margin-bottom: 25px;
     margin-inline: auto;
     transition: 0.2s;
-    width: 80%;
     padding: 5px;
 
     &-image {
+        display: block;
+        margin: auto;
         width: 100%;
     }
 

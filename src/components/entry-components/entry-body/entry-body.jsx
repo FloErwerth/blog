@@ -3,28 +3,24 @@ import "./entry-body.scss";
 import EntryBodyImage from "../entry-body-image/entry-body-image";
 import { navigateTo } from "../../../..";
 function EntryBody(props) {
-  const handleReturn = () => {
-    navigateTo("/");
-  };
   return (
-    <>
-      <button className="entry-body-button" onClick={handleReturn}>
-        RETURN
-      </button>
-      <div ref={props.reference} className="entry-body">
+    <div ref={props.reference} className="entry-body">
+      {props.hideScrollButton ? null : (
         <button
           className="entry-body-return"
           onClick={() => {
             props.reference.current.scrollIntoView();
           }}
         ></button>
-        {props.children}
-      </div>
-    </>
+      )}
+      {props.children}
+    </div>
   );
 }
 
-EntryBody.Text = (props) => <p className="entry-body-text">{props.children}</p>;
+EntryBody.Text = (props) => (
+  <div className="entry-body-text">{props.children}</div>
+);
 EntryBody.Subtitle = (props) => (
   <h3 style={{ marginBottom: "60px", marginTop: "60px" }} ref={props.reference}>
     {props.children}

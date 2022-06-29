@@ -65,17 +65,17 @@ function CreateReactApp() {
         folder and open this folder with VS code.
       </EntryBody.Text>
       <EntryBody.Image
-        width="400"
+        width="600"
         id="open-folder"
         src={VSCodeOpenFolder}
       ></EntryBody.Image>
       <EntryBody.Text>
-        Click on <EntryBody.Highlight>file</EntryBody.Highlight> >{" "}
+        Click on <EntryBody.Highlight>file</EntryBody.Highlight> {"> "}
         <EntryBody.Highlight>Open Folder...</EntryBody.Highlight> and select the
         folder you have just created.
       </EntryBody.Text>
       <EntryBody.Image
-        width="400"
+        width="600"
         id="folder-structure"
         src={FolderStructure}
       ></EntryBody.Image>
@@ -103,7 +103,7 @@ function CreateReactApp() {
       terminal:
       <EntryBody.Image
         src={Terminal}
-        width="400"
+        width="600"
         id="terminal"
       ></EntryBody.Image>
       <EntryBody.Text>
@@ -157,7 +157,7 @@ function CreateReactApp() {
         <EntryBody.Highlight>webpack.config.js</EntryBody.Highlight>. The folder
         structure should look like this:
         <EntryBody.Image
-          width="400"
+          width="600"
           id="created-config"
           src={CreatedConfig}
         ></EntryBody.Image>
@@ -180,7 +180,7 @@ function CreateReactApp() {
         like this:
       </EntryBody.Text>
       <EntryBody.Image
-        width="400"
+        width="600"
         id="config-body"
         src={ConfigBody}
       ></EntryBody.Image>
@@ -194,7 +194,7 @@ function CreateReactApp() {
         enables useful things for webpack.
       </EntryBody.Text>
       <EntryBody.Image
-        width="400"
+        width="600"
         id="config-body"
         src={ConfigBodyDone}
       ></EntryBody.Image>
@@ -227,7 +227,7 @@ function CreateReactApp() {
         a CSS file, which is then used to style our components. Type:
       </EntryBody.Text>
       <EntryBody.Button>
-        <EntryBody.Highlight spacing id="loaders">
+        <EntryBody.Highlight id="loaders">
           npm i --save-dev sass sass-loader style-loader css-loader
         </EntryBody.Highlight>
       </EntryBody.Button>
@@ -256,7 +256,7 @@ function CreateReactApp() {
         following:
       </EntryBody.Text>
       <EntryBody.Image
-        width="400"
+        width="600"
         id="config-body-loaders"
         src={ConfigBodyLoaders}
       ></EntryBody.Image>
@@ -308,7 +308,7 @@ function CreateReactApp() {
         In our config file we will add a new constant and call it htmlPlugin.
       </EntryBody.Text>
       <EntryBody.Image
-        width="400"
+        width="600"
         id="const-htmlPlugin"
         src={HtmlPlugin}
       ></EntryBody.Image>
@@ -339,7 +339,7 @@ function CreateReactApp() {
         The configuration file should look like this:
       </EntryBody.Text>
       <EntryBody.Image
-        width="400"
+        width="600"
         id="const-htmlPlugin"
         src={PluginsArray}
       ></EntryBody.Image>
@@ -354,7 +354,7 @@ function CreateReactApp() {
         should look like this:
       </EntryBody.Text>
       <EntryBody.Image
-        width="400"
+        width="600"
         id="const-htmlPlugin"
         src={Template}
       ></EntryBody.Image>
@@ -382,7 +382,7 @@ function CreateReactApp() {
         with the following command in the terminal:
       </EntryBody.Text>
       <EntryBody.Button>
-        <EntryBody.Highlight spacing id="webpack-command">
+        <EntryBody.Highlight id="webpack-command">
           npm i --save-dev webpack webpack-cli webpack-dev-server
         </EntryBody.Highlight>
       </EntryBody.Button>
@@ -434,7 +434,7 @@ function CreateReactApp() {
         The whole package.json file should look like this:
       </EntryBody.Text>
       <EntryBody.Image
-        width="400"
+        width="600"
         id="package-json"
         src={PackageJSON}
       ></EntryBody.Image>
@@ -459,7 +459,7 @@ function CreateReactApp() {
         A configuration of the dev server can look like this:
       </EntryBody.Text>
       <EntryBody.Image
-        width="400"
+        width="600"
         id="dev-server"
         src={DevServer}
       ></EntryBody.Image>

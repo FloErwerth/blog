@@ -11,6 +11,7 @@ function Header(props) {
   const header = useRef(null);
   const [initialY, setInitialY] = useState(0);
   const [isSmall, setIsSmall] = useState(false);
+  const [dark, setDark] = useState(false);
 
   const themeChangedEvent = new Event("theme", {
     bubbles: true,
@@ -25,14 +26,7 @@ function Header(props) {
 
   useEffect(() => {
     if (!swipe && isSmall) {
-      document
-        .getElementById("header")
-        .classList.add("header-transition-return");
-      setTimeout(() => {
-        document
-          .getElementById("header")
-          .classList.remove("header-transition-return");
-      }, 1000);
+      document.getElementById("header").classList.remove("header-notransition");
       setPosition(-40);
     }
   }, [swipe, isSmall]);
@@ -55,10 +49,17 @@ function Header(props) {
   };
 
   const handleClick = () => {
+    setDark((dark) => !dark);
     document.getElementById("header").dispatchEvent(themeChangedEvent);
   };
 
   const handleDragStart = (e) => {
+    document
+      .getElementById("header")
+      .addEventListener("touchmove", (e) => e.preventDefault(), {
+        passive: false,
+      });
+    document.getElementById("header").classList.add("header-notransition");
     setInitialY(
       e.targetTouches[0].clientY - document.getElementById("header").offsetTop
     );
@@ -85,7 +86,7 @@ function Header(props) {
       onTouchMove={handleDrag}
       style={{ top: position + "px" }}
     >
-      <ThemeSwitcher onClick={handleClick} />
+      <ThemeSwitcher dark={dark} onClick={handleClick} />
       <div className={"header-swipe-text"}>Swipe to toggle darkmode</div>
       <div className="header-links">
         <SocialLogo

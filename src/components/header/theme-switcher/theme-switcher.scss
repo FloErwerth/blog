@@ -15,9 +15,8 @@
         }
     }
     &-mover {
-        transition: 0.2s;
         position: relative;
-
+        transition: 0.5s;
         & > img:focus-visible {
             outline: none;
         }

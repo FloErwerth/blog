@@ -1,0 +1,58 @@
+@import "../../../variables.scss";
+.about {
+    &-image {
+        width: 160px;
+        height: 160px;
+        border-radius: 100%;
+        margin: auto 0px auto 0px;
+
+        background-size: 200% 240%;
+        background-position: 0px -30px;
+
+        @media (max-width: 1200px) {
+            width: 80px;
+            height: 80px;
+            background-size: 200% 240%;
+            background-position: 0px -15px;
+        }
+
+        &-container {
+            display: flex;
+            background-color: lightgray;
+            border-top-left-radius: 80px;
+            border-bottom-left-radius: 80px;
+            margin-bottom: 50px;
+
+            @media (max-width: 1200px) {
+                border-top-left-radius: 40px;
+                border-bottom-left-radius: 40px;
+            }
+        }
+    }
+
+    &-data {
+        font-size: 20px;
+        margin: auto auto auto 30px;
+        @media (max-width: 1200px) {
+            font-size: 12px;
+        }
+    }
+
+    &-return {
+        height: 30px;
+        width: 75px;
+        line-height: 30px;
+        background-color: $highlight;
+        border: none;
+        border-radius: 5px;
+        margin: auto 0 auto auto;
+    }
+}
+
+body[dark] {
+    .about {
+        &-image-container {
+            background-color: $background-card-dark;
+        }
+    }
+}

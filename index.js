@@ -3,6 +3,7 @@ import Dom from "react-dom/client";
 import Main from "./src/components/main/main";
 import Header from "./src/components/header/header";
 import CreateReactApp from "./src/components/blog-entries/create-react-app/create-react-app";
+import About from "./src/components/about/about";
 import "./body.scss";
 import { HashRouter, Routes, Route, Link } from "react-router-dom";
 
@@ -20,6 +21,7 @@ rootObject.render(
       <HashRouter>
         <Routes>
           <Route path="/" element={<Main />} />
+          <Route path="/about" element={<About />} />
           <Route path="/create-react-app" element={<CreateReactApp />} />
         </Routes>
       </HashRouter>
@@ -28,33 +30,10 @@ rootObject.render(
 );
 
 export const navigateTo = (to) => {
-  handleActivityStatus(to);
   if (window.location.hash === "#" + to || to === undefined) return;
   document.getElementById("wrapper").toggleAttribute("animation");
   setTimeout(() => {
     window.location.href = "/#" + to;
     document.getElementById("wrapper").toggleAttribute("animation");
   }, 750);
-};
-
-export const handleActivityStatus = (to) => {
-  const links = document.querySelectorAll(".header-link");
-  var valid = false;
-
-  for (var i = 0; i < links.length; i++) {
-    var link = links[i];
-    if (link.id == to) {
-      valid = true;
-      break;
-    }
-  }
-
-  if (valid) {
-    links.forEach((link) => {
-      link.setAttribute("isActive", "false");
-      if (link.id == to) {
-        link.setAttribute("isActive", "true");
-      }
-    });
-  }
 };

@@ -3,7 +3,7 @@
     display: flex;
     position: relative;
     user-select: none;
-    transition: 0.25s;
+    transition: 0.5s;
     width: 700px;
     height: 150px;
     margin: auto;
@@ -21,7 +21,7 @@
     }
 
     &-content {
-        transition: 0.25s;
+        transition: 0.5s;
         width: 70%;
 
         &:hover {
@@ -61,6 +61,7 @@
         width: 30%;
         height: calc(100% - 20px);
         background-color: #efefef;
+        transition: 0.5s;
 
         @media (max-width: 1200px) {
             height: 30%;
@@ -94,6 +95,7 @@
         font-size: 16px;
         font-style: italic;
         margin-left: 10px;
+        transition: 0.5s;
     }
     &-date {
         margin-top: 5px;

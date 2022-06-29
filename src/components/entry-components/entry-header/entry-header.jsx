@@ -8,9 +8,21 @@ function EntryHeader(props) {
   const handleImageClick = () => {
     navigateTo("/about");
   };
+  const handleReturn = () => {
+    navigateTo("/");
+  };
 
   return (
     <div id="entry-header" className="entry-header">
+      <button className="entry-body-button" onClick={handleReturn}>
+        RETURN
+      </button>
+      <div className="entry-header-wrapper">
+        <div className="entry-header-date">
+          {props.date} - {props.time} mins reading
+        </div>
+      </div>
+      <h3 className="entry-header-title">{props.title}</h3>
       <div className="entry-header-wrapper">
         <div
           className="entry-header-image"
@@ -26,13 +38,6 @@ function EntryHeader(props) {
           <div className="entry-header-shortdescription">
             {props.shortDescription}
           </div>
-        </div>
-      </div>
-
-      <h3 className="entry-header-title">{props.title}</h3>
-      <div className="entry-header-wrapper">
-        <div className="entry-header-date">
-          {props.date} - {props.time} mins reading
         </div>
       </div>
     </div>

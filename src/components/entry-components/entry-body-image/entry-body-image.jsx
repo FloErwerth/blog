@@ -14,6 +14,7 @@ function EntryBodyImage(props) {
             src={props.src}
             className="entry-body-image-image"
             onClick={handleClick}
+            width={props.width + "px"}
           ></img>
         </>
       </div>

@@ -2,7 +2,6 @@
 
 .header {
     transition: 0.5s;
-    transition: top 0s;
     position: fixed;
     display: flex;
     flex-direction: column;
@@ -19,6 +18,7 @@
     color: $color-dark;
 
     @media (max-width: 1200px) {
+        position: fixed;
         height: 80px;
         width: 60%;
         padding: 0;
@@ -60,8 +60,8 @@
         }
     }
 
-    &-transition-return {
-        transition: top 1s;
+    &-notransition {
+        transition: top 0s;
     }
 }
 
