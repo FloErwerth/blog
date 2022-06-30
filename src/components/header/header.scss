@@ -6,7 +6,7 @@
     display: flex;
     justify-content: space-between;
     flex-direction: column;
-    top: 0;
+    top: calc(50vh - 200px);
     left: 0;
     width: 45px;
     padding: 20px;
@@ -19,28 +19,16 @@
 
     @media (max-width: 1200px) {
         position: fixed;
-        height: 80px;
-        width: 60%;
+        height: 40px;
+        width: 40px;
         padding: 0;
-        left: 20%;
+        left: calc(100vw - 40px);
+        top: 55vh;
+        border-top-left-radius: 20px;
         border-bottom-left-radius: 20px;
-        border-bottom-right-radius: 20px;
         flex-direction: row;
         align-items: center;
         justify-content: start;
-    }
-
-    &-swipe-text {
-        visibility: hidden;
-        @media (max-width: 1200px) {
-            visibility: visible;
-            position: relative;
-            font-size: 14px;
-            text-align: center;
-            align-self: flex-end;
-            margin-bottom: 10px;
-            margin-inline: auto;
-        }
     }
 
     &-links {
@@ -75,7 +63,5 @@ body[dark] {
         &-swipe-text {
             color: $color-light;
         }
-    }
-    .header-links {
     }
 }

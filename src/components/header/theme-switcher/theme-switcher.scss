@@ -19,11 +19,6 @@
             outline: none;
         }
     }
-
-    @media (max-width: 1200px) {
-        visibility: hidden;
-        width: 0;
-    }
 }
 
 body[dark] {

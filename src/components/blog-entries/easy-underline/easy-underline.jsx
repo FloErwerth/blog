@@ -114,7 +114,7 @@ function EasyUnderline() {
           margin: "20px",
           marginInline: "auto",
         }}
-        className="element"
+        className="element-after"
       >
         Interactable Element
       </div>

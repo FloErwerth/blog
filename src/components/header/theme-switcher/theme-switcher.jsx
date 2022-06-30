@@ -17,20 +17,20 @@ const ThemeSwitcher = (props) => {
       <div
         className="theme-switcher-mover"
         style={{
-          top: dark ? "-45px" : "0px",
+          top: dark ? "-44px" : "0px",
         }}
       >
-        <img
-          src={Sun}
-          className="theme-switcher"
-          alt="A sun"
-          title="A svg of a sun"
-        />
         <img
           src={Moon}
           className="theme-switcher"
           alt="A moon"
           title="A svg of a moon"
+        />
+        <img
+          src={Sun}
+          className="theme-switcher"
+          alt="A sun"
+          title="A svg of a sun"
         />
       </div>
     </div>

@@ -49,11 +49,11 @@
             border-bottom-right-radius: 0;
             border-right: none;
             top: 65vh;
-            width: 30px;
+            width: 40px;
             right: 0;
             &::after {
-                font-size: 1em;
-                content: "top";
+                font-size: 1.25em;
+                content: "Top";
             }
         }
     }
