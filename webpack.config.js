@@ -53,7 +53,7 @@ module.exports = {
   },
   plugins: [
     new htmlPlugin({
-      title: "Blog",
+      title: "Florian Erwerth's Blog",
       filename: "index.html",
       template: "src/template.html",
     }),

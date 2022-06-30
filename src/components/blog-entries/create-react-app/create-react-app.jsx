@@ -68,6 +68,7 @@ function CreateReactApp() {
         width="600"
         id="open-folder"
         src={VSCodeOpenFolder}
+        alt="Visual Studio Code Open Folder"
       ></EntryBody.Image>
       <EntryBody.Text>
         Click on <EntryBody.Highlight>file</EntryBody.Highlight> {"> "}
@@ -78,6 +79,7 @@ function CreateReactApp() {
         width="600"
         id="folder-structure"
         src={FolderStructure}
+        alt="basic folder structure of the current project"
       ></EntryBody.Image>
       <EntryBody.Text>
         Create two folders: a{" "}
@@ -105,6 +107,7 @@ function CreateReactApp() {
         src={Terminal}
         width="600"
         id="terminal"
+        alt="Image of a terminal inside of VS code"
       ></EntryBody.Image>
       <EntryBody.Text>
         In the terminal window type the command{" "}
@@ -150,7 +153,12 @@ function CreateReactApp() {
         project folder we add the file{" "}
         <EntryBody.Highlight>webpack.config.js</EntryBody.Highlight>.
       </EntryBody.Text>
-      <EntryBody.Image width="400" id="create-file" src={CreateFile}>
+      <EntryBody.Image
+        width="400"
+        id="create-file"
+        src={CreateFile}
+        alt="Creating a file"
+      >
         On the root line of your project click on the{" "}
         <EntryBody.Highlight>new file icon</EntryBody.Highlight> and rename the
         created file to{" "}
@@ -160,6 +168,7 @@ function CreateReactApp() {
           width="600"
           id="created-config"
           src={CreatedConfig}
+          alt="Picture of a config file created for webpack"
         ></EntryBody.Image>
       </EntryBody.Image>
       <EntryBody.Text>
@@ -183,6 +192,7 @@ function CreateReactApp() {
         width="600"
         id="config-body"
         src={ConfigBody}
+        alt="Picture of a configuration"
       ></EntryBody.Image>
       <EntryBody.Text>
         We tell webpack where to get the files to build and where to store them.
@@ -197,6 +207,7 @@ function CreateReactApp() {
         width="600"
         id="config-body"
         src={ConfigBodyDone}
+        alt="Picture of a fully completed configuration"
       ></EntryBody.Image>
       <EntryBody.Text>
         We can move on and add loaders and plugins.
@@ -259,6 +270,7 @@ function CreateReactApp() {
         width="600"
         id="config-body-loaders"
         src={ConfigBodyLoaders}
+        alt="Picture of a body of a loader in the webpack config file"
       ></EntryBody.Image>
       <EntryBody.Text>
         {" "}
@@ -286,6 +298,7 @@ function CreateReactApp() {
         width="400"
         id="config-body-loaders-done"
         src={ConfigBodyLoadersDone}
+        alt="Done config of the webpack loaders body"
       ></EntryBody.Image>
       <EntryBody.Text>
         We can go ahead and install a HTML plugin which allows us to create a
@@ -311,6 +324,7 @@ function CreateReactApp() {
         width="600"
         id="const-htmlPlugin"
         src={HtmlPlugin}
+        alt="Picture of an implementation of a HTML plugin"
       ></EntryBody.Image>
       <EntryBody.Text>
         Below the modules body we add an array which is called{" "}
@@ -342,6 +356,7 @@ function CreateReactApp() {
         width="600"
         id="const-htmlPlugin"
         src={PluginsArray}
+        alt="Implementation of an array of plugins"
       ></EntryBody.Image>
       <EntryBody.Text>
         In order to successfully build our website we need to create a
@@ -357,6 +372,7 @@ function CreateReactApp() {
         width="600"
         id="const-htmlPlugin"
         src={Template}
+        alt="Creation of a constant"
       ></EntryBody.Image>
       <EntryBody.Text>
         In line 7 of the template.html file you can find the title. The title is{" "}
@@ -437,6 +453,7 @@ function CreateReactApp() {
         width="600"
         id="package-json"
         src={PackageJSON}
+        alt="the package.json file"
       ></EntryBody.Image>
       <EntryBody.Text>
         We can trigger those commands by typing the following schema in the
@@ -462,6 +479,7 @@ function CreateReactApp() {
         width="600"
         id="dev-server"
         src={DevServer}
+        alt="configuration of a dev server"
       ></EntryBody.Image>
       <EntryBody.Text>
         When we start the dev server a new tab of the standard browser is

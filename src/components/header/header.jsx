@@ -11,7 +11,6 @@ function Header(props) {
   const header = useRef(null);
   const [initialY, setInitialY] = useState(0);
   const [isSmall, setIsSmall] = useState(false);
-  const [dark, setDark] = useState(false);
 
   useEffect(() => {
     window.onload = handleResize;
@@ -39,12 +38,11 @@ function Header(props) {
     if (isSmall) {
       setPosition(-40);
     } else {
-      setPosition(0);
+      setPosition(window.screen.height / 2 - 300);
     }
   };
 
   const handleClick = () => {
-    setDark((dark) => !dark);
     document.getElementById("body").toggleAttribute("dark");
   };
 
@@ -81,7 +79,7 @@ function Header(props) {
       onTouchMove={handleDrag}
       style={{ top: position + "px" }}
     >
-      <ThemeSwitcher dark={dark} onClick={handleClick} />
+      <ThemeSwitcher onClick={handleClick} />
       <div className={"header-swipe-text"}>Swipe to toggle darkmode</div>
       <div className="header-links">
         <SocialLogo

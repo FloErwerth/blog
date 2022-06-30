@@ -22,7 +22,7 @@ function EntryHeader(props) {
           {props.date} - {props.time} mins reading
         </div>
       </div>
-      <h3 className="entry-header-title">{props.title}</h3>
+      <h1 className="entry-header-title">{props.title}</h1>
       <div className="entry-header-wrapper">
         <div
           className="entry-header-image"

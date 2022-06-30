@@ -5,11 +5,16 @@
     margin-inline: auto;
     transition: 0.2s;
     padding: 5px;
+    overflow: hidden;
+    border-radius: 5px;
 
     &-image {
         display: block;
         margin: auto;
-        width: 100%;
+
+        @media (max-width: 1200px) {
+            width: 100%;
+        }
     }
 
     @media (max-width: 1200px) {

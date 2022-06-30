@@ -25,9 +25,9 @@ EntryBody.Text = (props) => (
   <div className="entry-body-text">{props.children}</div>
 );
 EntryBody.Subtitle = (props) => (
-  <h3 style={{ marginBottom: "60px", marginTop: "60px" }} ref={props.reference}>
+  <h2 style={{ marginBottom: "60px", marginTop: "60px" }} ref={props.reference}>
     {props.children}
-  </h3>
+  </h2>
 );
 EntryBody.Link = (props) => (
   <a className="entry-body-link" target="_blank" href={props.href}>

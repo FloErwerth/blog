@@ -25,6 +25,16 @@ function SocialLogo(props) {
         return github;
     }
   };
+  const getSourceAlt = () => {
+    switch (props.logo) {
+      case "instagram":
+        return "Logo of instagram";
+      case "twitter":
+        return "Logo of twitter";
+      case "github":
+        return "Logo of github";
+    }
+  };
 
   return (
     <img
@@ -35,6 +45,8 @@ function SocialLogo(props) {
         cursor: "pointer",
         marginRight: "5px",
       }}
+      title={getSourceAlt()}
+      alt={getSourceAlt()}
       className={
         props.useFilter
           ? props.invertFilter

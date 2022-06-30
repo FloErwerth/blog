@@ -2,18 +2,16 @@
 .theme-switcher {
     width: 40px;
     height: 40px;
-    &-icon {
-        user-select: none;
-        border-radius: 5%;
-        overflow: hidden;
-        width: 40px;
-        height: 40px;
-        transition: 0.5s;
-        background-color: $background-header-light;
-        &:hover {
-            cursor: pointer;
-        }
+    user-select: none;
+    border-radius: 5px;
+    overflow: hidden;
+    transition: 0.5s;
+    background-color: $background-header-light;
+
+    &:hover {
+        cursor: pointer;
     }
+
     &-mover {
         position: relative;
         transition: 0.5s;
@@ -29,7 +27,7 @@
 }
 
 body[dark] {
-    .theme-switcher-icon {
+    .theme-switcher {
         background-color: $background-light;
     }
 }

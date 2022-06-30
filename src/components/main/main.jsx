@@ -19,6 +19,14 @@ function Main() {
         date="30.06.2022"
         to="/how-I-managed-darkmode"
       ></BlogCard>
+      <BlogCard
+        author="Florian Erwerth"
+        title="Easy hover underline effect with pseudo elements"
+        text="Hovering over an element that is interactable should always give feedback. Discover an easy way to use pseudo elements to create an awesome underline effect."
+        time="4"
+        date="30.06.2022"
+        to="/easy-underline"
+      ></BlogCard>
     </>
   );
 }

@@ -1,29 +1,40 @@
-import React, { useState, ReactComponent } from "react";
+import React, { useState } from "react";
 import "./theme-switcher.scss";
 import Sun from "./svgs/sun.svg";
 import Moon from "./svgs/moon.svg";
 
-function ThemeSwitcher(props) {
+const ThemeSwitcher = (props) => {
+  const [dark, setDark] = useState(false);
   return (
-    <div className="theme-switcher" id="theme-switcher">
+    <div
+      className="theme-switcher"
+      id="theme-switcher"
+      onClick={() => {
+        setDark((dark) => !dark);
+        props.onClick();
+      }}
+    >
       <div
-        className="theme-switcher-icon"
-        onClick={() => {
-          props.onClick();
+        className="theme-switcher-mover"
+        style={{
+          top: dark ? "-45px" : "0px",
         }}
       >
-        <div
-          className="theme-switcher-mover"
-          style={{
-            top: props.dark ? "-1px" : "-51px",
-          }}
-        >
-          <img src={Sun} className="theme-switcher" />
-          <img src={Moon} className="theme-switcher" />
-        </div>
+        <img
+          src={Sun}
+          className="theme-switcher"
+          alt="A sun"
+          title="A svg of a sun"
+        />
+        <img
+          src={Moon}
+          className="theme-switcher"
+          alt="A moon"
+          title="A svg of a moon"
+        />
       </div>
     </div>
   );
-}
+};
 
 export default ThemeSwitcher;

@@ -7,18 +7,15 @@ function EntryBodyImage(props) {
   };
 
   return (
-    <>
-      <div id={props.id} className="entry-body-image">
-        <>
-          <img
-            src={props.src}
-            className="entry-body-image-image"
-            onClick={handleClick}
-            width={props.width + "px"}
-          ></img>
-        </>
-      </div>
-    </>
+    <div id={props.id} className="entry-body-image">
+      <img
+        src={props.src}
+        className="entry-body-image-image"
+        onClick={handleClick}
+        width={props.width + "px"}
+        alt={props.alt}
+      ></img>
+    </div>
   );
 }
 
