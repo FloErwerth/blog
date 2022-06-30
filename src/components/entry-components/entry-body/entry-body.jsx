@@ -3,6 +3,7 @@ import "./entry-body.scss";
 import EntryBodyImage from "../entry-body-image/entry-body-image";
 import EntryList from "../entry-list/entry-list";
 import EntryListElement from "../entry-list/entry-list-element";
+import EntryBodyCode from "../entry-body-code/entry-body-code";
 
 function EntryBody(props) {
   return (
@@ -60,6 +61,10 @@ EntryBody.Highlight = (props) => {
     </div>
   );
 };
+
+EntryBody.Code = (props) => (
+  <EntryBodyCode language={props.language}>{props.children}</EntryBodyCode>
+);
 
 EntryBody.Button = (props) => {
   const id = props.children.props.id;

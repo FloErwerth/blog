@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = void 0;
+exports["default"] = void 0;
 var _default = {
   "hljs": {
     "display": "block",
@@ -17,9 +17,6 @@ var _default = {
   },
   "hljs-meta": {
     "color": "#969896"
-  },
-  "hljs-string": {
-    "color": "#df5000"
   },
   "hljs-variable": {
     "color": "#df5000"
@@ -37,13 +34,13 @@ var _default = {
     "color": "#df5000"
   },
   "hljs-keyword": {
-    "color": "#a71d5d"
+    "color": "#d73a49"
   },
   "hljs-selector-tag": {
-    "color": "#a71d5d"
+    "color": "#d73a49"
   },
   "hljs-type": {
-    "color": "#a71d5d"
+    "color": "#d73a49"
   },
   "hljs-literal": {
     "color": "#0086b3"
@@ -67,22 +64,22 @@ var _default = {
     "color": "#333333"
   },
   "hljs-title": {
-    "color": "#795da3"
+    "color": "#6f42c1"
   },
   "hljs-attr": {
-    "color": "#795da3"
+    "color": "#6f42c1"
   },
   "hljs-selector-id": {
-    "color": "#795da3"
+    "color": "#6f42c1"
   },
   "hljs-selector-class": {
-    "color": "#795da3"
+    "color": "#6f42c1"
   },
   "hljs-selector-attr": {
-    "color": "#795da3"
+    "color": "#6f42c1"
   },
   "hljs-selector-pseudo": {
-    "color": "#795da3"
+    "color": "#6f42c1"
   },
   "hljs-addition": {
     "color": "#55a532",
@@ -94,6 +91,12 @@ var _default = {
   },
   "hljs-link": {
     "textDecoration": "underline"
+  },
+  "hljs-number": {
+    "color": "#005cc5"
+  },
+  "hljs-string": {
+    "color": "#032f62"
   }
 };
-exports.default = _default;
+exports["default"] = _default;

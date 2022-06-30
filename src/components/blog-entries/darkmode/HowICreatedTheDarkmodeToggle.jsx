@@ -1,7 +1,9 @@
 import React, { useRef } from "react";
 import EntryBody from "../../entry-components/entry-body/entry-body";
 import EntryHeader from "../../entry-components/entry-header/entry-header";
-import EntryList from "../../entry-components/entry-list/entry-list";
+import light from "./pictures/light.jpg";
+import dark from "./pictures/dark.jpg";
+
 function HowIManagedDarkmode() {
   const css = useRef(null);
   const events = useRef(null);
@@ -47,19 +49,62 @@ function HowIManagedDarkmode() {
       </EntryBody.Text>
       <EntryBody.Text>
         This button acts as dark mode switch for now and is also responsible for
-        handling the attribute on the body.
+        handling the attribute on the body. The method that this click is firing
+        is the following:
       </EntryBody.Text>
+      <EntryBody.Code language="jsx">
+        {`const toggleDarkMode = () => {
+        const body = document.getElementById("root");
+        body.toggleAttribute("dark");}`}
+      </EntryBody.Code>
       <EntryBody.Text>
-        On click the button is calling a function with the name{" "}
-        <EntryBody.Highlight>toggleDarkMode</EntryBody.Highlight>. In this
-        function we get the body element by using{" "}
-        <EntryBody.Highlight>
-          document.getElementById("root")
-        </EntryBody.Highlight>
+        That is basically everything we need to enable dark mode.
       </EntryBody.Text>
       <EntryBody.Subtitle reference={css}>
         Using the dark attribute to toggle styles
       </EntryBody.Subtitle>
+      <EntryBody.Text>
+        Now in CSS we can define styles on every element which is affected by
+        the dark mode, if the dark attribute is on the body element. To do so we
+        can use the following synthax:
+      </EntryBody.Text>
+      <EntryBody.Code language="css">{`body[dark] {
+        //here are the elements that are affected by the dark attribute
+      }`}</EntryBody.Code>
+      <EntryBody.Text>
+        So if we want to change the background color of the whole webpage we can
+        simply say:
+      </EntryBody.Text>
+      <EntryBody.Code language="css">{`body[dark] {
+        background-color: black;
+      }`}</EntryBody.Code>
+      <EntryBody.Text>
+        If we then want to change the color of text elements we can type:
+      </EntryBody.Text>
+      <EntryBody.Code language="css">{`body[dark] > p {
+        color: yellow;
+      }`}</EntryBody.Code>
+      <EntryBody.Text>
+        To use this more effectivly I recommend using CSS preprocessors like
+        SCSS to handle the element selection on a better way. With SCSS we can
+        simplify the selection to the following:
+      </EntryBody.Text>
+      <EntryBody.Code language="sass">{`body[dark] {
+          background-color: black;
+            p {
+              color: yellow;
+            }
+        }`}</EntryBody.Code>
+      <EntryBody.Text>This leads to the following result:</EntryBody.Text>
+      <div style={{ display: "flex" }}>
+        <EntryBody.Image src={dark} />
+        <EntryBody.Image src={light} />
+      </div>
+      <EntryBody.Text>
+        Clicking the "Toggle dark mode" button leads to a change of the
+        background color and a change of the text color of the title and the
+        text. Exactly what we want.
+      </EntryBody.Text>
       <EntryBody.Subtitle reference={events}>
         Creating a toggle switch
       </EntryBody.Subtitle>
