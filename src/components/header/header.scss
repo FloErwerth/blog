@@ -67,10 +67,15 @@
 body[dark] {
     .header {
         background-color: $background-header-dark;
+        &-links {
+            @media (max-width: 1200px) {
+                background-color: $background-header-dark;
+            }
+        }
+        &-swipe-text {
+            color: $color-light;
+        }
     }
     .header-links {
-        @media (max-width: 1200px) {
-            background-color: $background-header-dark;
-        }
     }
 }
