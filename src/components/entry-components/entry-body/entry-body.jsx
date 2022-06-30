@@ -35,7 +35,12 @@ EntryBody.Link = (props) => (
   </a>
 );
 EntryBody.Image = (props) => (
-  <EntryBodyImage id={props.id} src={props.src} width={props.width}>
+  <EntryBodyImage
+    id={props.id}
+    alt={props.alt}
+    src={props.src}
+    width={props.width}
+  >
     {props.children}
   </EntryBodyImage>
 );

@@ -11,6 +11,8 @@ function EasyUnderline() {
         title="Easy underline hover effect with pseudo elements"
         date="30.06.2022"
         author="Florian Erwerth"
+        description="Hovering over an element that is interactable should always give feedback. Discover an easy way to use pseudo elements to create an awesome underline effect."
+        canonical="/easy-underline"
         time="5"
       />
       <EntryBody.Text>

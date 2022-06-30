@@ -17,6 +17,8 @@ function HowIManagedDarkmode() {
         date="30.06.2022"
         author="Florian Erwerth"
         shortDescription="React Developer @ Check24"
+        description="The darkmode is a huge plus for many visitors of web pages. Learn how I managed to implement the darkmode."
+        canonical="/how-I-managed-darkmode"
         time="7"
       />
       <EntryBody.Text>

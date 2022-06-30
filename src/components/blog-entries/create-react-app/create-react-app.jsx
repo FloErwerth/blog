@@ -27,10 +27,12 @@ function CreateReactApp() {
     <EntryBody reference={top}>
       <div className="create-react-app">
         <EntryHeader
+          description="Learn how to create a project using react without create-react-app and learn why you should do it, too"
           shortDescription="React Developer @ Check24"
           title="Create a react app without using create-react-app"
           date="04.06.2022"
           author="Florian Erwerth"
+          canonical="/create-react-app"
           time="10"
         />
       </div>

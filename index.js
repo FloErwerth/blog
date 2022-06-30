@@ -8,28 +8,31 @@ import About from "./src/components/about/about";
 import EasyUnderline from "./src/components/blog-entries/easy-underline/easy-underline";
 import "./body.scss";
 import { HashRouter, Routes, Route, Link } from "react-router-dom";
+import { HelmetProvider } from "react-helmet-async";
 
 const root = document.getElementById("root");
 const rootObject = Dom.createRoot(root);
 
 rootObject.render(
-  <StrictMode>
-    <Header />
-    <div id="wrapper" className="content-wrapper">
-      <HashRouter>
-        <Routes>
-          <Route path="/" element={<Main />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/create-react-app" element={<CreateReactApp />} />
-          <Route
-            path="how-I-managed-darkmode"
-            element={<HowICreatedTheDarkmodeToggle />}
-          />
-          <Route path="easy-underline" element={<EasyUnderline />} />
-        </Routes>
-      </HashRouter>
-    </div>
-  </StrictMode>
+  <HelmetProvider>
+    <StrictMode>
+      <Header />
+      <div id="wrapper" className="content-wrapper">
+        <HashRouter>
+          <Routes>
+            <Route path="/" element={<Main />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/create-react-app" element={<CreateReactApp />} />
+            <Route
+              path="how-I-managed-darkmode"
+              element={<HowICreatedTheDarkmodeToggle />}
+            />
+            <Route path="easy-underline" element={<EasyUnderline />} />
+          </Routes>
+        </HashRouter>
+      </div>
+    </StrictMode>
+  </HelmetProvider>
 );
 
 export const navigateTo = (to) => {
