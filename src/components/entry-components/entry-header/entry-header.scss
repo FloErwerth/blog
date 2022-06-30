@@ -32,6 +32,10 @@
     &-date {
         font-size: 12px;
         font-style: italic;
+
+        @media (max-width: 1200px) {
+            margin-top: 30px;
+        }
     }
 }
 

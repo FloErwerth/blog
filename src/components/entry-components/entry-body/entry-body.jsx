@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from "react";
 import "./entry-body.scss";
 import EntryBodyImage from "../entry-body-image/entry-body-image";
-import { navigateTo } from "../../../..";
+import EntryList from "../entry-list/entry-list";
+import EntryListElement from "../entry-list/entry-list-element";
+
 function EntryBody(props) {
   return (
     <div ref={props.reference} className="entry-body">
@@ -35,6 +37,14 @@ EntryBody.Image = (props) => (
   <EntryBodyImage id={props.id} src={props.src} width={props.width}>
     {props.children}
   </EntryBodyImage>
+);
+EntryBody.List = (props) => (
+  <EntryList reference={props.reference}>{props.children}</EntryList>
+);
+EntryBody.ListElement = (props) => (
+  <EntryListElement reference={props.reference}>
+    {props.children}
+  </EntryListElement>
 );
 
 EntryBody.Highlight = (props) => {

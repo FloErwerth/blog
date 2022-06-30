@@ -13,11 +13,6 @@ function Header(props) {
   const [isSmall, setIsSmall] = useState(false);
   const [dark, setDark] = useState(false);
 
-  const themeChangedEvent = new Event("theme", {
-    bubbles: true,
-    composed: true,
-  });
-
   useEffect(() => {
     window.onload = handleResize;
     window.onresize = handleResize;
@@ -50,7 +45,7 @@ function Header(props) {
 
   const handleClick = () => {
     setDark((dark) => !dark);
-    document.getElementById("header").dispatchEvent(themeChangedEvent);
+    document.getElementById("body").toggleAttribute("dark");
   };
 
   const handleDragStart = (e) => {

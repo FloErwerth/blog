@@ -38,20 +38,20 @@ function CreateReactApp() {
         In this step by step guide you will learn to create an react app without
         using create-react-app. The table of content is the following:
       </EntryBody.Text>
-      <EntryList>
-        <EntryList.Element clickRef={packages}>
+      <EntryBody.List>
+        <EntryBody.ListElement reference={packages}>
           Create the project and install npm
-        </EntryList.Element>
-        <EntryList.Element clickRef={configfile}>
+        </EntryBody.ListElement>
+        <EntryBody.ListElement reference={configfile}>
           Install the path module and add a configuration file for webpack
-        </EntryList.Element>
-        <EntryList.Element clickRef={plugins}>
+        </EntryBody.ListElement>
+        <EntryBody.ListElement reference={plugins}>
           Install plugins and loaders for webpack
-        </EntryList.Element>
-        <EntryList.Element clickRef={webpack}>
+        </EntryBody.ListElement>
+        <EntryBody.ListElement reference={webpack}>
           Install webpack, build and starting of the webpack development server
-        </EntryList.Element>
-      </EntryList>
+        </EntryBody.ListElement>
+      </EntryBody.List>
       <EntryBody.Subtitle reference={packages}>
         Create the project and install npm
       </EntryBody.Subtitle>

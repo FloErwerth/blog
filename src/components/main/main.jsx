@@ -13,11 +13,11 @@ function Main() {
       ></BlogCard>
       <BlogCard
         author="Florian Erwerth"
-        title="Experiences from my career"
-        text="I want to talk about my apprenticeship, the colleagues and decisions I regret"
-        time="5"
-        date="21.06.2022"
-        to="/experiences"
+        title="How I created the dark mode toggle"
+        text="The darkmode is a huge plus for many visitors of web pages. Learn how I managed to implement the darkmode."
+        time="7"
+        date="30.06.2022"
+        to="/how-I-managed-darkmode"
       ></BlogCard>
     </>
   );
