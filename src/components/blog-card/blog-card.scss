@@ -103,7 +103,7 @@
     }
 }
 
-body[dark] {
+body[dark="true"] {
     .blog-card {
         &-title {
             color: $color-dark;

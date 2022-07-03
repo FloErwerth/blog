@@ -8,6 +8,7 @@ function EntryBodyImage(props) {
         className="entry-body-image-image"
         width={props.width + "px"}
         alt={props.alt}
+        loading="lazy"
       ></img>
     </div>
   );

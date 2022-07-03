@@ -6,13 +6,13 @@ import BurgerMenu from "./burger-menu/burger-menu";
 import SocialLogo from "../entry-components/entry-header/social-logo/social-logo";
 
 function Header(props) {
-  const handleClick = () => {
-    document.getElementById("body").toggleAttribute("dark");
+  const handleClick = (dark) => {
+    document.getElementById("body").setAttribute("dark", dark);
   };
 
   return (
     <div id="header" className="header">
-      <ThemeSwitcher onClick={handleClick} />
+      <ThemeSwitcher onClick={(dark) => handleClick(dark)} />
       <div className="header-links">
         <SocialLogo
           logo="instagram"

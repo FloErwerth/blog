@@ -6,9 +6,9 @@ html {
 body {
     transition: 0.5s;
     font-family: Roboto;
-    margin: 10px;
+    margin: 0;
     background-color: $background-light;
-    &[dark] {
+    &[dark="true"] {
         background-color: $background-dark;
     }
 }

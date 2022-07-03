@@ -2,18 +2,20 @@ const path = require("path");
 const htmlPlugin = require("html-webpack-plugin");
 
 module.exports = {
-  mode: "production",
+  mode: "development",
   entry: path.resolve(__dirname, "index.js"),
   output: {
     path: path.resolve(__dirname, "dist"),
     filename: "[name].js",
     clean: true,
+    publicPath: "/",
   },
   devServer: {
     port: "3000",
     static: "./dist",
     open: true,
     hot: true,
+    historyApiFallback: true,
   },
   optimization: {
     runtimeChunk: "single",

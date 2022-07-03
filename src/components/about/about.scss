@@ -49,7 +49,7 @@
     }
 }
 
-body[dark] {
+body[dark="true"] {
     .about {
         &-image-container {
             background-color: $background-card-dark;

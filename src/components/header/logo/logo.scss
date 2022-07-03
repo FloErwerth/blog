@@ -20,7 +20,7 @@
     }
 }
 
-body[dark] {
+body[dark="true"] {
     .logo {
         fill: $color-dark;
     }

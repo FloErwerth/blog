@@ -22,8 +22,9 @@
         height: 40px;
         width: 40px;
         padding: 0;
-        left: calc(100vw - 40px);
+        margin-left: auto;
         top: 55vh;
+        right: 0;
         border-top-left-radius: 20px;
         border-bottom-left-radius: 20px;
         flex-direction: row;
@@ -52,7 +53,7 @@
     }
 }
 
-body[dark] {
+body[dark="true"] {
     .header {
         background-color: $background-header-dark;
         &-links {

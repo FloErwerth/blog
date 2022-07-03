@@ -28,11 +28,11 @@ function SocialLogo(props) {
   const getSourceAlt = () => {
     switch (props.logo) {
       case "instagram":
-        return "Logo of instagram";
+        return "Open Instagram";
       case "twitter":
-        return "Logo of twitter";
+        return "Open Twitter";
       case "github":
-        return "Logo of github";
+        return "Open GitHub";
     }
   };
 

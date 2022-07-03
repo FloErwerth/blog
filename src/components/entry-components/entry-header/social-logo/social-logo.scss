@@ -8,7 +8,7 @@
     }
 }
 
-body[dark] {
+body[dark="true"] {
     .social-logo {
         filter: $svg-light-filter;
         &-inverted {

@@ -1,6 +1,6 @@
-import React from "react";
+import React, { useEffect } from "react";
 import BlogCard from "../blog-card/blog-card";
-function Main() {
+const Main = () => {
   return (
     <>
       <BlogCard
@@ -27,8 +27,16 @@ function Main() {
         date="30.06.2022"
         to="/easy-underline"
       ></BlogCard>
+      <BlogCard
+        author="Florian Erwerth"
+        title="Using cookies to store simple data"
+        text="I had to learn using cookies. Now I want you tell what I have learned about the usage of cookies."
+        time="7"
+        date="01.07.2022"
+        to="/using-cookies"
+      ></BlogCard>
     </>
   );
-}
+};
 
 export default Main;

@@ -1,4 +1,4 @@
-import React, { StrictMode, useState } from "react";
+import React, { StrictMode, useEffect } from "react";
 import Dom from "react-dom/client";
 import Main from "./src/components/main/main";
 import Header from "./src/components/header/header";
@@ -9,29 +9,29 @@ import EasyUnderline from "./src/components/blog-entries/easy-underline/easy-und
 import "./body.scss";
 import { HashRouter, Routes, Route, Link } from "react-router-dom";
 import { HelmetProvider } from "react-helmet-async";
+import UsingCookies from "./src/components/blog-entries/using-cookies/using-cookies";
 
 const root = document.getElementById("root");
 const rootObject = Dom.createRoot(root);
-
+document.getElementById("body").setAttribute("dark", receiveCookie());
 rootObject.render(
   <HelmetProvider>
-    <StrictMode>
-      <Header />
-      <div id="wrapper" className="content-wrapper">
-        <HashRouter>
-          <Routes>
-            <Route path="/" element={<Main />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/create-react-app" element={<CreateReactApp />} />
-            <Route
-              path="how-I-managed-darkmode"
-              element={<HowICreatedTheDarkmodeToggle />}
-            />
-            <Route path="easy-underline" element={<EasyUnderline />} />
-          </Routes>
-        </HashRouter>
-      </div>
-    </StrictMode>
+    <Header />
+    <div id="wrapper" className="content-wrapper">
+      <HashRouter>
+        <Routes>
+          <Route path="/" element={<Main />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/create-react-app" element={<CreateReactApp />} />
+          <Route
+            path="how-I-managed-darkmode"
+            element={<HowICreatedTheDarkmodeToggle />}
+          />
+          <Route path="easy-underline" element={<EasyUnderline />} />
+          <Route path="using-cookies" element={<UsingCookies />} />
+        </Routes>
+      </HashRouter>
+    </div>
   </HelmetProvider>
 );
 
@@ -43,3 +43,15 @@ export const navigateTo = (to) => {
     document.getElementById("wrapper").toggleAttribute("animation");
   }, 750);
 };
+
+function receiveCookie() {
+  try {
+    const isDark = document.cookie.split("=")[1] === "true";
+    console.log(document.cookie.split("=")[1]);
+    document.getElementById("body").setAttribute("dark", isDark);
+    console.log("dark mode set to: " + isDark);
+    return isDark;
+  } catch (e) {
+    return false;
+  }
+}

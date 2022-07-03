@@ -39,7 +39,7 @@
     }
 }
 
-body[dark] {
+body[dark="true"] {
     .entry-header {
         color: $color-dark;
     }
