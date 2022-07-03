@@ -148,11 +148,11 @@ function UsingCookies() {
         method that fires a method to store the cookie, if the state has
         changed:
       </EntryBody.Text>
-      <EntryBody.Code language="javscript">{`useEffect() => {
+      <EntryBody.Code language="jsx">{`useEffect() => {
     storeCookie();
   }, [isDark]);`}</EntryBody.Code>
       <EntryBody.Text>The method looks like the following:</EntryBody.Text>
-      <EntryBody.Code language="javscript">{`function storeCookie(isDark) {
+      <EntryBody.Code language="javascript">{`function storeCookie(isDark) {
     var cookie = "dark=" + isDark + ";";
     cookie += "expires=31-Dec-9999 00:00:00 GMT;";
     document.cookie = cookie;
@@ -169,7 +169,7 @@ function UsingCookies() {
         or not. We can get the value by using:
       </EntryBody.Text>
       <EntryBody.Text>The method looks like the following:</EntryBody.Text>
-      <EntryBody.Code language="javscript">{`function receiveCookie() {
+      <EntryBody.Code language="javascript">{`function receiveCookie() {
         try {
             const isDark = document.cookie.split("=")[0] === "true";
             return isDark;

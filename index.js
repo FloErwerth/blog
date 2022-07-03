@@ -15,24 +15,26 @@ const root = document.getElementById("root");
 const rootObject = Dom.createRoot(root);
 document.getElementById("body").setAttribute("dark", receiveCookie());
 rootObject.render(
-  <HelmetProvider>
-    <Header />
-    <div id="wrapper" className="content-wrapper">
-      <HashRouter>
-        <Routes>
-          <Route path="/" element={<Main />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/create-react-app" element={<CreateReactApp />} />
-          <Route
-            path="how-I-managed-darkmode"
-            element={<HowICreatedTheDarkmodeToggle />}
-          />
-          <Route path="easy-underline" element={<EasyUnderline />} />
-          <Route path="using-cookies" element={<UsingCookies />} />
-        </Routes>
-      </HashRouter>
-    </div>
-  </HelmetProvider>
+  <React.StrictMode>
+    <HelmetProvider>
+      <Header />
+      <div id="wrapper" className="content-wrapper">
+        <HashRouter>
+          <Routes>
+            <Route path="/" element={<Main />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/create-react-app" element={<CreateReactApp />} />
+            <Route
+              path="how-I-managed-darkmode"
+              element={<HowICreatedTheDarkmodeToggle />}
+            />
+            <Route path="easy-underline" element={<EasyUnderline />} />
+            <Route path="using-cookies" element={<UsingCookies />} />
+          </Routes>
+        </HashRouter>
+      </div>
+    </HelmetProvider>
+  </React.StrictMode>
 );
 
 export const navigateTo = (to) => {

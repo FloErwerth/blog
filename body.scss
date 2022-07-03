@@ -29,7 +29,9 @@ body {
 
     &[animation] {
         position: relative;
-        top: 0px;
+        overflow: hidden;
+        top: 100px;
+        filter: saturate(0);
         opacity: 0;
     }
 }
