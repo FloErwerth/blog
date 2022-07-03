@@ -28,9 +28,8 @@ body {
     }
 
     &[animation] {
-        position: relative;
-        overflow: hidden;
-        top: 100px;
+        position: absolute;
+        top: -50px;
         filter: saturate(0);
         opacity: 0;
     }

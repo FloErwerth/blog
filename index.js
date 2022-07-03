@@ -37,11 +37,21 @@ rootObject.render(
   </React.StrictMode>
 );
 
+var lastSite = "#/";
 export const navigateTo = (to) => {
   if (window.location.hash === "#" + to || to === undefined) return;
   document.getElementById("wrapper").toggleAttribute("animation");
+  lastSite = "/" + window.location.hash;
   setTimeout(() => {
     window.location.href = "/#" + to;
+    document.getElementById("wrapper").toggleAttribute("animation");
+  }, 750);
+};
+
+export const navigateToLastSite = () => {
+  document.getElementById("wrapper").toggleAttribute("animation");
+  setTimeout(() => {
+    window.location.href = lastSite;
     document.getElementById("wrapper").toggleAttribute("animation");
   }, 750);
 };

@@ -2,7 +2,7 @@ import React from "react";
 import EntryBody from "../entry-components/entry-body/entry-body";
 import foto from "./Foto_Florian.jpg";
 import "./about.scss";
-import { navigateTo } from "../../..";
+import { navigateToLastSite } from "../../..";
 function About() {
   return (
     <EntryBody hideScrollButton>
@@ -11,7 +11,7 @@ function About() {
         <button
           className="about-return"
           onClick={() => {
-            navigateTo("/");
+            navigateToLastSite();
           }}
         >
           RETURN
