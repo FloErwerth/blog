@@ -12,5 +12,23 @@
     .main {
         width: 100%;
         margin: 0;
+
+        &-filter {
+        }
+    }
+}
+
+@media (max-width: 370px) {
+    .main-filter {
+        display: grid;
+        grid-template-columns: auto auto auto;
+        row-gap: 5px;
+    }
+}
+@media (max-width: 290px) {
+    .main-filter {
+        display: grid;
+        grid-template-columns: auto auto;
+        row-gap: 5px;
     }
 }

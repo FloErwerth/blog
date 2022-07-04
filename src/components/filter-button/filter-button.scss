@@ -21,6 +21,10 @@
 
 body[dark="true"] {
     .filter-button {
-        background-color: $color-dark;
+        background-color: $background-card-dark;
+
+        &[toggled] {
+            background-color: $highlight;
+        }
     }
 }

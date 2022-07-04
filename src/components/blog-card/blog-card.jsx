@@ -14,14 +14,14 @@ function BlogCard(props) {
   };
 
   return (
-    <div className="blog-card" id={props.id}>
+    <div className="blog-card" key={props.keyVal}>
       <div className="blog-card-content" onClick={handleTextClick}>
         <div className="blog-card-title">{props.title}</div>
         <div className="blog-card-text">{props.text}</div>
         <div className="blog-card-categories">
-          {props.categories.map((category, index) => {
+          {props.categories.map((category) => {
             return (
-              <div className="blog-card-category" key={index}>
+              <div className="blog-card-category" key={Math.random() * 1000}>
                 {category}
               </div>
             );

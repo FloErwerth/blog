@@ -1,0 +1,41 @@
+.entry-preview {
+    display: grid;
+    grid-template-rows: 30% 50% 22px 20px;
+    transition: 0.5s;
+    height: 200px;
+    width: 400px;
+    margin: auto;
+    padding-top: 10px;
+    padding-inline: 25px;
+    background-color: lightblue;
+    border-radius: 5px;
+
+    &-title {
+        color: white;
+        font-size: 16px;
+        transition: 0.5s;
+    }
+    &-text {
+        color: rgb(50, 50, 50);
+        font-size: 12px;
+        transition: 0.5s;
+    }
+
+    &-categories {
+        display: flex;
+    }
+    &-category {
+        font-size: 10px;
+        margin-right: 5px;
+        padding: 5px;
+        background-color: white;
+    }
+}
+
+body[dark="true"] {
+    .entry-preview {
+        &-title {
+            color: black;
+        }
+    }
+}

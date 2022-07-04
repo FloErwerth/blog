@@ -16,6 +16,7 @@ import PluginsArray from "./pictures/plugins-array.jpg";
 import Template from "./pictures/template.jpg";
 import PackageJSON from "./pictures/package-json.jpg";
 import DevServer from "./pictures/dev-server.jpg";
+import FolderStructureBabel from "./pictures/folder-structure-babel.jpg";
 
 function CreateReactApp() {
   const packages = useRef(null);
@@ -42,7 +43,7 @@ function CreateReactApp() {
       </EntryBody.Text>
       <EntryBody.List>
         <EntryBody.ListElement reference={packages}>
-          Create the project and install npm
+          Create the project, install npm and install babel
         </EntryBody.ListElement>
         <EntryBody.ListElement reference={configfile}>
           Install the path module and add a configuration file for webpack
@@ -55,7 +56,7 @@ function CreateReactApp() {
         </EntryBody.ListElement>
       </EntryBody.List>
       <EntryBody.Subtitle reference={packages}>
-        Create the project and install npm
+        Create the project, install npm and install babel
       </EntryBody.Subtitle>
       <EntryBody.Text>
         At first we choose a IDE to create our project with. My recommendation
@@ -132,6 +133,44 @@ function CreateReactApp() {
         can skip this step. Feel free to leave this out and type in the
         metadata.
       </EntryBody.Text>
+      <EntryBody.Text>
+        Since we are using React we have to use babel to transform the normal
+        html code into react code. This is done using Babel. Babel does
+        transform the HTML5 language into react components.
+      </EntryBody.Text>
+      <EntryBody.Text>
+        In the console use the command{" "}
+        <EntryBody.Highlight>
+          npm install --save-dev @babel/preset-react @babel/preset-env
+        </EntryBody.Highlight>{" "}
+        to install all necessary babel packages.
+      </EntryBody.Text>
+      <EntryBody.Text>
+        Then in the root folder, that means the top most folder in the folder
+        structure of your project, create a file with the name{" "}
+        <EntryBody.Highlight>.babelrc</EntryBody.Highlight>. Which is a
+        configuration file for babel.
+      </EntryBody.Text>
+      <EntryBody.Text>In this file type the following:</EntryBody.Text>
+      <EntryBody.Code language="js">{`"presets": 
+[
+        "@babel/preset-env",
+        "@babel/preset-react"
+    ],
+    "plugins": [
+        "@babel/plugin-transform-runtime"
+]`}</EntryBody.Code>
+      <EntryBody.Text>
+        This allows babel to run and in addition you can now use{" "}
+        <EntryBody.Highlight>.jsx</EntryBody.Highlight> files. The project
+        should look like this:
+      </EntryBody.Text>
+      <EntryBody.Image
+        src={FolderStructureBabel}
+        width="600"
+        id="terminal"
+        alt="Final folder structure with babel"
+      ></EntryBody.Image>
       <EntryBody.Subtitle reference={configfile}>
         Install the path module and add a configuration file for webpack
       </EntryBody.Subtitle>

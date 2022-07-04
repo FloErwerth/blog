@@ -20,7 +20,7 @@ const Main = () => {
       time="7"
       date="30.06.2022"
       to="/how-I-managed-darkmode"
-      categories={["CSS", "JavaScript"]}
+      categories={["CSS", "JavaScript", "React"]}
     ></BlogCard>,
     <BlogCard
       author="Florian Erwerth"
@@ -40,13 +40,21 @@ const Main = () => {
       to="/using-cookies"
       categories={["JavaScript"]}
     ></BlogCard>,
+    <BlogCard
+      author="Florian Erwerth"
+      title="Filter blog entries with React"
+      text="Learn how to implement a filter function with React.js and JavaScript and give your visitors a better time visiting your webpage or blog."
+      time="6"
+      date="04.07.2022"
+      to="/filter-function"
+      categories={["React", "JavaScript"]}
+    ></BlogCard>,
   ];
 
   const hasKeyword = (entry) => {
     if (currentFilter.length === 0) return true;
     const categories = entry.props.categories;
     for (var j = 0; j < currentFilter.length; j++) {
-      console.log("filter: " + currentFilter[j]);
       for (var i = 0; i < categories.length; i++) {
         if (categories[i].toLowerCase() == currentFilter[j]) {
           return true;
@@ -77,9 +85,14 @@ const Main = () => {
 
   const [currentEntries, setCurrentEntries] = useState(baseEntries);
   const [currentFilter, setCurrentFilter] = useState([]);
+
   return (
     <div className="main">
       <div className="main-filter">
+        <FilterButton
+          filter={(newFilter) => setNewFilter(newFilter)}
+          filterName="React"
+        />
         <FilterButton
           filter={(newFilter) => setNewFilter(newFilter)}
           filterName="JavaScript"

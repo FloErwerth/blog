@@ -10,6 +10,7 @@ import "./body.scss";
 import { HashRouter, Routes, Route, Link } from "react-router-dom";
 import { HelmetProvider } from "react-helmet-async";
 import UsingCookies from "./src/components/blog-entries/using-cookies/using-cookies";
+import FilterFunction from "./src/components/blog-entries/filter-function/filter-function";
 
 const root = document.getElementById("root");
 const rootObject = Dom.createRoot(root);
@@ -30,6 +31,7 @@ rootObject.render(
             />
             <Route path="easy-underline" element={<EasyUnderline />} />
             <Route path="using-cookies" element={<UsingCookies />} />
+            <Route path="filter-function" element={<FilterFunction />} />
           </Routes>
         </HashRouter>
       </div>
