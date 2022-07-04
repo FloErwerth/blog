@@ -16,7 +16,7 @@ function EntryBodyCode(props) {
   return (
     <div className="entry-body-code">
       <SyntaxHighlighter
-        customStyle={{ borderRadius: "5px", width: "100%", height: "100%" }}
+        customStyle={{ borderRadius: "5px", height: "100%" }}
         showLineNumbers={true}
         wrapLines={true}
         wrapLongLines={false}

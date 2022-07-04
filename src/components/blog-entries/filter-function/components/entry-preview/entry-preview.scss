@@ -5,10 +5,15 @@
     height: 200px;
     width: 400px;
     margin: auto;
-    padding-top: 10px;
-    padding-inline: 25px;
+    padding: 10px;
+    padding-inline: 20px;
     background-color: lightblue;
     border-radius: 5px;
+
+    @media (max-width: 1200px) {
+        width: calc(100% - 20px);
+        padding: 10px;
+    }
 
     &-title {
         color: white;
@@ -35,6 +40,9 @@
 body[dark="true"] {
     .entry-preview {
         &-title {
+            color: black;
+        }
+        &-category {
             color: black;
         }
     }
