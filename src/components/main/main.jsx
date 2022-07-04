@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import BlogCard from "../blog-card/blog-card";
-import AdSense from "react-adsense";
+import Adsense from "../adsense/adsense";
 const Main = () => {
   return (
     <>
@@ -36,14 +36,12 @@ const Main = () => {
         date="01.07.2022"
         to="/using-cookies"
       ></BlogCard>
-      <AdSense.Google
-        format="fluid"
+      {/* <Adsense
         client="ca-pub-3948296506852082"
-        slot="4793149103"
-        style={{ display: "block" }}
-        responsive={true}
-        layoutKey={"-fo-1f-36-83+s7"}
-      />
+        responsive="true"
+        format="auto"
+        slot="3038914425"
+      /> */}
     </>
   );
 };

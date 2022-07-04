@@ -1,0 +1,18 @@
+.adsense {
+    display: flex;
+    position: relative;
+    user-select: none;
+    transition: 0.5s;
+    width: 700px;
+    height: 175px;
+    margin: auto;
+    margin-bottom: 10px;
+    margin-left: calc(50% - 410px);
+
+    @media (max-width: 1200px) {
+        display: block;
+        width: 100%;
+        margin-left: auto;
+        height: fit-content;
+    }
+}
