@@ -1,6 +1,6 @@
 {
   "name": "blog",
-  "version": "1.0.2",
+  "version": "1.0.4",
   "description": "Blog for web developers about different topics with the languages javascript, css and the library react.js",
   "main": "index.js",
   "scripts": {
@@ -36,6 +36,7 @@
   },
   "dependencies": {
     "react": "^18.1.0",
+    "react-adsense": "^0.1.0",
     "react-dom": "^18.1.0",
     "react-helmet-async": "^1.3.0",
     "react-router-dom": "^6.3.0",
