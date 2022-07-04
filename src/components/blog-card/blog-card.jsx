@@ -18,6 +18,15 @@ function BlogCard(props) {
       <div className="blog-card-content" onClick={handleTextClick}>
         <div className="blog-card-title">{props.title}</div>
         <div className="blog-card-text">{props.text}</div>
+        <div className="blog-card-categories">
+          {props.categories.map((category, index) => {
+            return (
+              <div className="blog-card-category" key={index}>
+                {category}
+              </div>
+            );
+          })}
+        </div>
       </div>
       <div className="blog-card-credentials">
         <div

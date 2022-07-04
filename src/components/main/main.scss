@@ -1,0 +1,16 @@
+.main {
+    width: 700px;
+    margin-left: calc(50vw - 350px);
+
+    &-filter {
+        display: flex;
+        margin-bottom: 15px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .main {
+        width: 100%;
+        margin: 0;
+    }
+}

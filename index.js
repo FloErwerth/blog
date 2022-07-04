@@ -60,12 +60,7 @@ function receiveCookie() {
   try {
     const isDark =
       document.cookie.split("dark")[1].split(";")[0].split("=")[1] === "true";
-    console.log(document.cookie);
-    console.log(document.cookie.split("dark")[1]);
-    console.log(document.cookie.split("dark")[1].split(";")[0]);
-    console.log(isDark);
     document.getElementById("body").setAttribute("dark", isDark);
-    console.log("dark mode set to: " + isDark);
     return isDark;
   } catch (e) {
     return false;

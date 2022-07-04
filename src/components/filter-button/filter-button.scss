@@ -1,0 +1,26 @@
+@import "../../../variables.scss";
+
+.filter-button {
+    font-size: 18px;
+    outline: none;
+    border: none;
+    padding: 5px;
+    margin-right: 4px;
+    background-color: $color-light;
+    color: white;
+    transition: 0.5s;
+
+    &:hover {
+        cursor: pointer;
+    }
+
+    &[toggled] {
+        background-color: $highlight;
+    }
+}
+
+body[dark="true"] {
+    .filter-button {
+        background-color: $color-dark;
+    }
+}
