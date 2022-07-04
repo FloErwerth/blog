@@ -9,7 +9,7 @@ function SocialLogo(props) {
     const link = document.createElement("a");
     link.href = props.link;
     link.onclick = () => {
-      document.removeChild(link);
+      link.remove();
     };
     link.target = "_blank";
     link.click();
