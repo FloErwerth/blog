@@ -1,7 +1,7 @@
 import React from "react";
+import { navigateTo } from "../../..";
 import "./blog-card.scss";
 import pic from "./Foto_Florian.jpg";
-import { navigateTo } from "../../../index.js";
 
 function BlogCard(props) {
   const handleTextClick = () => {

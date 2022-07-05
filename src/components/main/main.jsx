@@ -1,8 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import BlogCard from "../blog-card/blog-card";
 import FilterButton from "../filter-button/filter-button";
 import "./main.scss";
 const Main = () => {
+  const linkRef = useRef(null);
   const baseEntries = [
     <BlogCard
       author="Florian Erwerth"

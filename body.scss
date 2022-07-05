@@ -3,14 +3,15 @@ html {
     scroll-behavior: smooth;
     scroll-padding-top: 75px;
 }
+
 body {
-    transition: 0.5s;
+    transition: top 0.5s;
     font-family: Roboto;
     margin: 0;
-    background-color: $background-light;
     &[dark="true"] {
         background-color: $background-dark;
     }
+    background-color: $background-light;
 }
 
 .content-wrapper {
@@ -25,10 +26,14 @@ body {
         left: 10%;
     }
 
-    &[animation] {
-        position: relative;
-        top: -50px;
+    &[animation="true"] {
+        top: 0;
         filter: saturate(0);
         opacity: 0;
+    }
+    &[animation="false"] {
+        top: 50px;
+        filter: saturate(1);
+        opacity: 1;
     }
 }

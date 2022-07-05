@@ -5,7 +5,6 @@
     user-select: none;
     border-radius: 5px;
     overflow: hidden;
-    transition: 0.5s;
     background-color: $background-header-light;
 
     &:hover {
@@ -14,7 +13,7 @@
 
     &-mover {
         position: relative;
-        transition: 0.5s;
+
         & > img:focus-visible {
             outline: none;
         }

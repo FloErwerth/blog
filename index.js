@@ -1,4 +1,4 @@
-import React, { StrictMode, useEffect } from "react";
+import React, { StrictMode } from "react";
 import Dom from "react-dom/client";
 import Main from "./src/components/main/main";
 import Header from "./src/components/header/header";
@@ -7,20 +7,24 @@ import HowICreatedTheDarkmodeToggle from "./src/components/blog-entries/darkmode
 import About from "./src/components/about/about";
 import EasyUnderline from "./src/components/blog-entries/easy-underline/easy-underline";
 import "./body.scss";
-import { HashRouter, Routes, Route, Link } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { HelmetProvider } from "react-helmet-async";
 import UsingCookies from "./src/components/blog-entries/using-cookies/using-cookies";
 import FilterFunction from "./src/components/blog-entries/filter-function/filter-function";
 
+window.onload = () => {
+  const wrapper = document.getElementById("wrapper");
+  wrapper.setAttribute("animation", "false");
+};
 const root = document.getElementById("root");
 const rootObject = Dom.createRoot(root);
-document.getElementById("body").setAttribute("dark", receiveCookie());
+
 rootObject.render(
-  <React.StrictMode>
+  <StrictMode>
     <HelmetProvider>
       <Header />
-      <div id="wrapper" className="content-wrapper">
-        <HashRouter>
+      <div id="wrapper" className="content-wrapper" animation="true">
+        <BrowserRouter basename="/">
           <Routes>
             <Route path="/" element={<Main />} />
             <Route path="/about" element={<About />} />
@@ -33,38 +37,16 @@ rootObject.render(
             <Route path="using-cookies" element={<UsingCookies />} />
             <Route path="filter-function" element={<FilterFunction />} />
           </Routes>
-        </HashRouter>
+        </BrowserRouter>
       </div>
     </HelmetProvider>
-  </React.StrictMode>
+  </StrictMode>
 );
 
-var lastSite = "#/";
 export const navigateTo = (to) => {
-  if (window.location.hash === "#" + to || to === undefined) return;
-  document.getElementById("wrapper").toggleAttribute("animation");
-  lastSite = "/" + window.location.hash;
+  if (window.location.pathname === to || to === undefined) return;
+  document.getElementById("wrapper").setAttribute("animation", "true");
   setTimeout(() => {
-    window.location.href = "/#" + to;
-    document.getElementById("wrapper").toggleAttribute("animation");
+    window.location.pathname = to;
   }, 750);
 };
-
-export const navigateToLastSite = () => {
-  document.getElementById("wrapper").toggleAttribute("animation");
-  setTimeout(() => {
-    window.location.href = lastSite;
-    document.getElementById("wrapper").toggleAttribute("animation");
-  }, 750);
-};
-
-function receiveCookie() {
-  try {
-    const isDark =
-      document.cookie.split("dark")[1].split(";")[0].split("=")[1] === "true";
-    document.getElementById("body").setAttribute("dark", isDark);
-    return isDark;
-  } catch (e) {
-    return false;
-  }
-}
