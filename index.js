@@ -6,16 +6,12 @@ import CreateReactApp from "./src/components/blog-entries/create-react-app/creat
 import HowICreatedTheDarkmodeToggle from "./src/components/blog-entries/darkmode/HowICreatedTheDarkmodeToggle";
 import About from "./src/components/about/about";
 import EasyUnderline from "./src/components/blog-entries/easy-underline/easy-underline";
-import "./body.scss";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { HelmetProvider } from "react-helmet-async";
 import UsingCookies from "./src/components/blog-entries/using-cookies/using-cookies";
 import FilterFunction from "./src/components/blog-entries/filter-function/filter-function";
+import Wrapper from "./src/components/main/wrapper";
 
-window.onload = () => {
-  const wrapper = document.getElementById("wrapper");
-  wrapper.setAttribute("animation", "false");
-};
 const root = document.getElementById("root");
 const rootObject = Dom.createRoot(root);
 
@@ -23,7 +19,7 @@ rootObject.render(
   <StrictMode>
     <HelmetProvider>
       <Header />
-      <div id="wrapper" className="content-wrapper" animation="true">
+      <Wrapper>
         <BrowserRouter basename="/">
           <Routes>
             <Route path="/" element={<Main />} />
@@ -38,7 +34,7 @@ rootObject.render(
             <Route path="filter-function" element={<FilterFunction />} />
           </Routes>
         </BrowserRouter>
-      </div>
+      </Wrapper>
     </HelmetProvider>
   </StrictMode>
 );

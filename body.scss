@@ -27,11 +27,13 @@ body {
     }
 
     &[animation="true"] {
-        top: 0;
+        position: relative;
+        top: 150px;
         filter: saturate(0);
         opacity: 0;
     }
     &[animation="false"] {
+        position: relative;
         top: 50px;
         filter: saturate(1);
         opacity: 1;

@@ -47,17 +47,7 @@
         }
 
         @media (max-width: 1200px) {
-            padding: 2.5px;
-            border-top-right-radius: 0;
-            border-bottom-right-radius: 0;
-            border-right: none;
-            top: 65vh;
-            width: 40px;
-            right: 0;
-            &::after {
-                font-size: 1.25em;
-                content: "Top";
-            }
+            visibility: hidden;
         }
     }
 
