@@ -15,17 +15,24 @@
     }
 }
 
-@media (max-width: 370px) {
+@media (max-width: 483px) {
     .main-filter {
         display: grid;
         grid-template-columns: auto auto auto;
         row-gap: 5px;
     }
 }
-@media (max-width: 290px) {
+@media (max-width: 317px) {
     .main-filter {
         display: grid;
         grid-template-columns: auto auto;
+        row-gap: 5px;
+    }
+}
+@media (max-width: 225px) {
+    .main-filter {
+        display: grid;
+        grid-template-columns: auto;
         row-gap: 5px;
     }
 }

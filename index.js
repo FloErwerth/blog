@@ -10,6 +10,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { HelmetProvider } from "react-helmet-async";
 import UsingCookies from "./src/components/blog-entries/using-cookies/using-cookies";
 import FilterFunction from "./src/components/blog-entries/filter-function/filter-function";
+import CustomEvents from "./src/components/blog-entries/custom-events/custom-events";
 import Wrapper from "./src/components/main/wrapper";
 
 const root = document.getElementById("root");
@@ -32,6 +33,7 @@ rootObject.render(
             <Route path="easy-underline" element={<EasyUnderline />} />
             <Route path="using-cookies" element={<UsingCookies />} />
             <Route path="filter-function" element={<FilterFunction />} />
+            <Route path="custom-events" element={<CustomEvents />} />
           </Routes>
         </BrowserRouter>
       </Wrapper>

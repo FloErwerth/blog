@@ -11,21 +11,6 @@
         width: 100%;
     }
 
-    &-button {
-        height: 30px;
-        width: 75px;
-        line-height: 30px;
-        margin-left: calc(100% - 75px);
-        background-color: $highlight;
-        border: none;
-        border-radius: 5px;
-
-        @media (max-width: 768px) {
-            width: 100%;
-            margin-left: 0;
-        }
-    }
-
     &-scrolltotop {
         position: fixed;
         bottom: 50px;
@@ -68,6 +53,7 @@
         hyphens: auto;
         font-size: 18px;
         margin-top: 20px;
+
         @media (max-width: 1200px) {
             width: 100%;
         }

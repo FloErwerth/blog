@@ -27,7 +27,7 @@ const Main = () => {
       author="Florian Erwerth"
       title="Easy hover underline effect with pseudo elements"
       text="Hovering over an element that is interactable should always give feedback. Discover an easy way to use pseudo elements to create an awesome underline effect."
-      time="4"
+      time="5"
       date="30.06.2022"
       to="/easy-underline"
       categories={["CSS"]}
@@ -49,6 +49,15 @@ const Main = () => {
       date="04.07.2022"
       to="/filter-function"
       categories={["React", "JavaScript"]}
+    ></BlogCard>,
+    <BlogCard
+      author="Florian Erwerth"
+      title="Create custom events with JavaScript"
+      text="Creating custom events can be very useful in various scenarios. Learn how to set up on your own and listen to them aswell."
+      time="9"
+      date="06.07.2022"
+      to="/custom-events"
+      categories={["JavaScript", "Events"]}
     ></BlogCard>,
   ];
 
@@ -105,6 +114,10 @@ const Main = () => {
         <FilterButton
           filter={(newFilter) => setNewFilter(newFilter)}
           filterName="Webpack"
+        />
+        <FilterButton
+          filter={(newFilter) => setNewFilter(newFilter)}
+          filterName="Events"
         />
       </div>
       {currentEntries.filter((entry) => hasKeyword(entry))}
