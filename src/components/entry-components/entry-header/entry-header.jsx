@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import "./entry-header.scss";
 import pic from "./Foto_Florian.jpg";
 import { navigateTo, handleActivityStatus } from "../../../..";
-import SocialLogo from "./social-logo/social-logo";
 import { Helmet } from "react-helmet-async";
 
 function EntryHeader(props) {
@@ -21,7 +20,7 @@ function EntryHeader(props) {
         <link rel="canonical" href={props.canonical}></link>
       </Helmet>
       <div id="entry-header" className="entry-header">
-        <button className="entry-body-button" onClick={handleReturn}>
+        <button className="entry-header-return" onClick={handleReturn}>
           RETURN
         </button>
         <div className="entry-header-wrapper">

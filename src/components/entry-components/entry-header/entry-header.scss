@@ -36,6 +36,21 @@
             margin-top: 30px;
         }
     }
+    &-return {
+        height: 30px;
+        width: 75px;
+        line-height: 30px;
+        margin-left: calc(100% - 75px);
+        background-color: $highlight;
+        border: none;
+        border-radius: 5px;
+        color: black;
+
+        @media (max-width: 768px) {
+            width: 100%;
+            margin-left: 0;
+        }
+    }
 }
 
 body[dark="true"] {
