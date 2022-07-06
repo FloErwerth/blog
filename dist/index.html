@@ -1,4 +1,22 @@
-<!doctype html><html lang="en"><head><meta charset="UTF-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>Florian Erwerth's Blog</title><meta name="description" content="Florian Erwerth's Blog - Discover interesting things about JS, CSS, React and more!" data-rh="true"/><style>::-webkit-scrollbar {
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Florian Erwerth's Blog</title>
+    <meta
+      name="description"
+      content="Florian Erwerth's Blog - Discover interesting things about JS, CSS, React and more!"
+      data-rh="true"
+    />
+    <!-- <script
+      async
+      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3948296506852082"
+      crossorigin="anonymous"
+    ></script> -->
+    <style>
+      ::-webkit-scrollbar {
         width: 8px;
       }
 
@@ -15,7 +33,14 @@
       /* Handle on hover */
       ::-webkit-scrollbar-thumb:hover {
         filter: saturate(1.5);
-      }</style><script defer="defer" src="/runtime.js"></script><script defer="defer" src="/main.js"></script></head><body id="body" style="visibility: hidden"><div id="root"></div></body><script>try {
+      }
+    </style>
+  <script defer src="/runtime.js"></script><script defer src="/main.js"></script></head>
+  <body id="body" style="visibility: hidden">
+    <div id="root"></div>
+  </body>
+  <script>
+    try {
       const isDark =
         document.cookie.split("dark")[1].split(";")[0].split("=")[1] === "true";
       document.getElementById("body").setAttribute("dark", isDark);
@@ -23,4 +48,6 @@
     } catch (e) {
       console.log(e);
       document.getElementById("body").style.visibility = "visible";
-    }</script></html>
+    }
+  </script>
+</html>

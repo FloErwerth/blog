@@ -26,21 +26,18 @@
         }
     }
 
-    &-return {
+    &-scrolltotop {
         position: fixed;
-        bottom: 50px;
+        top: 95vh;
         right: 50px;
         height: 40px;
-        padding: 10px;
-        padding-inline: 50px;
+        padding: 3px;
+        padding-inline: 20px;
+        line-height: 40px;
         border: none;
         border-radius: 5px;
         background-color: $highlight;
         color: black;
-
-        &::after {
-            content: "Scroll to top";
-        }
 
         &:hover {
             filter: saturate(1.5);

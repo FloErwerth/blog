@@ -9,12 +9,7 @@ function EntryBody(props) {
   return (
     <div ref={props.reference} className="entry-body">
       {props.hideScrollButton ? null : (
-        <button
-          className="entry-body-return"
-          onClick={() => {
-            props.reference.current.scrollIntoView();
-          }}
-        ></button>
+        <div className="entry-body-scrolltotop">Scroll to top</div>
       )}
       {props.children}
     </div>

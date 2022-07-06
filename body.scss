@@ -6,7 +6,7 @@ html {
 
 body {
     transition: top 0.5s;
-    font-family: Roboto;
+    font-family: Roboto, Arial, Helvetica, sans-serif;
     margin: 0;
     &[dark="true"] {
         background-color: $background-dark;
@@ -29,13 +29,11 @@ body {
     &[animation="true"] {
         position: relative;
         top: 150px;
-        filter: saturate(0);
         opacity: 0;
     }
     &[animation="false"] {
         position: relative;
         top: 50px;
-        filter: saturate(1);
         opacity: 1;
     }
 }
