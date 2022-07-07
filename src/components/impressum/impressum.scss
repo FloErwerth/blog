@@ -1,7 +1,7 @@
 @import "../../../variables.scss";
 .impressum {
     &-header {
-        transition: 0.5s;
+        transition: 0.51s;
         display: flex;
         width: fit-content;
         position: fixed;
@@ -11,28 +11,34 @@
             margin-right: 5px;
             content: "\2B85";
         }
-        background-color: white;
+        &:hover {
+            cursor: pointer;
+        }
+        background-color: $background-card-dark;
+        color: $color-dark;
+        padding: 0.6em;
         padding-inline: 10px;
         border-top-left-radius: 5px;
         border-top-right-radius: 5px;
         margin: 0;
         display: flex;
-        font-size: 0.8em;
+        font-size: 0.7em;
     }
     &-body {
         transition: 0.5s;
-        height: 0;
+        height: 0px;
         width: fit-content;
         position: fixed;
         bottom: 0;
         left: 0;
         color: transparent;
         user-select: none;
+        background-color: $background-card-dark;
     }
     &-header[opened] {
         position: fixed;
         left: 0;
-        bottom: 83px;
+        bottom: 78px;
         z-index: 1;
         &::before {
             content: "\2B87    ";
@@ -40,23 +46,13 @@
 
         & ~ .impressum-body {
             padding: 10px;
-            color: $color-light;
+            color: $color-dark;
             font-size: 12px;
             user-select: text;
             visibility: visible;
             border-top-right-radius: 2px;
-            background-color: white;
+            background-color: $background-card-dark;
             height: 65px;
-        }
-    }
-    &-opening-button {
-    }
-}
-
-body[dark="true"] {
-    .impressum {
-        &-header {
-            border-bottom: 1px solid white;
         }
     }
 }
