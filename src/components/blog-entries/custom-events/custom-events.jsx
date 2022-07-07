@@ -177,7 +177,7 @@ document.getElementById("body").appendChild(a);`}</EntryBody.Code>
 }`}</EntryBody.Code>
       <EntryBody.Text>
         Check this example at{" "}
-        <EntryBody.Link href="https://codepen.io/floerwerth/pen/bGvEqRp">
+        <EntryBody.Link href="https://codepen.io/floerwerth/pen/abYdwwp">
           codepen
         </EntryBody.Link>
         . Try removing the canceling of the event and take a look at google. The
