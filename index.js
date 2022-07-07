@@ -12,9 +12,13 @@ import UsingCookies from "./src/components/blog-entries/using-cookies/using-cook
 import FilterFunction from "./src/components/blog-entries/filter-function/filter-function";
 import CustomEvents from "./src/components/blog-entries/custom-events/custom-events";
 import Wrapper from "./src/components/main/wrapper";
+import ReactGA from "react-ga";
+import Impressum from "./src/components/impressum/impressum";
 
 const root = document.getElementById("root");
 const rootObject = Dom.createRoot(root);
+ReactGA.initialize("G-XHDFZYPQF5");
+ReactGA.pageview(window.location.pathname + window.location.search);
 
 rootObject.render(
   <StrictMode>
@@ -37,6 +41,7 @@ rootObject.render(
           </Routes>
         </BrowserRouter>
       </Wrapper>
+      <Impressum />
     </HelmetProvider>
   </StrictMode>
 );
