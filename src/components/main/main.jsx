@@ -1,8 +1,14 @@
 import React, { useState, useEffect, useRef } from "react";
 import BlogCard from "../blog-card/blog-card";
 import FilterButton from "../filter-button/filter-button";
+import ReactGA from "react-ga";
 import "./main.scss";
+
 const Main = () => {
+  useEffect(() => {
+    ReactGA.initialize("G-D298BGMKJP");
+    ReactGA.pageview(window.location.pathname);
+  }, []);
   const linkRef = useRef(null);
   const baseEntries = [
     <BlogCard

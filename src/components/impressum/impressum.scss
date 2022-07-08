@@ -7,17 +7,18 @@
         position: fixed;
         bottom: 0;
         left: 0;
-        &::before {
-            margin-right: 5px;
-            content: "\2B85";
+        @media (min-width: 768px) {
+            &::before {
+                margin-right: 5px;
+                content: "\2B85";
+            }
         }
         &:hover {
             cursor: pointer;
         }
+        padding: 5px;
         background-color: $background-card-dark;
         color: $color-dark;
-        padding: 0.6em;
-        padding-inline: 10px;
         border-top-left-radius: 5px;
         border-top-right-radius: 5px;
         margin: 0;
@@ -27,6 +28,9 @@
     &-body {
         transition: 0.5s;
         height: 0px;
+        @media (max-width: 768px) {
+            width: calc(100% - 20px);
+        }
         width: fit-content;
         position: fixed;
         bottom: 0;
@@ -38,10 +42,12 @@
     &-header[opened] {
         position: fixed;
         left: 0;
-        bottom: 78px;
+        bottom: 83px;
         z-index: 1;
-        &::before {
-            content: "\2B87    ";
+        @media (min-width: 768px) {
+            &::before {
+                content: "\2B87    ";
+            }
         }
 
         & ~ .impressum-body {
