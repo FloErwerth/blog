@@ -1,6 +1,6 @@
 {
   "name": "blog",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "Blog for web developers about different topics with the languages javascript, css and the library react.js",
   "main": "index.js",
   "scripts": {

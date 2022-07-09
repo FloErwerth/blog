@@ -44,19 +44,61 @@ rootObject.render(
 );
 
 var lastSite = "#/";
+const animationStepTime = 750;
+
 export const navigateTo = (to) => {
   if (window.location.hash === "#" + to || to === undefined) return;
-  document.getElementById("wrapper").setAttribute("animation", "true");
   lastSite = "/" + window.location.hash;
-  setTimeout(() => {
-    window.location.href = `/#` + to;
-    document.getElementById("wrapper").setAttribute("animation", "false");
-  }, 750);
+  const wrapper = document.getElementById("wrapper");
+  console.log(to === "/");
+  if (to === "/") {
+    transitionFromEntry(wrapper);
+  } else {
+    transitionToEntry(wrapper);
+  }
 };
+
 export const navigateToLastSite = () => {
-  document.getElementById("wrapper").setAttribute("animation", "true");
+  document.getElementById("wrapper").toggleAttribute("animation");
   setTimeout(() => {
     window.location.href = lastSite;
-    document.getElementById("wrapper").setAttribute("animation", "false");
+    document.getElementById("wrapper").toggleAttribute("animation");
   }, 750);
+};
+
+const transitionToEntry = (wrapper) => {
+  wrapper.classList.toggle("content-wrapper-to-left");
+
+  setTimeout(() => {
+    wrapper.classList.toggle("content-wrapper-to-left"), 750;
+  });
+};
+
+const transitionFromEntry = (wrapper) => {
+  addClassAfter(wrapper, "content-wrapper-to-left", 0);
+  removeClassAfter(wrapper, "content-wrapper-to-left", animationStepTime);
+  addClassAfter(wrapper, "content-wrapper-set-right", animationStepTime);
+  addClassAfter(wrapper, "content-wrapper-to-middle", animationStepTime + 1);
+  removeClassAfter(
+    wrapper,
+    "content-wrapper-to-middle",
+    animationStepTime + animationStepTime
+  );
+  removeClassAfter(
+    wrapper,
+    "content-wrapper-set-right",
+    animationStepTime + animationStepTime + 1
+  );
+};
+
+const removeClassAfter = (element, className, time) => {
+  setTimeout(() => {
+    element.classList.remove(className);
+  }, time);
+};
+
+const addClassAfter = (element, className, time) => {
+  setTimeout(() => {
+    element.classList.add(className);
+  }, time);
 };

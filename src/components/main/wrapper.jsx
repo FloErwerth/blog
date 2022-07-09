@@ -7,7 +7,7 @@ function Wrapper(props) {
     }
   });
   return (
-    <div id="wrapper" className="content-wrapper" animation="true">
+    <div id="wrapper" className="content-wrapper">
       {props.children}
     </div>
   );
