@@ -6,10 +6,8 @@ import "./main.scss";
 
 const Main = () => {
   useEffect(() => {
-    ReactGA.initialize("G-D298BGMKJP");
     ReactGA.pageview(window.location.pathname);
   }, []);
-  const linkRef = useRef(null);
   const baseEntries = [
     <BlogCard
       author="Florian Erwerth"
@@ -99,7 +97,6 @@ const Main = () => {
     return { value: false, index: undefined };
   };
 
-  const [currentEntries, setCurrentEntries] = useState(baseEntries);
   const [currentFilter, setCurrentFilter] = useState([]);
 
   return (
@@ -126,7 +123,7 @@ const Main = () => {
           filterName="Events"
         />
       </div>
-      {currentEntries.filter((entry) => hasKeyword(entry))}
+      {baseEntries.filter((entry) => hasKeyword(entry))}
     </div>
   );
 };

@@ -9,7 +9,6 @@ function EntryHeader(props) {
   useEffect(() => {
     ReactGA.pageview(window.location.pathname);
   }, []);
-
   const handleImageClick = () => {
     navigateTo("/about");
   };
