@@ -6,6 +6,9 @@ import EntryListElement from "../entry-list/entry-list-element";
 import EntryBodyCode from "../entry-body-code/entry-body-code";
 
 function EntryBody(props) {
+  useEffect(() => {
+    props.reference.current.scrollIntoView();
+  }, []);
   return (
     <div ref={props.reference} className="entry-body">
       {props.hideScrollButton ? null : (

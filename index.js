@@ -44,18 +44,23 @@ rootObject.render(
 );
 
 var lastSite = "#/";
-const animationStepTime = 750;
+const animationStepTime = 500;
 
 export const navigateTo = (to) => {
   if (window.location.hash === "#" + to || to === undefined) return;
   lastSite = "/" + window.location.hash;
   const wrapper = document.getElementById("wrapper");
-  window.location.href = "/#" + to;
-  // if (to === "/") {
-  //   transitionFromEntry(wrapper);
-  // } else {
-  //   transitionToEntry(wrapper);
-  // }
+
+  // window.location.href = "/#" + to;
+  if (to === "/") {
+    transitionFromEntry(wrapper).then(() => {
+      window.location.href = "/#" + to;
+    });
+  } else {
+    transitionToEntry(wrapper).then(() => {
+      window.location.href = "/#" + to;
+    });
+  }
 };
 
 export const navigateToLastSite = () => {
@@ -63,32 +68,51 @@ export const navigateToLastSite = () => {
   setTimeout(() => {
     window.location.href = lastSite;
     document.getElementById("wrapper").toggleAttribute("animation");
-  }, 750);
+  }, animationStepTime);
 };
 
 const transitionToEntry = (wrapper) => {
-  wrapper.classList.toggle("content-wrapper-to-left");
-
-  setTimeout(() => {
-    wrapper.classList.toggle("content-wrapper-to-left"), 750;
+  return new Promise((resolve) => {
+    addClassAfter(wrapper, "content-wrapper-to-right", 0);
+    removeClassAfter(wrapper, "content-wrapper-to-right", animationStepTime);
+    addClassAfter(wrapper, "content-wrapper-set-left", animationStepTime);
+    addClassAfter(wrapper, "content-wrapper-to-middle", animationStepTime + 10);
+    removeClassAfter(
+      wrapper,
+      "content-wrapper-set-left",
+      animationStepTime * 2
+    );
+    removeClassAfter(
+      wrapper,
+      "content-wrapper-to-middle",
+      animationStepTime * 2
+    );
+    setTimeout(() => {
+      resolve(true);
+    }, animationStepTime);
   });
 };
 
 const transitionFromEntry = (wrapper) => {
-  addClassAfter(wrapper, "content-wrapper-to-left", 0);
-  removeClassAfter(wrapper, "content-wrapper-to-left", animationStepTime);
-  addClassAfter(wrapper, "content-wrapper-set-right", animationStepTime);
-  addClassAfter(wrapper, "content-wrapper-to-middle", animationStepTime + 1);
-  removeClassAfter(
-    wrapper,
-    "content-wrapper-to-middle",
-    animationStepTime + animationStepTime
-  );
-  removeClassAfter(
-    wrapper,
-    "content-wrapper-set-right",
-    animationStepTime + animationStepTime + 1
-  );
+  return new Promise((resolve) => {
+    addClassAfter(wrapper, "content-wrapper-to-left", 0);
+    removeClassAfter(wrapper, "content-wrapper-to-left", animationStepTime);
+    addClassAfter(wrapper, "content-wrapper-set-right", animationStepTime);
+    addClassAfter(wrapper, "content-wrapper-to-middle", animationStepTime + 10);
+    removeClassAfter(
+      wrapper,
+      "content-wrapper-set-right",
+      animationStepTime * 2
+    );
+    removeClassAfter(
+      wrapper,
+      "content-wrapper-to-middle",
+      animationStepTime * 2
+    );
+    setTimeout(() => {
+      resolve(true);
+    }, animationStepTime);
+  });
 };
 
 const removeClassAfter = (element, className, time) => {
