@@ -3,12 +3,8 @@ import "./entry-header.scss";
 import pic from "./Foto_Florian.jpg";
 import { navigateTo, handleActivityStatus } from "../../../..";
 import { Helmet } from "react-helmet-async";
-import ReactGA from "react-ga";
 
 function EntryHeader(props) {
-  useEffect(() => {
-    ReactGA.pageview(window.location.pathname);
-  }, []);
   const handleImageClick = () => {
     navigateTo("/about");
   };

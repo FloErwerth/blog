@@ -1,12 +1,12 @@
 import React, { useState, useEffect, useRef } from "react";
 import BlogCard from "../blog-card/blog-card";
 import FilterButton from "../filter-button/filter-button";
-import ReactGA from "react-ga";
 import "./main.scss";
 
 const Main = () => {
   useEffect(() => {
-    ReactGA.pageview(window.location.pathname);
+    if (window.location.pathname.includes("#")) return;
+    window.location.href = "/#" + window.location.pathname;
   }, []);
   const baseEntries = [
     <BlogCard

@@ -28,13 +28,13 @@ rootObject.render(
             <Route path="/about" element={<About />} />
             <Route path="/create-react-app" element={<CreateReactApp />} />
             <Route
-              path="how-I-managed-darkmode"
+              path="/how-I-managed-darkmode"
               element={<HowICreatedTheDarkmodeToggle />}
             />
-            <Route path="easy-underline" element={<EasyUnderline />} />
-            <Route path="using-cookies" element={<UsingCookies />} />
-            <Route path="filter-function" element={<FilterFunction />} />
-            <Route path="custom-events" element={<CustomEvents />} />
+            <Route path="/easy-underline" element={<EasyUnderline />} />
+            <Route path="/using-cookies" element={<UsingCookies />} />
+            <Route path="/filter-function" element={<FilterFunction />} />
+            <Route path="/custom-events" element={<CustomEvents />} />
           </Routes>
         </HashRouter>
       </Wrapper>
@@ -50,12 +50,12 @@ export const navigateTo = (to) => {
   if (window.location.hash === "#" + to || to === undefined) return;
   lastSite = "/" + window.location.hash;
   const wrapper = document.getElementById("wrapper");
-  console.log(to === "/");
-  if (to === "/") {
-    transitionFromEntry(wrapper);
-  } else {
-    transitionToEntry(wrapper);
-  }
+  window.location.href = "/#" + to;
+  // if (to === "/") {
+  //   transitionFromEntry(wrapper);
+  // } else {
+  //   transitionToEntry(wrapper);
+  // }
 };
 
 export const navigateToLastSite = () => {
