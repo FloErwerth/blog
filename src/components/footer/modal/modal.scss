@@ -1,0 +1,38 @@
+@import "variables.scss";
+.modal {
+  position: relative;
+  left: 50%;
+  top: 50%;
+  background-color: $background-card-credentials-light;
+  transform: translateX(-50%) translateY(-50%);
+  width: fit-content;
+
+  &-container {
+    backdrop-filter: brightness(0.5);
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+    top: 0;
+    left: 0;
+  }
+  &-selection {
+    padding: 50px;
+  }
+  &-return {
+    height: 30px;
+    width: 75px;
+    line-height: 30px;
+    text-align: center;
+    background-color: $highlight;
+    border: none;
+    border-radius: 5px;
+    color: black;
+    outline: none;
+    position: relative;
+    left: 100%;
+    transform: translateX(-100%);
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}

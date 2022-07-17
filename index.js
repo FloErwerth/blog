@@ -12,7 +12,7 @@ import UsingCookies from "./src/components/blog-entries/using-cookies/using-cook
 import FilterFunction from "./src/components/blog-entries/filter-function/filter-function";
 import CustomEvents from "./src/components/blog-entries/custom-events/custom-events";
 import Wrapper from "./src/components/main/wrapper";
-import Impressum from "./src/components/impressum/impressum";
+import Footer from "./src/components/footer/footer.tsx";
 
 const root = document.getElementById("root");
 const rootObject = Dom.createRoot(root);
@@ -38,20 +38,18 @@ rootObject.render(
           </Routes>
         </HashRouter>
       </Wrapper>
-      <Impressum />
+      <Footer name={"footer"}/>
     </HelmetProvider>
   </StrictMode>
 );
 
-var lastSite = "#/";
+let lastSite = "#/";
 const animationStepTime = 500;
 
 export const navigateTo = (to) => {
   if (window.location.hash === "#" + to || to === undefined) return;
   lastSite = "/" + window.location.hash;
   const wrapper = document.getElementById("wrapper");
-
-  // window.location.href = "/#" + to;
   if (to === "/") {
     transitionFromEntry(wrapper).then(() => {
       window.location.href = "/#" + to;
@@ -64,11 +62,9 @@ export const navigateTo = (to) => {
 };
 
 export const navigateToLastSite = () => {
-  document.getElementById("wrapper").toggleAttribute("animation");
-  setTimeout(() => {
+  transitionFromEntry(wrapper).then(() => {
     window.location.href = lastSite;
-    document.getElementById("wrapper").toggleAttribute("animation");
-  }, animationStepTime);
+  });
 };
 
 const transitionToEntry = (wrapper) => {

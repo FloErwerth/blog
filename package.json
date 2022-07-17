@@ -1,6 +1,6 @@
 {
   "name": "blog",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "Blog for web developers about different topics with the languages javascript, css and the library react.js",
   "main": "index.js",
   "scripts": {
@@ -16,6 +16,7 @@
     "@babel/preset-env": "^7.18.2",
     "@babel/preset-react": "^7.17.12",
     "@babel/runtime": "^7.18.3",
+    "@types/react": "^18.0.15",
     "babel-eslint": "^10.1.0",
     "babel-loader": "^8.2.5",
     "css-loader": "^6.7.1",
@@ -31,6 +32,8 @@
     "source-map-loader": "^4.0.0",
     "style-loader": "^3.3.1",
     "svg-url-loader": "^7.1.1",
+    "ts-loader": "^9.3.1",
+    "typescript": "^4.7.4",
     "webpack": "^5.72.1",
     "webpack-cli": "^4.9.2",
     "webpack-dev-server": "^4.9.1"

@@ -1,0 +1,57 @@
+@import "variables.scss";
+
+.footer {
+  padding: 20px;
+  background-color: $background-card-credentials-light;
+  height: 100px;
+  &-label {
+    text-align: center;
+    font-size: 1.1em;
+    margin-bottom: 20px;
+  }
+
+  &-content {
+    display: flex;
+    justify-content: space-evenly;
+    width: 75%;
+    margin: auto;
+  }
+
+  &-link {
+    &::after {
+      content: "";
+      display: block;
+      position: relative;
+      height: calc(100% + 10px);
+      width: 0;
+      transition: 0.5s;
+      backdrop-filter: invert(1);
+      top: calc(-100% - 5px);
+      left: -5px;
+    }
+
+    padding: 5px;
+
+    &:hover {
+      cursor: pointer;
+
+      &::after {
+        width: calc(100% + 10px);
+
+      }
+    }
+  }
+
+  &-modal {
+    opacity: 0;
+    visibility: hidden;
+    &[show] {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+}
+
+body[dark="true"] {
+
+}

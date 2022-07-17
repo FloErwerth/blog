@@ -1,11 +1,12 @@
-import React from "react";
+import React, { useRef } from "react";
 import EntryBody from "../entry-components/entry-body/entry-body";
 import foto from "./Foto_Florian.jpg";
 import "./about.scss";
 import { navigateToLastSite } from "../../..";
 function About() {
+  const top = useRef(null);
   return (
-    <EntryBody hideScrollButton>
+    <EntryBody reference={top} hideScrollButton>
       <div style={{ display: "flex" }}>
         <h2>About the author</h2>
         <button

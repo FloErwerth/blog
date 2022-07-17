@@ -76,7 +76,7 @@
         margin-right: 0;
         width: 30%;
         height: calc(100% - 20px);
-        background-color: #efefef;
+        background-color: $background-card-credentials-light;
 
         @media (max-width: 1200px) {
             height: 30%;
