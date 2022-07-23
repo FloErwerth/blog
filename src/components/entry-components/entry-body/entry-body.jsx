@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import "./entry-body.scss";
 import EntryBodyImage from "../entry-body-image/entry-body-image";
 import EntryList from "../entry-list/entry-list";

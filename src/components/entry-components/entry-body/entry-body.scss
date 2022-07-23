@@ -1,5 +1,6 @@
 @import "../../../../variables.scss";
 .entry-body {
+    transition: 0.5s;
     background-color: $background-light;
     margin: auto;
     padding-bottom: 75px;
@@ -59,6 +60,8 @@
         }
     }
     &-link {
+        transition: 0.5s;
+        color: $color-light;
         text-decoration: underline;
         &:hover {
             cursor: pointer;

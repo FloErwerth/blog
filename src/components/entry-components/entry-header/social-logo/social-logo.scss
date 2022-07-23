@@ -1,5 +1,6 @@
 @import "../../../../../variables.scss";
 .social-logo {
+    transition: 0.5s;
     filter: $svg-dark-filter;
 
     &-inverted {

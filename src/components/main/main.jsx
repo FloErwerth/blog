@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import BlogCard from "../blog-card/blog-card";
 import FilterButton from "../filter-button/filter-button";
-import Adsense from "../adsense/adsense";
 import "./main.scss";
 
 const Main = () => {
@@ -37,7 +36,6 @@ const Main = () => {
       to="/easy-underline"
       categories={["CSS"]}
     ></BlogCard>,
-    <Adsense.Mobile />,
     <BlogCard
       author="Florian Erwerth"
       title="Using cookies to store simple data"
@@ -68,8 +66,9 @@ const Main = () => {
   ];
 
   const hasKeyword = (entry) => {
-    if (currentFilter.length === 0 || entry.type.name !== "BlogCard")
+    if (currentFilter.length === 0) {
       return true;
+    }
     const categories = entry.props.categories;
     for (var j = 0; j < currentFilter.length; j++) {
       for (var i = 0; i < categories.length; i++) {

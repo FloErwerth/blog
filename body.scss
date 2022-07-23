@@ -6,22 +6,15 @@ html {
 }
 
 body {
-    transition: top 0.5s;
-    font-family: system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+    transition: 0.5s;
+    font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif,
+        BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+        "Segoe UI Symbol";
     margin: 0;
     &[dark="true"] {
         background-color: $background-dark;
     }
     background-color: $background-light;
-}
-
-.vertical-line {
-    position: fixed;
-    background-color: black;
-    width: 0;
-    top: 10vw;
-    left: 0;
-    height: 50vw;
 }
 
 .content-wrapper {
@@ -31,6 +24,7 @@ body {
     top: 50px;
     padding-bottom: 50px;
     margin-bottom: 50px;
+    min-height: 100vh;
 
     @media (max-width: 1200px) {
         width: 75%;

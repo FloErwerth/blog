@@ -1,8 +1,6 @@
-import React, { useEffect, useState, useRef } from "react";
+import React from "react";
 import "./header.scss";
 import ThemeSwitcher from "./theme-switcher/theme-switcher";
-import HeaderLink from "./link/header-link";
-import BurgerMenu from "./burger-menu/burger-menu";
 import SocialLogo from "../entry-components/entry-header/social-logo/social-logo";
 
 function Header(props) {

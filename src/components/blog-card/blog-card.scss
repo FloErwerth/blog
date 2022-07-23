@@ -1,5 +1,6 @@
 @import "../../../variables.scss";
 .blog-card {
+    transition: 0.5s;
     display: flex;
     position: relative;
     user-select: none;
@@ -7,7 +8,7 @@
     margin: auto;
     margin-bottom: 10px;
     background-color: white;
-    outline: 2px solid #efefef;
+    outline: 2px solid $background-card-credentials-light;
     border-radius: 1px;
 
     @media (max-width: 1200px) {
@@ -65,6 +66,7 @@
     }
 
     &-credentials {
+        transition: 0.5s;
         display: flex;
         font-size: 10px;
         z-index: 0;
@@ -87,6 +89,7 @@
     }
 
     &-title {
+        transition: 0.5s;
         font-size: 22px;
         padding: 15px;
         padding-left: 15px;
@@ -105,6 +108,7 @@
         }
     }
     &-metadata {
+        transition: 0.5s;
         font-size: 16px;
         font-style: italic;
         margin-left: 10px;

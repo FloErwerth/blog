@@ -1,4 +1,4 @@
-import { useState, useEffect, useId } from "react";
+import { useState } from "react";
 import * as React from "react";
 import "./footer.scss";
 import Privacy from "../privacy/privacy";

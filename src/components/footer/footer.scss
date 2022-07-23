@@ -1,9 +1,17 @@
 @import "variables.scss";
 
 .footer {
-  padding: 20px;
+  transition: 0.5s;
   background-color: $background-card-credentials-light;
-  height: 75px;
+  height: 100px;
+  width: 700px;
+  margin: auto;
+  padding-top: 30px;
+  outline: 2px solid $background-card-credentials-light;
+
+  @media (max-width: 768px) {
+    width: auto;
+  }
 
   &-label {
     text-align: center;
@@ -40,5 +48,13 @@
         width: calc(100% + 10px);
       }
     }
+  }
+}
+
+body[dark="true"] {
+  .footer {
+    background-color: $background-card-dark;
+    outline: 2px solid $background-card-dark;
+    color: $color-dark;
   }
 }

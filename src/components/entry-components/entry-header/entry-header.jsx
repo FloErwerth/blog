@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import "./entry-header.scss";
 import pic from "./Foto_Florian.jpg";
-import { navigateTo, handleActivityStatus } from "../../../..";
+import { navigateTo } from "../../../..";
 import { Helmet } from "react-helmet-async";
 
 function EntryHeader(props) {

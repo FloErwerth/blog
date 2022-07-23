@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import "./entry-body-image.scss";
 function EntryBodyImage(props) {
   return (
