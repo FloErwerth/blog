@@ -3,7 +3,7 @@ import * as React from "react";
 import "./footer.scss";
 import Privacy from "../privacy/privacy";
 import Imprint from "../imprint/imprint";
-import Modal from "./modal/modal";
+import Modal from "../modal/modal.tsx";
 
 const index = require("../../../index.js");
 
@@ -13,10 +13,8 @@ const modals = [<Privacy />, <Imprint />];
 const footer = () => {
   const [modalContentIndex, setModalContentIndex] = useState(1);
   const [showModal, setShowModal] = useState(false);
-  const footerModal = useId();
 
   const handleCloseModal = () => {
-    setModalContentIndex(-1);
     setShowModal(false);
   };
 
@@ -24,10 +22,6 @@ const footer = () => {
     setModalContentIndex(index);
     setShowModal(true);
   };
-
-  useEffect(() => {
-    document.getElementById(footerModal).toggleAttribute("show");
-  }, [showModal]);
 
   return (
     <div className={"footer"}>
@@ -46,12 +40,14 @@ const footer = () => {
           About
         </div>
       </div>
-      <div id={footerModal} className={"footer-modal"}>
-        <Modal
-          selectedModal={modals[modalContentIndex]}
-          closeModal={handleCloseModal}
-        />
-      </div>
+
+      {showModal ? (
+        <div className={"footer-modal"}>
+          <Modal modalVisible={showModal} closeModal={handleCloseModal}>
+            {modals[modalContentIndex]}
+          </Modal>
+        </div>
+      ) : null}
     </div>
   );
 };

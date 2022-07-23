@@ -5,7 +5,7 @@ const privacy = () => {
   const top = useRef(null);
 
   return (
-    <div className="privacy">
+    <div className="privacy-container">
       <img
         style={{ width: "100px" }}
         src={AdsenseLogo}

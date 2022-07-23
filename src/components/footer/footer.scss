@@ -37,21 +37,7 @@
 
       &::after {
         width: calc(100% + 10px);
-
       }
     }
   }
-
-  &-modal {
-    opacity: 0;
-    visibility: hidden;
-    &[show] {
-      opacity: 1;
-      visibility: visible;
-    }
-  }
-}
-
-body[dark="true"] {
-
 }

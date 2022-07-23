@@ -13,6 +13,7 @@ import FilterFunction from "./src/components/blog-entries/filter-function/filter
 import CustomEvents from "./src/components/blog-entries/custom-events/custom-events";
 import Wrapper from "./src/components/main/wrapper";
 import Footer from "./src/components/footer/footer";
+import CookiePopup from "./src/components/cookie-popup/cookie-popup";
 
 const root = document.getElementById("root");
 const rootObject = Dom.createRoot(root);
@@ -21,6 +22,7 @@ rootObject.render(
   <StrictMode>
     <HelmetProvider>
       <Header />
+
       <Wrapper>
         <HashRouter>
           <Routes>
@@ -38,6 +40,7 @@ rootObject.render(
           </Routes>
         </HashRouter>
       </Wrapper>
+      <CookiePopup />
       <Footer name={"footer"} />
     </HelmetProvider>
   </StrictMode>
