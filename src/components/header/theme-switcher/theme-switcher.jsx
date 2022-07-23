@@ -8,18 +8,22 @@ const ThemeSwitcher = (props) => {
     document.getElementById("body").getAttribute("dark") === "true"
   );
 
-  const storeCookie = (isDark) => {
-    var cookie = "dark=" + isDark + ";";
-    cookie += "expires=31-Dec-9999 00:00:00 GMT;";
-    document.cookie = cookie;
+  const storeDarkmode = (isDark) => {
+    try {
+      storage.setItem("dark", isDark.toString());
+    } catch (e) {
+      console.error("Could not set session data.");
+    }
   };
+
+  const storage = localStorage;
 
   return (
     <div
       className="theme-switcher"
       id="theme-switcher"
       onClick={() => {
-        storeCookie(!isDark);
+        storeDarkmode(!isDark);
         setIsDark((isDark) => !isDark);
         props.onClick(!isDark);
       }}
