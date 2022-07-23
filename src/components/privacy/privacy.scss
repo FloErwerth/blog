@@ -1,0 +1,12 @@
+.privacy {
+    &-container {
+        width: 700px;
+        height: 700px;
+        overflow: auto;
+        margin: 0;
+    }
+
+    & > h2:not(:first-child) {
+        margin-top: 50px;
+    }
+}

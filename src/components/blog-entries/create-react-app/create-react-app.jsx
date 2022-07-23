@@ -1,7 +1,6 @@
 import React, { useRef } from "react";
 import EntryHeader from "../../entry-components/entry-header/entry-header";
 import EntryBody from "../../entry-components/entry-body/entry-body";
-import EntryList from "../../entry-components/entry-list/entry-list";
 import VSCodeOpenFolder from "./pictures/VS_Code_OpenFolder.jpg";
 import FolderStructure from "./pictures/FolderStructure.jpg";
 import Terminal from "./pictures/Terminal.jpg";

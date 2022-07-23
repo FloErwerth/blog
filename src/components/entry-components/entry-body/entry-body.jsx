@@ -7,11 +7,14 @@ import EntryBodyCode from "../entry-body-code/entry-body-code";
 
 function EntryBody(props) {
   useEffect(() => {
+    if (props.reference === null || props.reference === undefined) return;
     props.reference.current.scrollIntoView();
   }, []);
   return (
     <div ref={props.reference} className="entry-body">
-      {props.hideScrollButton ? null : (
+      {props.hideScrollButton ||
+      props.reference === null ||
+      props.reference === undefined ? null : (
         <div
           className="entry-body-scrolltotop"
           onClick={() => {
@@ -27,6 +30,9 @@ function EntryBody(props) {
 EntryBody.Text = (props) => (
   <div className="entry-body-text">{props.children}</div>
 );
+
+EntryBody.Title = (props) => <h1 ref={props.reference}>{props.children}</h1>;
+
 EntryBody.Subtitle = (props) => (
   <h2 style={{ marginBottom: "60px", marginTop: "60px" }} ref={props.reference}>
     {props.children}

@@ -12,7 +12,7 @@ import UsingCookies from "./src/components/blog-entries/using-cookies/using-cook
 import FilterFunction from "./src/components/blog-entries/filter-function/filter-function";
 import CustomEvents from "./src/components/blog-entries/custom-events/custom-events";
 import Wrapper from "./src/components/main/wrapper";
-import Footer from "./src/components/footer/footer.tsx";
+import Footer from "./src/components/footer/footer";
 
 const root = document.getElementById("root");
 const rootObject = Dom.createRoot(root);
@@ -38,7 +38,7 @@ rootObject.render(
           </Routes>
         </HashRouter>
       </Wrapper>
-      <Footer name={"footer"}/>
+      <Footer name={"footer"} />
     </HelmetProvider>
   </StrictMode>
 );

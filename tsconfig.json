@@ -8,6 +8,6 @@
     "allowSyntheticDefaultImports": true
   },
   "files": [
-    "./src/components/footer/footer.tsx",
+    "src/components/footer/footer.jsx",
   ]
 }
