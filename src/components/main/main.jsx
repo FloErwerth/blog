@@ -1,6 +1,7 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect } from "react";
 import BlogCard from "../blog-card/blog-card";
 import FilterButton from "../filter-button/filter-button";
+import Adsense from "../adsense/adsense";
 import "./main.scss";
 
 const Main = () => {
@@ -36,6 +37,13 @@ const Main = () => {
       to="/easy-underline"
       categories={["CSS"]}
     ></BlogCard>,
+    <Adsense
+      client="ca-pub-3948296506852082"
+      format="fluid"
+      slot="2486090518"
+      responsive="true"
+      layoutKey="-gl-1x-1r-h5+167"
+    />,
     <BlogCard
       author="Florian Erwerth"
       title="Using cookies to store simple data"

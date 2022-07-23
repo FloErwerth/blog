@@ -9,5 +9,10 @@
   },
   "files": [
     "src/components/footer/footer.jsx",
+    
+  ],
+  "include": [
+    "src/components",
+    "attributes.d.ts"
   ]
 }

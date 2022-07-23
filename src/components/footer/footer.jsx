@@ -30,9 +30,6 @@ const footer = () => {
         <div onClick={() => handleOpenModal(1)} className={"footer-link"}>
           Imprint
         </div>
-        <div onClick={() => handleOpenModal(0)} className={"footer-link"}>
-          Privacy
-        </div>
         <div
           className={"footer-link"}
           onClick={() => index.navigateTo("/about")}
