@@ -37,13 +37,7 @@ const Main = () => {
       to="/easy-underline"
       categories={["CSS"]}
     ></BlogCard>,
-    <Adsense
-      client="ca-pub-3948296506852082"
-      format="fluid"
-      slot="2486090518"
-      responsive="true"
-      layoutKey="-gl-1x-1r-h5+167"
-    />,
+    <Adsense.Mobile />,
     <BlogCard
       author="Florian Erwerth"
       title="Using cookies to store simple data"
@@ -74,7 +68,8 @@ const Main = () => {
   ];
 
   const hasKeyword = (entry) => {
-    if (currentFilter.length === 0) return true;
+    if (currentFilter.length === 0 || entry.type.name !== "BlogCard")
+      return true;
     const categories = entry.props.categories;
     for (var j = 0; j < currentFilter.length; j++) {
       for (var i = 0; i < categories.length; i++) {

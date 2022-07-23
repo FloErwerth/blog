@@ -14,7 +14,7 @@ function BlogCard(props) {
   };
 
   return (
-    <div className="blog-card" key={props.keyVal}>
+    <div className="blog-card" id="blog-card" key={props.keyVal}>
       <div className="blog-card-content" onClick={handleTextClick}>
         <div className="blog-card-title">{props.title}</div>
         <div className="blog-card-text">{props.text}</div>
