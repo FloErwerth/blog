@@ -1,5 +1,6 @@
 @import "variables.scss";
 .modal {
+  transition: background 0.5s;
   position: relative;
   left: 50%;
   top: 50%;
@@ -34,5 +35,11 @@
     &:hover {
       cursor: pointer;
     }
+  }
+}
+
+body[dark="true"] {
+  .modal {
+    background-color: $background-card-dark;
   }
 }
