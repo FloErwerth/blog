@@ -1,0 +1,18 @@
+@import "../../../variables.scss";
+.social-logo {
+    transition: 0.5s;
+    filter: $svg-dark-filter;
+
+    &-inverted {
+        filter: $svg-light-filter;
+    }
+}
+
+body[dark="true"] {
+    .social-logo {
+        filter: $svg-light-filter;
+        &-inverted {
+            filter: $svg-dark-filter;
+        }
+    }
+}

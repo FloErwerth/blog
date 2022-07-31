@@ -5,14 +5,14 @@
     "preserveConstEnums": true,
     "sourceMap": true,
     "jsx": "react",
-    "allowSyntheticDefaultImports": true
+    "allowSyntheticDefaultImports": true,
   },
   "files": [
     "src/components/footer/footer.jsx",
-    
+    "custom.d.ts"
   ],
   "include": [
     "src/components",
-    "attributes.d.ts"
+    "custom.d.ts"
   ]
 }
