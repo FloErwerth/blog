@@ -1,13 +1,18 @@
-import React, { useState, useEffect } from "react";
+import * as React from "react";
+import { useState, useEffect } from "react";
 import BlogCard from "../blog-card/blog-card";
 import FilterButton from "../filter-button/filter-button";
 import "./main.scss";
 
+type filterReturn = {value: boolean, index: number|undefined}
+
 const Main = () => {
+
   useEffect(() => {
     if (window.location.pathname.includes("#")) return;
     window.location.href = "/#" + window.location.pathname;
   }, []);
+
   const baseEntries = [
     <BlogCard
       author="Florian Erwerth"
@@ -65,13 +70,13 @@ const Main = () => {
     ></BlogCard>,
   ];
 
-  const hasKeyword = (entry) => {
+  const hasKeyword = (entry: JSX.Element): boolean => {
     if (currentFilter.length === 0) {
       return true;
     }
     const categories = entry.props.categories;
-    for (var j = 0; j < currentFilter.length; j++) {
-      for (var i = 0; i < categories.length; i++) {
+    for (let j = 0; j < currentFilter.length; j++) {
+      for (let i = 0; i < categories.length; i++) {
         if (categories[i].toLowerCase() == currentFilter[j]) {
           return true;
         }
@@ -81,8 +86,8 @@ const Main = () => {
     return false;
   };
 
-  const setNewFilter = (filterName) => {
-    var filters = currentFilter;
+  const setNewFilter = (filterName: string): void => {
+    let filters = currentFilter;
     const filterData = hasFilter(filterName);
     if (filterData.value) {
       filters.splice(filterData.index, 1);
@@ -92,8 +97,8 @@ const Main = () => {
     setCurrentFilter([...filters]);
   };
 
-  const hasFilter = (filterName) => {
-    for (var i = 0; i < currentFilter.length; i++) {
+  const hasFilter = (filterName: string): filterReturn => {
+    for (let i = 0; i < currentFilter.length; i++) {
       if (currentFilter[i] === filterName) return { value: true, index: i };
     }
     return { value: false, index: undefined };
@@ -105,23 +110,23 @@ const Main = () => {
     <div className="main">
       <div className="main-filter">
         <FilterButton
-          filter={(newFilter) => setNewFilter(newFilter)}
+          filter={(newFilter: string) => setNewFilter(newFilter)}
           filterName="React"
         />
         <FilterButton
-          filter={(newFilter) => setNewFilter(newFilter)}
+          filter={(newFilter: string) => setNewFilter(newFilter)}
           filterName="JavaScript"
         />
         <FilterButton
-          filter={(newFilter) => setNewFilter(newFilter)}
+          filter={(newFilter: string) => setNewFilter(newFilter)}
           filterName="CSS"
         />
         <FilterButton
-          filter={(newFilter) => setNewFilter(newFilter)}
+          filter={(newFilter: string) => setNewFilter(newFilter)}
           filterName="Webpack"
         />
         <FilterButton
-          filter={(newFilter) => setNewFilter(newFilter)}
+          filter={(newFilter: string) => setNewFilter(newFilter)}
           filterName="Events"
         />
       </div>

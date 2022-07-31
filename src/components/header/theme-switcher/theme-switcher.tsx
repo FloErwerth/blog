@@ -1,14 +1,18 @@
-import React, { useState } from "react";
+import * as React from "react";
+import { useState } from "react";
 import "./theme-switcher.scss";
-import Sun from "./svgs/sun.svg";
-import Moon from "./svgs/moon.svg";
+import {getSvg} from "../../../media/svgs";
 
-const ThemeSwitcher = (props) => {
+interface Props {
+  onClick: React.ComponentState;
+}
+
+const ThemeSwitcher = (props: Props) => {
   const [isDark, setIsDark] = useState(
     document.getElementById("body").getAttribute("dark") === "true"
   );
 
-  const storeDarkmode = (isDark) => {
+  const storeDarkmode = (isDark: boolean) => {
     try {
       storage.setItem("dark", isDark.toString());
     } catch (e) {
@@ -35,13 +39,13 @@ const ThemeSwitcher = (props) => {
         }}
       >
         <img
-          src={Moon}
+          src={getSvg("moon")}
           className="theme-switcher"
           alt="A moon"
           title="Switch to dark mode"
         />
         <img
-          src={Sun}
+          src={getSvg("sun")}
           className="theme-switcher"
           alt="A sun"
           title="Switch to light mode"

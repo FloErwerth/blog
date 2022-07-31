@@ -21,7 +21,6 @@ rootObject.render(
   <StrictMode>
     <HelmetProvider>
       <Header />
-
       <Wrapper>
         <HashRouter>
           <Routes>
@@ -43,83 +42,3 @@ rootObject.render(
     </HelmetProvider>
   </StrictMode>
 );
-
-let lastSite = "#/";
-const animationStepTime = 500;
-
-export const navigateTo = (to) => {
-  if (window.location.hash === "#" + to || to === undefined) return;
-  lastSite = "/" + window.location.hash;
-  const wrapper = document.getElementById("wrapper");
-  if (to === "/") {
-    transitionFromEntry(wrapper).then(() => {
-      window.location.href = "/#" + to;
-    });
-  } else {
-    transitionToEntry(wrapper).then(() => {
-      window.location.href = "/#" + to;
-    });
-  }
-};
-
-export const navigateToLastSite = () => {
-  transitionFromEntry(wrapper).then(() => {
-    window.location.href = lastSite;
-  });
-};
-
-const transitionToEntry = (wrapper) => {
-  return new Promise((resolve) => {
-    addClassAfter(wrapper, "content-wrapper-to-right", 0);
-    removeClassAfter(wrapper, "content-wrapper-to-right", animationStepTime);
-    addClassAfter(wrapper, "content-wrapper-set-left", animationStepTime);
-    addClassAfter(wrapper, "content-wrapper-to-middle", animationStepTime + 10);
-    removeClassAfter(
-      wrapper,
-      "content-wrapper-set-left",
-      animationStepTime * 2
-    );
-    removeClassAfter(
-      wrapper,
-      "content-wrapper-to-middle",
-      animationStepTime * 2
-    );
-    setTimeout(() => {
-      resolve(true);
-    }, animationStepTime);
-  });
-};
-
-const transitionFromEntry = (wrapper) => {
-  return new Promise((resolve) => {
-    addClassAfter(wrapper, "content-wrapper-to-left", 0);
-    removeClassAfter(wrapper, "content-wrapper-to-left", animationStepTime);
-    addClassAfter(wrapper, "content-wrapper-set-right", animationStepTime);
-    addClassAfter(wrapper, "content-wrapper-to-middle", animationStepTime + 10);
-    removeClassAfter(
-      wrapper,
-      "content-wrapper-set-right",
-      animationStepTime * 2
-    );
-    removeClassAfter(
-      wrapper,
-      "content-wrapper-to-middle",
-      animationStepTime * 2
-    );
-    setTimeout(() => {
-      resolve(true);
-    }, animationStepTime);
-  });
-};
-
-const removeClassAfter = (element, className, time) => {
-  setTimeout(() => {
-    element.classList.remove(className);
-  }, time);
-};
-
-const addClassAfter = (element, className, time) => {
-  setTimeout(() => {
-    element.classList.add(className);
-  }, time);
-};

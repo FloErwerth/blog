@@ -1,6 +1,13 @@
-import React, { useEffect } from "react";
+import * as React from "react";
+import { ReactElement, useEffect} from "react";
+
 import "../../../body.scss";
-function Wrapper(props) {
+
+interface Props {
+  children: ReactElement;
+}
+
+function Wrapper(props: Props) {
   useEffect(() => {
     if (document.getElementById("wrapper").getAttribute("animation")) {
       document.getElementById("wrapper").setAttribute("animation", "false");

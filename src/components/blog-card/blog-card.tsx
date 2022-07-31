@@ -1,9 +1,19 @@
-import React from "react";
-import { navigateTo } from "../../..";
+import * as React from "react";
+import {navigateTo} from "../../util/navigateTo";
 import "./blog-card.scss";
-import pic from "./Foto_Florian.jpg";
+import {getPicture} from "../../media/pictures";
 
-function BlogCard(props) {
+interface Props {
+  to: string;
+  title: string;
+  text: string;
+  categories: string[];
+  author: string;
+  date: string;
+  time: string;
+}
+
+function BlogCard(props: Props) {
   const handleTextClick = () => {
     if (props.to === undefined) return;
     navigateTo(props.to);
@@ -14,7 +24,7 @@ function BlogCard(props) {
   };
 
   return (
-    <div className="blog-card" id="blog-card" key={props.keyVal}>
+    <div className="blog-card" id="blog-card">
       <div className="blog-card-content" onClick={handleTextClick}>
         <div className="blog-card-title">{props.title}</div>
         <div className="blog-card-text">{props.text}</div>
@@ -33,7 +43,7 @@ function BlogCard(props) {
           onClick={handleImageClick}
           className="blog-card-image"
           style={{
-            backgroundImage: `url(${pic})`,
+            backgroundImage: `url(${getPicture("PictureFlorian")})`,
             backgroundSize: "200% 240%",
             backgroundPosition: "-3px -10px",
           }}

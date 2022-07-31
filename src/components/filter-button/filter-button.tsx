@@ -1,6 +1,12 @@
-import React from "react";
+import * as React from "react";
 import "./filter-button.scss";
-function FilterButton(props) {
+
+interface Props {
+  filterName: string;
+  filter: React.ComponentState;
+}
+
+function FilterButton(props: Props) {
   return (
     <div
       id={props.filterName}

@@ -1,7 +1,7 @@
-import React from "react";
+import * as React from "react";
 import "./entry-header.scss";
-import pic from "./Foto_Florian.jpg";
-import { navigateTo } from "../../../..";
+import {getPicture} from "../../../media/pictures";
+import {navigateTo} from "../../../util/navigateTo";
 import { Helmet } from "react-helmet-async";
 
 function EntryHeader(props) {
@@ -34,7 +34,7 @@ function EntryHeader(props) {
             className="entry-header-image"
             onClick={handleImageClick}
             style={{
-              backgroundImage: `url(${pic})`,
+              backgroundImage: `url(${getPicture("PictureFlorian")})`,
               backgroundSize: "200% 240%",
               backgroundPosition: "0px -15px",
             }}

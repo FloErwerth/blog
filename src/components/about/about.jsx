@@ -1,8 +1,8 @@
 import React, { useRef } from "react";
 import EntryBody from "../entry-components/entry-body/entry-body";
-import foto from "./Foto_Florian.jpg";
+import {getPicture} from "../../media/pictures";
 import "./about.scss";
-import { navigateToLastSite } from "../../..";
+import {navigateToLastSite} from "../../util/navigateTo";
 function About() {
   const top = useRef(null);
   return (
@@ -23,7 +23,7 @@ function About() {
         <div
           className="about-image"
           style={{
-            backgroundImage: `url(${foto})`,
+            backgroundImage: `url(${getPicture("PictureFlorian")})`,
           }}
         ></div>
         <div className="about-data">
