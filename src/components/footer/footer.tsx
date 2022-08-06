@@ -3,7 +3,7 @@ import * as React from "react";
 import "./footer.scss";
 import Privacy from "../privacy/privacy";
 import Imprint from "../imprint/imprint";
-import Modal from "../modal/modal.tsx";
+import Modal from "../modal/modal";
 
 const index = require("../../../index.js");
 
@@ -18,7 +18,7 @@ const footer = () => {
     setShowModal(false);
   };
 
-  const handleOpenModal = (index) => {
+  const handleOpenModal = (index: number) => {
     setModalContentIndex(index);
     setShowModal(true);
   };

@@ -1,6 +1,12 @@
-import React from "react";
+import * as React from "react";
 import "./entry-list-element.scss";
-function EntryListElement(props) {
+
+interface Props {
+  reference: React.RefObject<HTMLElement>;
+  children: React.ReactElement;
+}
+
+function EntryListElement(props: Props) {
   const handleClick = () => {
     if (props.reference === undefined) return;
     props.reference.current.scrollIntoView();

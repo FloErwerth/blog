@@ -4,10 +4,21 @@ import {getPicture} from "../../../media/pictures";
 import {navigateTo} from "../../../util/navigateTo";
 import { Helmet } from "react-helmet-async";
 
-function EntryHeader(props) {
+interface Props {
+  description: string;
+  canonical: string;
+  title: string;
+  date: string;
+  time: string;
+  author: string;
+  shortDescription: string;
+}
+
+function EntryHeader(props: Props) {
   const handleImageClick = () => {
     navigateTo("/about");
   };
+
   const handleReturn = () => {
     navigateTo("/");
   };

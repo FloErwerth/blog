@@ -3,7 +3,7 @@ import {navigateTo} from "../../util/navigateTo";
 import "./blog-card.scss";
 import {getPicture} from "../../media/pictures";
 
-interface Props {
+export interface Props {
   to: string;
   title: string;
   text: string;

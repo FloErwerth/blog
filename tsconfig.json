@@ -8,7 +8,6 @@
     "allowSyntheticDefaultImports": true,
   },
   "files": [
-    "src/components/footer/footer.jsx",
     "custom.d.ts"
   ],
   "include": [

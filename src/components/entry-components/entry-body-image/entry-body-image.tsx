@@ -1,6 +1,14 @@
-import React from "react";
+import * as React from "react";
 import "./entry-body-image.scss";
-function EntryBodyImage(props) {
+
+interface Props {
+  id: string,
+  src: string,
+  width: string | number,
+  alt: string,
+}
+
+function EntryBodyImage(props: Props) {
   return (
     <div id={props.id} className="entry-body-image">
       <img
