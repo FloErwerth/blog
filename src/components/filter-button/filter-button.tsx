@@ -17,7 +17,7 @@ function FilterButton(props: Props) {
   const handleClick = useCallback(() => {
     props.filter(props.filterName.toLowerCase());
     getFilter(props.filterName);
-  }, []);
+  }, [getFilter]);
 
   return (
     <div

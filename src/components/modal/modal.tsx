@@ -1,4 +1,4 @@
-import { ReactNode } from "react";
+import {ReactNode, useCallback} from "react";
 import * as React from "react";
 import "./modal.scss";
 
@@ -9,9 +9,6 @@ interface ModalProps {
   hideClose?: boolean;
 }
 
-const handleCloseModal: Function = (closeModal: Function) => {
-  closeModal();
-};
 
 const Modal = ({
   children,
@@ -19,8 +16,13 @@ const Modal = ({
   closeModal,
   hideClose,
 }: ModalProps) => {
+
+  const handleCloseModal = useCallback(()=>{
+    closeModal();
+  }, [closeModal])
+
   return modalVisible ? (
-    <div className={"modal-container"}>
+    <div className={"modal-container"} onClick={handleCloseModal}>
       <div className={"modal"}>
         <div className={"modal-selection"}>
           {hideClose ? (
@@ -28,7 +30,7 @@ const Modal = ({
           ) : (
             <div
               className={"modal-return"}
-              onClick={() => handleCloseModal(closeModal)}
+              onClick={handleCloseModal}
             >
               Return
             </div>
