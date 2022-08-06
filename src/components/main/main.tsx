@@ -1,17 +1,32 @@
 import * as React from "react";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import BlogCard from "../blog-card/blog-card";
 import FilterButton from "../filter-button/filter-button";
 import "./main.scss";
 
-type filterReturn = {value: boolean, index: number|undefined}
+type filterReturn = {value: boolean, index?: number}
 
 const Main = () => {
 
+  const counter = useRef(0);
   useEffect(() => {
     if (window.location.pathname.includes("#")) return;
     window.location.href = "/#" + window.location.pathname;
   }, []);
+
+  useEffect(() => {
+    return () => {
+      counter.current++;
+    };
+  });
+
+  useEffect(() => {
+    return () => {
+      console.log(counter);
+    };
+  }, [counter]);
+
+
 
   const baseEntries = [
     <BlogCard

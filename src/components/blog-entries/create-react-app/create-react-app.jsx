@@ -1,21 +1,8 @@
-import React, { useRef } from "react";
+import React, {useEffect, useRef} from "react";
 import EntryHeader from "../../entry-components/entry-header/entry-header";
 import EntryBody from "../../entry-components/entry-body/entry-body";
-import VSCodeOpenFolder from "./pictures/VS_Code_OpenFolder.jpg";
-import FolderStructure from "./pictures/FolderStructure.jpg";
-import Terminal from "./pictures/Terminal.jpg";
-import CreateFile from "./pictures/create-file.jpg";
-import CreatedConfig from "./pictures/created-config.jpg";
-import ConfigBody from "./pictures/config-body.jpg";
-import ConfigBodyDone from "./pictures/config-body-done.jpg";
-import ConfigBodyLoaders from "./pictures/config-body-loaders.jpg";
-import ConfigBodyLoadersDone from "./pictures/config-body-loaders-done.jpg";
-import HtmlPlugin from "./pictures/html-plugin.jpg";
-import PluginsArray from "./pictures/plugins-array.jpg";
-import Template from "./pictures/template.jpg";
-import PackageJSON from "./pictures/package-json.jpg";
-import DevServer from "./pictures/dev-server.jpg";
-import FolderStructureBabel from "./pictures/folder-structure-babel.jpg";
+import {pictures} from "../../../media/pictures";
+import ConfigBody from "../../../media/pictures/config-body.jpg";
 
 function CreateReactApp() {
   const packages = useRef(null);
@@ -23,6 +10,12 @@ function CreateReactApp() {
   const webpack = useRef(null);
   const plugins = useRef(null);
   const top = useRef(null);
+
+  useEffect(()=>{
+      console.log(pictures.ConfigBody);
+      console.log(ConfigBody);
+  })
+
   return (
     <EntryBody reference={top}>
       <div className="create-react-app">
@@ -69,7 +62,7 @@ function CreateReactApp() {
       <EntryBody.Image
         width="600"
         id="open-folder"
-        src={VSCodeOpenFolder}
+        src={pictures.VSCodeOpenFolder}
         alt="Visual Studio Code Open Folder"
       ></EntryBody.Image>
       <EntryBody.Text>
@@ -80,7 +73,7 @@ function CreateReactApp() {
       <EntryBody.Image
         width="600"
         id="folder-structure"
-        src={FolderStructure}
+        src={pictures.FolderStructure}
         alt="basic folder structure of the current project"
       ></EntryBody.Image>
       <EntryBody.Text>
@@ -106,7 +99,7 @@ function CreateReactApp() {
       When installing node you will receive npm automatically. Now we can open a
       terminal:
       <EntryBody.Image
-        src={Terminal}
+        src={pictures.Terminal}
         width="600"
         id="terminal"
         alt="Image of a terminal inside of VS code"
@@ -165,7 +158,7 @@ function CreateReactApp() {
         should look like this:
       </EntryBody.Text>
       <EntryBody.Image
-        src={FolderStructureBabel}
+        src={pictures.FolderStructureBabel}
         width="600"
         id="terminal"
         alt="Final folder structure with babel"
@@ -196,7 +189,7 @@ function CreateReactApp() {
       <EntryBody.Image
         width="400"
         id="create-file"
-        src={CreateFile}
+        src={pictures.CreateFile}
         alt="Creating a file"
       >
         On the root line of your project click on the{" "}
@@ -207,7 +200,7 @@ function CreateReactApp() {
         <EntryBody.Image
           width="600"
           id="created-config"
-          src={CreatedConfig}
+          src={pictures.CreatedConfig}
           alt="Picture of a config file created for webpack"
         ></EntryBody.Image>
       </EntryBody.Image>
@@ -231,7 +224,7 @@ function CreateReactApp() {
       <EntryBody.Image
         width="600"
         id="config-body"
-        src={ConfigBody}
+        src={pictures.ConfigBody}
         alt="Picture of a configuration"
       ></EntryBody.Image>
       <EntryBody.Text>
@@ -246,7 +239,7 @@ function CreateReactApp() {
       <EntryBody.Image
         width="600"
         id="config-body"
-        src={ConfigBodyDone}
+        src={pictures.ConfigBodyDone}
         alt="Picture of a fully completed configuration"
       ></EntryBody.Image>
       <EntryBody.Text>
@@ -309,7 +302,7 @@ function CreateReactApp() {
       <EntryBody.Image
         width="600"
         id="config-body-loaders"
-        src={ConfigBodyLoaders}
+        src={pictures.ConfigBodyLoaders}
         alt="Picture of a body of a loader in the webpack config file"
       ></EntryBody.Image>
       <EntryBody.Text>
@@ -337,7 +330,7 @@ function CreateReactApp() {
       <EntryBody.Image
         width="400"
         id="config-body-loaders-done"
-        src={ConfigBodyLoadersDone}
+        src={pictures.ConfigBodyLoadersDone}
         alt="Done config of the webpack loaders body"
       ></EntryBody.Image>
       <EntryBody.Text>
@@ -363,7 +356,7 @@ function CreateReactApp() {
       <EntryBody.Image
         width="600"
         id="const-htmlPlugin"
-        src={HtmlPlugin}
+        src={pictures.HtmlPlugin}
         alt="Picture of an implementation of a HTML plugin"
       ></EntryBody.Image>
       <EntryBody.Text>
@@ -395,7 +388,7 @@ function CreateReactApp() {
       <EntryBody.Image
         width="600"
         id="const-htmlPlugin"
-        src={PluginsArray}
+        src={pictures.PluginsArray}
         alt="Implementation of an array of plugins"
       ></EntryBody.Image>
       <EntryBody.Text>
@@ -411,7 +404,7 @@ function CreateReactApp() {
       <EntryBody.Image
         width="600"
         id="const-htmlPlugin"
-        src={Template}
+        src={pictures.Template}
         alt="Creation of a constant"
       ></EntryBody.Image>
       <EntryBody.Text>
@@ -492,7 +485,7 @@ function CreateReactApp() {
       <EntryBody.Image
         width="600"
         id="package-json"
-        src={PackageJSON}
+        src={pictures.PackageJSON}
         alt="the package.json file"
       ></EntryBody.Image>
       <EntryBody.Text>
@@ -518,7 +511,7 @@ function CreateReactApp() {
       <EntryBody.Image
         width="600"
         id="dev-server"
-        src={DevServer}
+        src={pictures.DevServer}
         alt="configuration of a dev server"
       ></EntryBody.Image>
       <EntryBody.Text>

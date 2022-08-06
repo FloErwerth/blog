@@ -1,6 +1,6 @@
 import * as React from "react";
 import "./entry-header.scss";
-import {getPicture} from "../../../media/pictures";
+import {pictures, wrapInUrl} from "../../../media/pictures";
 import {navigateTo} from "../../../util/navigateTo";
 import { Helmet } from "react-helmet-async";
 
@@ -14,14 +14,17 @@ interface Props {
   shortDescription: string;
 }
 
-function EntryHeader(props: Props) {
-  const handleImageClick = () => {
-    navigateTo("/about");
-  };
 
-  const handleReturn = () => {
-    navigateTo("/");
-  };
+const handleImageClick = () => {
+  navigateTo("/about");
+};
+
+const handleReturn = () => {
+  navigateTo("/");
+};
+
+function EntryHeader(props: Props) {
+
 
   return (
     <>
@@ -45,7 +48,7 @@ function EntryHeader(props: Props) {
             className="entry-header-image"
             onClick={handleImageClick}
             style={{
-              backgroundImage: `url(${getPicture("PictureFlorian")})`,
+              backgroundImage: wrapInUrl(pictures.PictureFlorian),
               backgroundSize: "200% 240%",
               backgroundPosition: "0px -15px",
             }}

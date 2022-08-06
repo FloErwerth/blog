@@ -1,11 +1,7 @@
 import * as React from "react";
-import {ReactElement} from "react";
+import {PropsWithChildren} from "react";
 
-interface Props {
-  children: ReactElement
-}
-
-function EntryList(props: Props) {
+function EntryList(props: PropsWithChildren) {
   return <ul style={{ marginBottom: "60px" }}>{props.children}</ul>;
 }
 

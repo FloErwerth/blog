@@ -1,9 +1,9 @@
 import * as React from "react";
 import "./entry-list-element.scss";
+import {PropsWithChildren} from "react";
 
-interface Props {
+interface Props extends PropsWithChildren{
   reference: React.RefObject<HTMLElement>;
-  children: React.ReactElement;
 }
 
 function EntryListElement(props: Props) {

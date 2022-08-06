@@ -10,7 +10,7 @@
         width: 80px;
         height: 80px;
         border-radius: 100%;
-        margin: auto 0px auto 0px;
+        margin: auto 0 auto 0;
 
         &:hover {
             outline: 3px solid $highlight;
@@ -25,7 +25,7 @@
         font-style: italic;
     }
     &-metadata {
-        margin: auto 0px auto 20px;
+        margin: auto 0 auto 20px;
         font-family: Arial, Helvetica, sans-serif;
     }
     &-date {
@@ -45,6 +45,7 @@
         border: none;
         border-radius: 5px;
         color: black;
+        cursor: pointer;
 
         @media (max-width: 768px) {
             width: 100%;

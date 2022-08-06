@@ -1,7 +1,8 @@
 import * as React from "react";
 import {navigateTo} from "../../util/navigateTo";
 import "./blog-card.scss";
-import {getPicture} from "../../media/pictures";
+import {pictures, wrapInUrl} from "../../media/pictures";
+import {useCallback} from "react";
 
 export interface Props {
   to: string;
@@ -13,15 +14,16 @@ export interface Props {
   time: string;
 }
 
-function BlogCard(props: Props) {
-  const handleTextClick = () => {
-    if (props.to === undefined) return;
-    navigateTo(props.to);
-  };
+const handleImageClick = () => {
+  navigateTo("/about");
+};
 
-  const handleImageClick = () => {
-    navigateTo("/about");
-  };
+function BlogCard(props: Props) {
+
+  const handleTextClick = useCallback(() => {
+    navigateTo(props.to);
+  }, [props.to]);
+
 
   return (
     <div className="blog-card" id="blog-card">
@@ -43,7 +45,7 @@ function BlogCard(props: Props) {
           onClick={handleImageClick}
           className="blog-card-image"
           style={{
-            backgroundImage: `url(${getPicture("PictureFlorian")})`,
+            backgroundImage: wrapInUrl(pictures.PictureFlorian),
             backgroundSize: "200% 240%",
             backgroundPosition: "-3px -10px",
           }}

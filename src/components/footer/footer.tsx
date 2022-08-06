@@ -1,27 +1,30 @@
-import { useState } from "react";
+import {useCallback, useState} from "react";
 import * as React from "react";
 import "./footer.scss";
 import Privacy from "../privacy/privacy";
 import Imprint from "../imprint/imprint";
 import Modal from "../modal/modal";
-
-const index = require("../../../index.js");
+import {navigateTo} from "../../util/navigateTo";
 
 const LABEL = "Florian Erwerth's Blog";
 const modals = [<Privacy />, <Imprint />];
+
+const handleNavigation = () => {
+  navigateTo("/about");
+}
 
 const footer = () => {
   const [modalContentIndex, setModalContentIndex] = useState(1);
   const [showModal, setShowModal] = useState(false);
 
-  const handleCloseModal = () => {
+  const handleCloseModal = useCallback(() => {
     setShowModal(false);
-  };
+  }, [setShowModal]);
 
-  const handleOpenModal = (index: number) => {
+  const handleOpenModal = useCallback((index: number) => {
     setModalContentIndex(index);
     setShowModal(true);
-  };
+  }, [setModalContentIndex]);
 
   return (
     <div className={"footer"}>
@@ -32,7 +35,7 @@ const footer = () => {
         </div>
         <div
           className={"footer-link"}
-          onClick={() => index.navigateTo("/about")}
+          onClick={handleNavigation}
         >
           About
         </div>

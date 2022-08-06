@@ -1,14 +1,15 @@
 import * as React from "react";
 import "./entry-body-image.scss";
+import {PropsWithChildren} from "react";
 
-interface Props {
+export interface EntryBodyImageProps extends PropsWithChildren{
   id: string,
   src: string,
   width: string | number,
   alt: string,
 }
 
-function EntryBodyImage(props: Props) {
+function EntryBodyImage(props: EntryBodyImageProps) {
   return (
     <div id={props.id} className="entry-body-image">
       <img

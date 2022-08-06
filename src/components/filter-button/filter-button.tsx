@@ -8,7 +8,6 @@ interface Props {
 }
 
 const getFilter = (filterName: string) => {
-  console.log("filter");
   document.getElementById(filterName).toggleAttribute("toggled");
 }
 
