@@ -1,5 +1,5 @@
-import { useRef } from "react";
 import * as React from "react";
+import {useRef} from "react";
 import EntryBody from "../entry-components/entry-body/entry-body";
 import {pictures, wrapInUrl} from "../../media/pictures";
 import "./about.scss";
@@ -13,9 +13,7 @@ function About() {
         <h2>About the author</h2>
         <button
           className="about-return"
-          onClick={() => {
-            navigateToLastSite();
-          }}
+          onClick={navigateToLastSite}
         >
           RETURN
         </button>
