@@ -1,141 +1,169 @@
 @import "../../../variables.scss";
-.blog-card {
-    transition: 0.5s;
-    display: flex;
-    position: relative;
-    user-select: none;
-    height: 200px;
-    margin: auto;
-    margin-bottom: 10px;
-    background-color: white;
-    outline: 2px solid $background-card-credentials-light;
-    border-radius: 1px;
-    max-width: 900px;
 
+.blog-card {
+  transition: 0.5s;
+  display: flex;
+  position: relative;
+  user-select: none;
+  height: 200px;
+  margin: auto;
+  margin-bottom: 10px;
+  background-color: white;
+  outline: 2px solid $background-card-credentials-light;
+  border-radius: 1px;
+  max-width: 900px;
+
+  &-filtered {
+    transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
+    filter: opacity(0);
+    user-select: none;
+    pointer-events: none;
+    height: 0;
+  }
+
+  @media (max-width: 768px) {
+    display: block;
+    width: 100%;
+    margin-left: auto;
+    height: 350px;
+    margin-bottom: 50px;
     &-filtered {
-        transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
-        filter: opacity(0);
-        height: 0;
+      height: 0;
+      margin-bottom: 0;
+    }
+  }
+
+  @media (max-width: 1200px) {
+    display: block;
+    width: 100%;
+    margin-left: auto;
+    height: 275px;
+    margin-bottom: 50px;
+    &-filtered {
+      height: 0;
+      margin-bottom: 0;
+    }
+  }
+
+  &-content {
+    width: 70%;
+    display: grid;
+    grid-template-rows: 30% 50% 22px 20px;
+
+    &:hover {
+      cursor: pointer;
+
+      & > .blog-card-title {
+        cursor: pointer;
+        color: $highlight;
+      }
     }
 
     @media (max-width: 1200px) {
-        display: block;
-        width: 100%;
-        margin-left: auto;
-        height: fit-content;
+      display: block;
+      width: 100%;
+      height: 70%;
     }
+  }
 
-    &-content {
-        width: 70%;
-        display: grid;
-        grid-template-rows: 30% 50% 22px 20px;
-        &:hover {
-            cursor: pointer;
-
-            & > .blog-card-title {
-                cursor: pointer;
-                color: $highlight;
-            }
-        }
-
-        @media (max-width: 1200px) {
-            display: block;
-            width: 100%;
-            height: 70%;
-        }
+  &-categories {
+    display: flex;
+    column-gap: 5px;
+    margin-left: 15px;
+    @media (max-width: 1200px) {
+      // display: none;
+      margin-bottom: 15px;
     }
+  }
 
-    &-categories {
-        display: flex;
-        column-gap: 5px;
-        margin-left: 15px;
-        @media (max-width: 1200px) {
-            // display: none;
-            margin-bottom: 15px;
-        }
-    }
+  &-category {
+    display: block;
+    background-color: $highlight;
+    padding: 5px;
+    border-radius: 5px;
+    font-size: 10px;
+  }
 
-    &-category {
-        display: block;
-        background-color: $highlight;
-        padding: 5px;
-        border-radius: 5px;
-        font-size: 10px;
-    }
+  &-text {
+    padding: 15px;
+    font-size: 15px;
+    color: rgb(100, 100, 100);
 
-    &-text {
-        padding: 15px;
-        font-size: 15px;
-        color: rgb(100, 100, 100);
-        &:hover {
-            cursor: pointer;
-        }
+    &:hover {
+      cursor: pointer;
     }
+  }
 
-    &-credentials {
-        transition: 0.5s;
-        display: flex;
-        font-size: 10px;
-        z-index: 0;
-        padding: 15px;
-        padding-top: 5px;
-        overflow: hidden;
-        align-items: center;
-        margin: auto;
-        margin-right: 0;
-        width: 30%;
-        min-width: 220px;
-        height: calc(100% - 20px);
-        background-color: $background-card-credentials-light;
+  &-credentials {
+    transition: 0.5s;
+    display: flex;
+    font-size: 10px;
+    z-index: 0;
+    padding: 15px;
+    padding-top: 5px;
+    overflow: hidden;
+    align-items: center;
+    margin: auto;
+    margin-right: 0;
+    width: 30%;
+    min-width: 220px;
+    height: calc(100% - 20px);
+    background-color: $background-card-credentials-light;
 
-        @media (max-width: 1200px) {
-            height: 30%;
-            width: calc(100% - 20px);
-            padding: 10px;
-        }
+    @media (max-width: 1200px) {
+      height: 30%;
+      width: calc(100% - 20px);
+      padding: 10px;
     }
+  }
 
-    &-title {
-        transition: 0.5s;
-        font-size: 22px;
-        padding: 15px 15px 3px;
-        min-height: 60px;
-        color: $background-card-dark;
-    }
+  &-title {
+    transition: 0.5s;
+    font-size: 22px;
+    padding: 15px 15px 3px;
+    min-height: 60px;
+    color: $background-card-dark;
+  }
 
-    &-image {
-        border-radius: 100%;
-        width: 60px;
-        height: 60px;
-        &:hover {
-            cursor: pointer;
-            outline: 2px solid $highlight;
-        }
+  &-image {
+    border-radius: 100%;
+    width: 60px;
+    height: 60px;
+
+    &:hover {
+      cursor: pointer;
+      outline: 2px solid $highlight;
     }
-    &-metadata {
-        transition: 0.5s;
-        font-size: 16px;
-        font-style: italic;
-        margin-left: 10px;
-    }
-    &-date {
-        margin-top: 5px;
-        font-size: 12px;
-    }
+  }
+
+  &-metadata {
+    transition: 0.5s;
+    font-size: 16px;
+    font-style: italic;
+    margin-left: 10px;
+  }
+
+  &-date {
+    margin-top: 5px;
+    font-size: 12px;
+  }
 }
 
 body[dark="true"] {
-    .blog-card {
-        &-title {
-            color: $color-dark;
-        }
-        &-metadata {
-            color: $color-dark;
-        }
-        &-credentials {
-            background-color: $background-dark;
-        }
-        background-color: $background-card-dark;
-        outline: 1px solid $background-card-dark;
+  .blog-card {
+    &-title {
+      color: $color-dark;
     }
+
+    &-metadata {
+      color: $color-dark;
+    }
+
+    &-credentials {
+      background-color: $background-dark;
+    }
+
+    background-color: $background-card-dark;
+    outline: 1px solid $background-card-dark;
+  }
 }
