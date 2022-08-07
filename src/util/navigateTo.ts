@@ -1,6 +1,16 @@
-import {useMemo} from "react";
+export enum Endpoint {
+  Main = "/",
+  About = "/about",
+  CRA = "/create-react-app",
+  CustomEvents = "/custom-events",
+  Darkmode = "/how-I-managed-darkmode",
+  Underline = "/easy-underline",
+  Filter = "/filter-function",
+  Cookies = "/using-cookies"
+}
 
-window.onload = function() {
+
+window.onload = function () {
   wrapper = document.getElementById("wrapper");
 }
 
@@ -8,10 +18,10 @@ let lastSite = "#/";
 let wrapper: HTMLElement;
 const animationStepTime = 500;
 
-export const navigateTo = (to: string): void => {
-  if (window.location.hash === "#" + to || to === undefined) return;
+export const navigateTo = (to: Endpoint): void => {
+  if (window.location.hash === "#" + to) return;
   lastSite = "/" + window.location.hash;
-  if (to === "/") {
+  if (to === Endpoint.Main) {
     transitionFromEntry(wrapper).then(() => {
       window.location.href = "/#" + to;
     });

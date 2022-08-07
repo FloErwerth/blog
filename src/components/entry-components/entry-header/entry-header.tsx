@@ -1,8 +1,8 @@
 import * as React from "react";
 import "./entry-header.scss";
 import {pictures, wrapInUrl} from "../../../media/pictures";
-import {navigateTo} from "../../../util/navigateTo";
-import { Helmet } from "react-helmet-async";
+import {Endpoint, navigateTo} from "../../../util/navigateTo";
+import {Helmet} from "react-helmet-async";
 
 interface Props {
   description: string;
@@ -16,11 +16,11 @@ interface Props {
 
 
 const handleImageClick = () => {
-  navigateTo("/about");
+  navigateTo(Endpoint.About);
 };
 
 const handleReturn = () => {
-  navigateTo("/");
+  navigateTo(Endpoint.Main);
 };
 
 function EntryHeader(props: Props) {

@@ -1,16 +1,16 @@
-import {useCallback, useState} from "react";
 import * as React from "react";
+import {useCallback, useState} from "react";
 import "./footer.scss";
 import Privacy from "../privacy/privacy";
 import Imprint from "../imprint/imprint";
 import Modal from "../modal/modal";
-import {navigateTo} from "../../util/navigateTo";
+import {Endpoint, navigateTo} from "../../util/navigateTo";
 
 const LABEL = "Florian Erwerth's Blog";
 const modals = [<Privacy />, <Imprint />];
 
 const handleNavigation = () => {
-  navigateTo("/about");
+  navigateTo(Endpoint.About);
 }
 
 const footer = () => {

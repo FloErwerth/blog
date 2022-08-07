@@ -1,39 +1,46 @@
 import * as React from "react";
-import {navigateTo} from "../../util/navigateTo";
+import {useCallback, useId} from "react";
+import {Endpoint, navigateTo} from "../../util/navigateTo";
 import "./blog-card.scss";
 import {pictures, wrapInUrl} from "../../media/pictures";
-import {useCallback} from "react";
 
-export interface Props {
-  to: string;
+interface Props {
+  to: Endpoint;
   title: string;
   text: string;
   categories: string[];
   author: string;
   date: string;
   time: string;
+  filtered: boolean;
 }
 
 const handleImageClick = () => {
-  navigateTo("/about");
+  navigateTo(Endpoint.About);
 };
 
 function BlogCard(props: Props) {
+
+  const getClassName = useCallback(
+    () => {
+      return props.filtered ? "blog-card blog-card-filtered" : "blog-card"
+    },
+    [props.filtered],
+  );
 
   const handleTextClick = useCallback(() => {
     navigateTo(props.to);
   }, [props.to]);
 
-
   return (
-    <div className="blog-card" id="blog-card">
+    <div className={getClassName()} id="blog-card">
       <div className="blog-card-content" onClick={handleTextClick}>
         <div className="blog-card-title">{props.title}</div>
         <div className="blog-card-text">{props.text}</div>
         <div className="blog-card-categories">
           {props.categories.map((category) => {
             return (
-              <div className="blog-card-category" key={Math.random() * 1000}>
+              <div className="blog-card-category" key={useId()}>
                 {category}
               </div>
             );
@@ -59,6 +66,11 @@ function BlogCard(props: Props) {
       </div>
     </div>
   );
+}
+
+BlogCard.defaultProps = {
+  filtered: false,
+  author: "Florian Erwerth",
 }
 
 export default BlogCard;
